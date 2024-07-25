@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace HeThongBanDienThoai_Admin.Properties {
+namespace DTO.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
@@ -23,16 +23,14 @@ namespace HeThongBanDienThoai_Admin.Properties {
             }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source=ADMIN-5ET942130\\BAOTOAN;Initial Catalog=QL_DTDD;Persist Security Info" +
             "=True;User ID=sa;Password=123;TrustServerCertificate=True")]
-        public string stringConnectSql {
+        public string QL_DTDDConnectionString {
             get {
-                return ((string)(this["stringConnectSql"]));
-            }
-            set {
-                this["stringConnectSql"] = value;
+                return ((string)(this["QL_DTDDConnectionString"]));
             }
         }
     }

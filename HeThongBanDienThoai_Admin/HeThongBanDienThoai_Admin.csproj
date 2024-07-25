@@ -33,8 +33,24 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BUS">
+      <HintPath>..\BUS\bin\Debug\BUS.dll</HintPath>
+    </Reference>
+    <Reference Include="DTO">
+      <HintPath>..\DTO\bin\Debug\DTO.dll</HintPath>
+    </Reference>
+    <Reference Include="Guna.Charts.WinForms, Version=1.0.9.0, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
+      <HintPath>..\packages\Guna.Charts.WinForms.1.0.9\lib\net472\Guna.Charts.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Guna.UI2, Version=2.0.4.6, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
+      <HintPath>..\packages\Guna.UI2.WinForms.2.0.4.6\lib\net472\Guna.UI2.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,14 +62,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GUI\Login_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Login_Form.Designer.cs">
+      <DependentUpon>Login_Form.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Menu_Form.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\Menu_Form.Designer.cs">
       <DependentUpon>Menu_Form.cs</DependentUpon>
     </Compile>
+    <Compile Include="LIB\DBConnect.cs" />
+    <Compile Include="LIB\MyLib.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="GUI\Login_Form.resx">
+      <DependentUpon>Login_Form.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Menu_Form.resx">
       <DependentUpon>Menu_Form.cs</DependentUpon>
     </EmbeddedResource>
@@ -65,7 +92,9 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -78,6 +107,25 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="RESOURCE\Icons\chart.png" />
+    <Content Include="RESOURCE\Icons\device.png" />
+    <Content Include="RESOURCE\Icons\login.png" />
+    <Content Include="RESOURCE\Icons\logout-32.ico" />
+    <Content Include="RESOURCE\Icons\logout-32.png" />
+    <Content Include="RESOURCE\Icons\logout-512.png" />
+    <Content Include="RESOURCE\Icons\logout.png" />
+    <Content Include="RESOURCE\Icons\people.png" />
+    <Content Include="RESOURCE\Icons\pie-chart.png" />
+    <Content Include="RESOURCE\Icons\process.png" />
+    <Content Include="RESOURCE\Icons\Product.png" />
+    <Content Include="RESOURCE\Icons\teamwork.png" />
+    <Content Include="RESOURCE\Icons\warehouse.png" />
+    <Content Include="RESOURCE\Icons\x-close.png" />
+    <Content Include="RESOURCE\Logo\logo-video.png" />
+    <Content Include="RESOURCE\Logo\logo_topzone.jpg" />
+    <Content Include="RESOURCE\Logo\logo_topzonePanel.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
