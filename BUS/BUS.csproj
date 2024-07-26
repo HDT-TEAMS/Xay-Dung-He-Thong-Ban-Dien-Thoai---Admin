@@ -60,7 +60,9 @@
     <Compile Include="NhanVien_BUS.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Quyen_BUS.cs" />
+    <Compile Include="Loai_BUS.cs" />
     <Compile Include="NguoiDung_BUS.cs" />
+    <Compile Include="SanPham_BUS.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

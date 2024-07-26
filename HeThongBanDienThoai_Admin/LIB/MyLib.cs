@@ -6,7 +6,6 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using DTO;
 
 namespace HeThongBanDienThoai_Admin.LIB
 {
@@ -17,7 +16,7 @@ namespace HeThongBanDienThoai_Admin.LIB
         public static void CloseThisOpenThat(Form pOldForm, Form pNewForm)
         {
             pOldForm.Close();
-            thread = new Thread (()=>
+            thread = new Thread(() =>
             {
                 Application.Run(pNewForm);
             });
@@ -147,16 +146,15 @@ namespace HeThongBanDienThoai_Admin.LIB
         {
             if (control.Tag == null)
             {
-                return false;
+                return false; 
             }
-
             string[] tags = control.Tag.ToString().Split('|');
-
             if (tags.Length < 1)
             {
                 return true;
             }
-
+            string controlType = tags[0];
+            string permissionName = tags[1];
             using (var db = new DB_DTDDDataContext())
             {
                 var userPermissions = db.QuyenNguoiDungs
@@ -168,37 +166,33 @@ namespace HeThongBanDienThoai_Admin.LIB
                     .Join(db.ChucNangs,
                            temp => temp.qcn.MaCN,
                            cn => cn.MaCN,
-                           (temp, cn) => cn.TenCN).ToList();
-
-                if (tags[0] != null && tags[0] == "parent")
+                           (temp, cn) => cn.TenCN)
+                    .ToList();
+                switch (controlType)
                 {
-                    string[] childPermissions = tags[1].Split(',');
-                    int count = 0;
-
-                    foreach (var item in childPermissions)
-                    {
-                        if (userPermissions.Contains(item))
+                    case "parent":
+                        string[] requiredPermissions = permissionName.Split(',');
+                        foreach (string requiredPermission in requiredPermissions)
                         {
-                            count++;
+                            if (userPermissions.Contains(requiredPermission))
+                            {
+                                return true;
+                            }
                         }
-                    }
-
-                    if (count == 0)
-                    {
                         return false;
-                    }
-                }
-                else if (tags.Length > 1 && tags[1] != null)
-                {
-                    if (!userPermissions.Contains(tags[1]))
-                    {
+                    case "children":
+                        if (userPermissions.Contains(permissionName))
+                        {
+                            return true;
+                        }
                         return false;
-                    }
-                }
 
-                return true;
+                    default:
+                        return true; 
+                }
             }
         }
+
 
         public static bool CheckPermission(int userId, string permission)
         {
