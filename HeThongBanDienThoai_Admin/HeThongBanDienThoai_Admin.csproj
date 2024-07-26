@@ -45,10 +45,14 @@
     <Reference Include="Guna.UI2, Version=2.0.4.6, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
       <HintPath>..\packages\Guna.UI2.WinForms.2.0.4.6\lib\net472\Guna.UI2.dll</HintPath>
     </Reference>
+    <Reference Include="MyControl">
+      <HintPath>..\MyControl\bin\Debug\MyControl.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />
     <Reference Include="System.Design" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Management" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
@@ -62,6 +66,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GUI\Customer Form\QL_CustomerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Customer Form\QL_CustomerForm.Designer.cs">
+      <DependentUpon>QL_CustomerForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Login_Form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,15 +84,63 @@
     <Compile Include="GUI\Menu_Form.Designer.cs">
       <DependentUpon>Menu_Form.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Role Form\insertRoleForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Role Form\insertRoleForm.Designer.cs">
+      <DependentUpon>insertRoleForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Role Form\QL_RoleForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Role Form\QL_RoleForm.Designer.cs">
+      <DependentUpon>QL_RoleForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Staff Form\insertStaffForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Staff Form\insertStaffForm.Designer.cs">
+      <DependentUpon>insertStaffForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Staff Form\QL_StaffForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Staff Form\QL_StaffForm.Designer.cs">
+      <DependentUpon>QL_StaffForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\User Form\QL_UserForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\User Form\QL_UserForm.Designer.cs">
+      <DependentUpon>QL_UserForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="LIB\DBConnect.cs" />
     <Compile Include="LIB\MyLib.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="GUI\Customer Form\QL_CustomerForm.resx">
+      <DependentUpon>QL_CustomerForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Login_Form.resx">
       <DependentUpon>Login_Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Menu_Form.resx">
       <DependentUpon>Menu_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Role Form\insertRoleForm.resx">
+      <DependentUpon>insertRoleForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Role Form\QL_RoleForm.resx">
+      <DependentUpon>QL_RoleForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Staff Form\insertStaffForm.resx">
+      <DependentUpon>insertStaffForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Staff Form\QL_StaffForm.resx">
+      <DependentUpon>QL_StaffForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\User Form\QL_UserForm.resx">
+      <DependentUpon>QL_UserForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -127,5 +185,6 @@
     <Content Include="RESOURCE\Logo\logo_topzone.jpg" />
     <Content Include="RESOURCE\Logo\logo_topzonePanel.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

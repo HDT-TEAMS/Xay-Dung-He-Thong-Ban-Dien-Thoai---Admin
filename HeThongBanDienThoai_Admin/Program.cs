@@ -1,4 +1,8 @@
 ﻿using HeThongBanDienThoai_Admin.GUI;
+using HeThongBanDienThoai_Admin.GUI.Customer_Form;
+using HeThongBanDienThoai_Admin.GUI.Role_Form;
+using HeThongBanDienThoai_Admin.GUI.Staff_Form;
+using HeThongBanDienThoai_Admin.GUI.User_Form;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,7 +18,7 @@ namespace HeThongBanDienThoai_Admin
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Login_Form());
+            Application.Run(new QL_UserForm());
         }
     }
 }
