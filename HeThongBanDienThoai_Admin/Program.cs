@@ -8,7 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using BUS;
 namespace HeThongBanDienThoai_Admin
 {
     public static class Program
@@ -18,7 +18,7 @@ namespace HeThongBanDienThoai_Admin
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new QL_UserForm());
+            Application.Run(new QL_RoleForm());
         }
     }
 }

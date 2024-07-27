@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BUS;
+using HeThongBanDienThoai_Admin.GUI.Staff_Form;
 
 namespace HeThongBanDienThoai_Admin.GUI.Customer_Form
 {
@@ -18,11 +19,47 @@ namespace HeThongBanDienThoai_Admin.GUI.Customer_Form
         {
             InitializeComponent();
             this.Load += QL_CustomerForm_Load;
+            dataGridViewCustomer.CellContentClick += DataGridViewCustomer_CellContentClick;
+        }
+
+        private void DataGridViewCustomer_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == dataGridViewCustomer.Columns["btnSua"].Index && e.RowIndex >= 0)
+            {
+                // Lấy ID của nhân viên từ hàng hiện tại
+                string customerId = dataGridViewCustomer.Rows[e.RowIndex].Cells["MaNB"].Value.ToString();
+
+                // Tạo form chỉnh sửa và truyền ID nhân viên
+                EditCustomerForm editStaffForm = new EditCustomerForm(customerId);
+                editStaffForm.Show();
+            }
+
+            if (e.ColumnIndex == dataGridViewCustomer.Columns["btnXoa"].Index && e.RowIndex >= 0)
+            {
+                // Lấy ID của khách hàng từ hàng hiện tại
+                string customerId = dataGridViewCustomer.Rows[e.RowIndex].Cells["MaNB"].Value.ToString();
+
+                // Xóa khách hàng
+                try
+                {
+                    khBUS.DeleteKhachHang(customerId);
+                    MessageBox.Show("Khách hàng đã được xóa thành công.");
+                    LoadKH(); // Làm mới danh sách khách hàng
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Lỗi: {ex.Message}");
+                }
+            }
         }
 
         private void QL_CustomerForm_Load(object sender, EventArgs e)
         {
             LoadKH();
+        }
+        public void DeleteKH()
+        {
+            dataGridViewCustomer.DataSource = khBUS.LoadKH();
         }
         public void LoadKH()
         {
