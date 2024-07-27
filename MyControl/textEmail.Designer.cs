@@ -1,6 +1,6 @@
 ﻿namespace MyControl
 {
-    partial class EmailBox
+    partial class textEmail
     {
         /// <summary>
         /// Required designer variable.

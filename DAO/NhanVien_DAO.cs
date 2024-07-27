@@ -14,5 +14,41 @@ namespace DAO
         {
             return dB.NhanViens.Select(nv => nv).ToList<NhanVien>();
         }
+
+        public void AddNhanVien(NhanVien newNhanVien)
+        {
+            dB.NhanViens.InsertOnSubmit(newNhanVien);
+            dB.SubmitChanges();
+        }
+
+        public void UpdateNhanVien(NhanVien updatedNhanVien)
+        {
+            var existingNhanVien = dB.NhanViens.SingleOrDefault(nv => nv.MaNB == updatedNhanVien.MaNB);
+
+            if (existingNhanVien != null)
+            {
+                existingNhanVien.TenNV = updatedNhanVien.TenNV;
+                existingNhanVien.NgaySinh = updatedNhanVien.NgaySinh;
+                existingNhanVien.GioiTinh = updatedNhanVien.GioiTinh;
+                existingNhanVien.SDTNV = updatedNhanVien.SDTNV;
+                existingNhanVien.Email=updatedNhanVien.Email;
+
+                dB.SubmitChanges();
+            }
+            else
+            {
+                throw new Exception("Không tìm thấy nhân viên");
+            }
+        }
+        public NhanVien GetNhanVienById(string employeeId)
+        {
+            return dB.NhanViens.SingleOrDefault(nv => nv.MaNB == employeeId);
+        }
+
+        public void DeleteNhanVien(NhanVien deletenhanVien)
+        {
+            dB.NhanViens.DeleteOnSubmit(deletenhanVien);
+            dB.SubmitChanges();
+        }
     }
 }

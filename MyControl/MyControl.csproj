@@ -51,19 +51,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EmailBox.cs">
-      <SubType>Component</SubType>
+    <Compile Include="phoneBox.cs">
+      <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="EmailBox.Designer.cs">
-      <DependentUpon>EmailBox.cs</DependentUpon>
-    </Compile>
-    <Compile Include="PhoneBox.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="PhoneBox.Designer.cs">
-      <DependentUpon>PhoneBox.cs</DependentUpon>
+    <Compile Include="phoneBox.Designer.cs">
+      <DependentUpon>phoneBox.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="textEmail.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="textEmail.Designer.cs">
+      <DependentUpon>textEmail.cs</DependentUpon>
+    </Compile>
     <Compile Include="TopTaskbarButton.cs">
       <SubType>UserControl</SubType>
     </Compile>

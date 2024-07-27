@@ -16,5 +16,22 @@ namespace BUS
         {
             return rDAO.LoadRole();
         }
+        public void UpdateQuyen(Quyen updateQuyen)
+        {
+            rDAO.UpdateQuyen(updateQuyen);
+        }
+
+        public Quyen GetQuyenById(int roleID)
+        {
+            return rDAO.GetQuyenById(roleID);
+        }
+        public List<ChucNang> GetAllChucNangs()
+        {
+            return rDAO.GetAllChucNangs();
+        }
+        public List<ChucNang> GetChucNangByMaQuyen(int maQuyen)
+        {
+            return rDAO.GetChucNangByMaQuyen(maQuyen);
+        }
     }
 }

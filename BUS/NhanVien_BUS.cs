@@ -16,5 +16,32 @@ namespace BUS
         {
             return nvDAO.LoadNV();
         }
+        public void AddNhanVien(NhanVien newNhanVien)
+        {
+            nvDAO.AddNhanVien(newNhanVien);
+        }
+
+        public void UpdateNhanVien (NhanVien updateNhanVien)
+        {
+            nvDAO.UpdateNhanVien(updateNhanVien);
+        }
+
+        public NhanVien GetNhanVienById(string employeeId)
+        {
+            return nvDAO.GetNhanVienById(employeeId);
+        }
+
+        public void DeleteNhanVien(string employeeId)
+        {
+            NhanVien nv = nvDAO.GetNhanVienById(employeeId);
+            if (nv != null)
+            {
+                nvDAO.DeleteNhanVien(nv);
+            }
+            else
+            {
+                throw new Exception("Nhân viên không tồn tại");
+            }
+        }
     }
 }

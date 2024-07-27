@@ -17,6 +17,39 @@ namespace HeThongBanDienThoai_Admin.GUI.Staff_Form
         {
             InitializeComponent();
             this.Load += QL_StaffForm_Load;
+            dataGridViewStaff.CellContentClick += DataGridViewStaff_CellContentClick;
+           
+        }
+
+
+        private void DataGridViewStaff_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == dataGridViewStaff.Columns["btnSua"].Index && e.RowIndex >= 0)
+            {
+                // Lấy ID của nhân viên từ hàng hiện tại
+                string employeeId = dataGridViewStaff.Rows[e.RowIndex].Cells["MaNB"].Value.ToString();
+
+                // Tạo form chỉnh sửa và truyền ID nhân viên
+                EditStaffForm editStaffForm = new EditStaffForm(employeeId);
+                editStaffForm.Show();
+            }
+            if (e.ColumnIndex == dataGridViewStaff.Columns["btnXoa"].Index && e.RowIndex >= 0)
+            {
+                // Lấy ID của khách hàng từ hàng hiện tại
+                string employeeId = dataGridViewStaff.Rows[e.RowIndex].Cells["MaNB"].Value.ToString();
+
+                // Xóa khách hàng
+                try
+                {
+                    nvBUS.DeleteNhanVien(employeeId);
+                    MessageBox.Show("Nhân viên đã được xóa thành công.");
+                    LoadNV(); // Làm mới danh sách khách hàng
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Lỗi: {ex.Message}");
+                }
+            }
         }
 
         private void QL_StaffForm_Load(object sender, EventArgs e)
@@ -33,5 +66,12 @@ namespace HeThongBanDienThoai_Admin.GUI.Staff_Form
         {
             LoadNV();
         }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            InsertStaffForm insertStaffForm = new InsertStaffForm();
+            insertStaffForm.Show();
+        }
+
     }
 }

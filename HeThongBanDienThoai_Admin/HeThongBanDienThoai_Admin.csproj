@@ -66,6 +66,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GUI\Customer Form\EditCustomerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Customer Form\EditCustomerForm.Designer.cs">
+      <DependentUpon>EditCustomerForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Customer Form\QL_CustomerForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,11 +90,11 @@
     <Compile Include="GUI\Menu_Form.Designer.cs">
       <DependentUpon>Menu_Form.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Role Form\insertRoleForm.cs">
+    <Compile Include="GUI\Role Form\EditRoleForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\Role Form\insertRoleForm.Designer.cs">
-      <DependentUpon>insertRoleForm.cs</DependentUpon>
+    <Compile Include="GUI\Role Form\EditRoleForm.Designer.cs">
+      <DependentUpon>EditRoleForm.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Role Form\QL_RoleForm.cs">
       <SubType>Form</SubType>
@@ -96,11 +102,17 @@
     <Compile Include="GUI\Role Form\QL_RoleForm.Designer.cs">
       <DependentUpon>QL_RoleForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Staff Form\insertStaffForm.cs">
+    <Compile Include="GUI\Staff Form\EditStaffForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\Staff Form\insertStaffForm.Designer.cs">
-      <DependentUpon>insertStaffForm.cs</DependentUpon>
+    <Compile Include="GUI\Staff Form\EditStaffForm.Designer.cs">
+      <DependentUpon>EditStaffForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Staff Form\InsertStaffForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Staff Form\InsertStaffForm.Designer.cs">
+      <DependentUpon>InsertStaffForm.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Staff Form\QL_StaffForm.cs">
       <SubType>Form</SubType>
@@ -118,6 +130,9 @@
     <Compile Include="LIB\MyLib.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="GUI\Customer Form\EditCustomerForm.resx">
+      <DependentUpon>EditCustomerForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Customer Form\QL_CustomerForm.resx">
       <DependentUpon>QL_CustomerForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -127,14 +142,17 @@
     <EmbeddedResource Include="GUI\Menu_Form.resx">
       <DependentUpon>Menu_Form.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Role Form\insertRoleForm.resx">
-      <DependentUpon>insertRoleForm.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\Role Form\EditRoleForm.resx">
+      <DependentUpon>EditRoleForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Role Form\QL_RoleForm.resx">
       <DependentUpon>QL_RoleForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Staff Form\insertStaffForm.resx">
-      <DependentUpon>insertStaffForm.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\Staff Form\EditStaffForm.resx">
+      <DependentUpon>EditStaffForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Staff Form\InsertStaffForm.resx">
+      <DependentUpon>InsertStaffForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Staff Form\QL_StaffForm.resx">
       <DependentUpon>QL_StaffForm.cs</DependentUpon>

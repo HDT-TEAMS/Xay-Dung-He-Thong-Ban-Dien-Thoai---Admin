@@ -1,6 +1,6 @@
 ﻿namespace MyControl
 {
-    partial class PhoneBox
+    partial class phoneBox
     {
         /// <summary>
         /// Required designer variable.

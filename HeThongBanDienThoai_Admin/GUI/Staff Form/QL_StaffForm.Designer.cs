@@ -28,15 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.btnReload = new Guna.UI2.WinForms.Guna2GradientButton();
             this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnAdd = new Guna.UI2.WinForms.Guna2GradientButton();
             this.dataGridViewStaff = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.btnSua = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.btnXoa = new System.Windows.Forms.DataGridViewButtonColumn();
             this.MaNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaNB = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaND = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,7 +59,7 @@
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 77.1164F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22.8836F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 188F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 191F));
             this.tableLayoutPanel1.Controls.Add(this.btnReload, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.txtSearch, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnAdd, 2, 0);
@@ -64,7 +68,7 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 64F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(948, 64);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
@@ -81,7 +85,7 @@
             this.btnReload.FillColor2 = System.Drawing.Color.RoyalBlue;
             this.btnReload.Font = new System.Drawing.Font("Bahnschrift Condensed", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReload.ForeColor = System.Drawing.Color.White;
-            this.btnReload.Location = new System.Drawing.Point(616, 7);
+            this.btnReload.Location = new System.Drawing.Point(613, 7);
             this.btnReload.Name = "btnReload";
             this.btnReload.Size = new System.Drawing.Size(140, 50);
             this.btnReload.TabIndex = 2;
@@ -128,27 +132,30 @@
             this.btnAdd.Size = new System.Drawing.Size(140, 50);
             this.btnAdd.TabIndex = 1;
             this.btnAdd.Text = "Thêm mới";
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // dataGridViewStaff
             // 
             this.dataGridViewStaff.AllowUserToResizeRows = false;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Bahnschrift Condensed", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(201)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
-            this.dataGridViewStaff.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(147)))), ((int)(((byte)(245)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Bahnschrift Condensed", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(147)))), ((int)(((byte)(245)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewStaff.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Bahnschrift Condensed", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(201)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            this.dataGridViewStaff.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(147)))), ((int)(((byte)(245)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Bahnschrift Condensed", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(147)))), ((int)(((byte)(245)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewStaff.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewStaff.ColumnHeadersHeight = 36;
             this.dataGridViewStaff.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.dataGridViewStaff.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.btnSua,
+            this.btnXoa,
             this.MaNV,
             this.MaNB,
             this.MaND,
@@ -158,28 +165,28 @@
             this.SDTNV,
             this.Email,
             this.IsDeleted});
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Bahnschrift Condensed", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(201)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewStaff.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Bahnschrift Condensed", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(201)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewStaff.DefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridViewStaff.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewStaff.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dataGridViewStaff.Location = new System.Drawing.Point(0, 64);
             this.dataGridViewStaff.Name = "dataGridViewStaff";
             this.dataGridViewStaff.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.dataGridViewStaff.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Bahnschrift Condensed", 14.25F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewStaff.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Bahnschrift Condensed", 14.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewStaff.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridViewStaff.RowHeadersVisible = false;
             this.dataGridViewStaff.RowTemplate.Height = 24;
             this.dataGridViewStaff.Size = new System.Drawing.Size(948, 495);
@@ -206,6 +213,32 @@
             this.dataGridViewStaff.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dataGridViewStaff.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             // 
+            // btnSua
+            // 
+            this.btnSua.DataPropertyName = "btnSua";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Bahnschrift Condensed", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSua.DefaultCellStyle = dataGridViewCellStyle3;
+            this.btnSua.FillWeight = 40.04226F;
+            this.btnSua.HeaderText = "";
+            this.btnSua.Name = "btnSua";
+            this.btnSua.Text = "Sửa";
+            this.btnSua.UseColumnTextForButtonValue = true;
+            // 
+            // btnXoa
+            // 
+            this.btnXoa.DataPropertyName = "btnXoa";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Bahnschrift Condensed", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXoa.DefaultCellStyle = dataGridViewCellStyle4;
+            this.btnXoa.FillWeight = 42.63961F;
+            this.btnXoa.HeaderText = "";
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.btnXoa.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.btnXoa.Text = "Xóa";
+            this.btnXoa.UseColumnTextForButtonValue = true;
+            // 
             // MaNV
             // 
             this.MaNV.DataPropertyName = "MaNV";
@@ -216,6 +249,7 @@
             // MaNB
             // 
             this.MaNB.DataPropertyName = "MaNB";
+            this.MaNB.FillWeight = 123.4637F;
             this.MaNB.HeaderText = "Mã nội bộ";
             this.MaNB.Name = "MaNB";
             // 
@@ -229,6 +263,7 @@
             // TenNV
             // 
             this.TenNV.DataPropertyName = "TenNV";
+            this.TenNV.FillWeight = 123.4637F;
             this.TenNV.HeaderText = "Tên nhân viên";
             this.TenNV.Name = "TenNV";
             // 
@@ -242,18 +277,21 @@
             // NgaySinh
             // 
             this.NgaySinh.DataPropertyName = "NgaySinh";
+            this.NgaySinh.FillWeight = 123.4637F;
             this.NgaySinh.HeaderText = "Ngày sinh";
             this.NgaySinh.Name = "NgaySinh";
             // 
             // SDTNV
             // 
             this.SDTNV.DataPropertyName = "SDTNV";
+            this.SDTNV.FillWeight = 123.4637F;
             this.SDTNV.HeaderText = "Số điện thoại";
             this.SDTNV.Name = "SDTNV";
             // 
             // Email
             // 
             this.Email.DataPropertyName = "Email";
+            this.Email.FillWeight = 123.4637F;
             this.Email.HeaderText = "Email";
             this.Email.Name = "Email";
             // 
@@ -273,6 +311,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "QL_StaffForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "QL_StaffForm";
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStaff)).EndInit();
@@ -287,6 +326,8 @@
         private Guna.UI2.WinForms.Guna2TextBox txtSearch;
         private Guna.UI2.WinForms.Guna2GradientButton btnAdd;
         private Guna.UI2.WinForms.Guna2DataGridView dataGridViewStaff;
+        private System.Windows.Forms.DataGridViewButtonColumn btnSua;
+        private System.Windows.Forms.DataGridViewButtonColumn btnXoa;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaNV;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaNB;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaND;

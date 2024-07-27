@@ -1,22 +1,35 @@
-﻿using System;
+﻿using Guna.UI2.WinForms;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
+using System.Linq;
+using System.Text;
 using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 using System.Windows.Forms;
+using static Guna.UI2.WinForms.Suite.Descriptions;
 
 namespace MyControl
 {
-    public partial class EmailBox : TextBox
+    public partial class textEmail : Guna2TextBox
     {
         private ErrorProvider errorProvider;
-
-        public EmailBox()
+        public textEmail()
         {
-            InitializeComponent();
             errorProvider = new ErrorProvider();
-            this.TextChanged += EmailBox_TextChanged;
+            InitializeComponent();
+            InitializeErrorProvider();
+            this.TextChanged += TextEmail_TextChanged;
         }
-
-        private void EmailBox_TextChanged(object sender, EventArgs e)
+        private void InitializeErrorProvider()
+        {
+            errorProvider = new ErrorProvider
+            {
+                BlinkStyle = ErrorBlinkStyle.BlinkIfDifferentError,
+            };
+        }
+        private void TextEmail_TextChanged(object sender, EventArgs e)
         {
             if (!IsValidEmail(this.Text))
             {

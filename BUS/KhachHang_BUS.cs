@@ -16,5 +16,28 @@ namespace BUS
         {
             return khDAO.LoadKH();
         }
+
+        public void UpdateKhachHang(KhachHang updateKhachHang)
+        {
+            khDAO.UpdateKhachHang(updateKhachHang);
+        }
+
+        public KhachHang GetKhachHangById(string CustomerId)
+        {
+            return khDAO.GetKhachHangById(CustomerId);
+        }
+
+        public void DeleteKhachHang(string CustomerId)
+        {
+            KhachHang kh = khDAO.GetKhachHangById(CustomerId);
+            if (kh != null)
+            {
+                khDAO.DeleteKhachHang(kh);
+            }
+            else
+            {
+                throw new Exception("Khách hàng không tồn tại");
+            }
+        }
     }
 }
