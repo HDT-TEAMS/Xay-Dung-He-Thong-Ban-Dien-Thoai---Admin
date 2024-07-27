@@ -33,7 +33,7 @@ namespace HeThongBanDienThoai_Admin.GUI.Product
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.btnLuu = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.Label_Heading = new System.Windows.Forms.Label();
+            this.Label_Headings = new System.Windows.Forms.Label();
             this.TableLayoutPanel_Info = new System.Windows.Forms.TableLayoutPanel();
             this.pictureImage = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -51,20 +51,23 @@ namespace HeThongBanDienThoai_Admin.GUI.Product
             this.panel1 = new System.Windows.Forms.Panel();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.panel_HinhAnh = new Guna.UI2.WinForms.Guna2Panel();
+            this.btn_Back = new Guna.UI2.WinForms.Guna2PictureBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.TableLayoutPanel_Info.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureImage)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_Back)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 3;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 38F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 54F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 115F));
             this.tableLayoutPanel1.Controls.Add(this.btnLuu, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.Label_Heading, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.Label_Headings, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.btn_Back, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -93,16 +96,16 @@ namespace HeThongBanDienThoai_Admin.GUI.Product
             this.btnLuu.Text = "Lưu";
             this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
-            // Label_Heading
+            // Label_Headings
             // 
-            this.Label_Heading.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.Label_Heading.AutoSize = true;
-            this.Label_Heading.Font = new System.Drawing.Font("Bahnschrift SemiBold SemiConden", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label_Heading.Location = new System.Drawing.Point(41, 14);
-            this.Label_Heading.Name = "Label_Heading";
-            this.Label_Heading.Size = new System.Drawing.Size(178, 25);
-            this.Label_Heading.TabIndex = 0;
-            this.Label_Heading.Text = "Thêm mới sản phẩm";
+            this.Label_Headings.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.Label_Headings.AutoSize = true;
+            this.Label_Headings.Font = new System.Drawing.Font("Bahnschrift SemiBold SemiConden", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label_Headings.Location = new System.Drawing.Point(57, 14);
+            this.Label_Headings.Name = "Label_Headings";
+            this.Label_Headings.Size = new System.Drawing.Size(178, 25);
+            this.Label_Headings.TabIndex = 0;
+            this.Label_Headings.Text = "Thêm mới sản phẩm";
             // 
             // TableLayoutPanel_Info
             // 
@@ -357,6 +360,18 @@ namespace HeThongBanDienThoai_Admin.GUI.Product
             this.panel_HinhAnh.Size = new System.Drawing.Size(831, 235);
             this.panel_HinhAnh.TabIndex = 3;
             // 
+            // btn_Back
+            // 
+            this.btn_Back.Image = global::HeThongBanDienThoai_Admin.Properties.Resources.back_icon;
+            this.btn_Back.ImageRotate = 0F;
+            this.btn_Back.Location = new System.Drawing.Point(3, 3);
+            this.btn_Back.Name = "btn_Back";
+            this.btn_Back.Size = new System.Drawing.Size(48, 47);
+            this.btn_Back.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btn_Back.TabIndex = 6;
+            this.btn_Back.TabStop = false;
+            this.btn_Back.Click += new System.EventHandler(this.btn_Back_Click);
+            // 
             // NewProduct_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -378,6 +393,7 @@ namespace HeThongBanDienThoai_Admin.GUI.Product
             ((System.ComponentModel.ISupportInitialize)(this.pictureImage)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_Back)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -385,7 +401,7 @@ namespace HeThongBanDienThoai_Admin.GUI.Product
         #endregion
 
         private TableLayoutPanel tableLayoutPanel1;
-        private Label Label_Heading;
+        private Label Label_Headings;
         private TableLayoutPanel TableLayoutPanel_Info;
         private Label label2;
         private Guna.UI2.WinForms.Guna2TextBox txtTenSP;
@@ -404,5 +420,6 @@ namespace HeThongBanDienThoai_Admin.GUI.Product
         private Panel panel1;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
         private Guna.UI2.WinForms.Guna2Panel panel_HinhAnh;
+        private Guna.UI2.WinForms.Guna2PictureBox btn_Back;
     }
 }

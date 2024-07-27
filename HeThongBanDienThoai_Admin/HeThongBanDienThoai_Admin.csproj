@@ -74,6 +74,7 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="GUI\Customer Form\EditCustomerForm.cs">
@@ -101,15 +102,13 @@
       <DependentUpon>Menu_Form.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Role Form\EditRoleForm.cs">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\Product\NewProduct_Form.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\Product\NewProduct_Form.Designer.cs">
       <DependentUpon>NewProduct_Form.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\Role Form\insertRoleForm.cs">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\Role Form\EditRoleForm.Designer.cs">
       <DependentUpon>EditRoleForm.cs</DependentUpon>
@@ -173,9 +172,6 @@
     <EmbeddedResource Include="GUI\Product\NewProduct_Form.resx">
       <DependentUpon>NewProduct_Form.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Role Form\insertRoleForm.resx">
-      <DependentUpon>insertRoleForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Role Form\QL_RoleForm.resx">
       <DependentUpon>QL_RoleForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -204,7 +200,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="credentials.json" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

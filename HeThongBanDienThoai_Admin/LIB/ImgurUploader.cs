@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
@@ -10,6 +11,11 @@ public class ImgurUploader
 
     public async Task<string> UploadFileAsync(string filePath)
     {
+        if (string.IsNullOrWhiteSpace(filePath) || !File.Exists(filePath))
+        {
+            throw new ArgumentException("Đường dẫn tệp không hợp lệ.");
+        }
+
         using (var client = new HttpClient())
         {
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Client-ID", _clientId);

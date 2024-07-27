@@ -26,7 +26,9 @@ namespace HeThongBanDienThoai_Admin.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-GVRFC16\\BAOTOAN;Initial Catalog=QL_DTDD;Persist Security Info" +
-            "=True;User ID=sa;Password=123;Encrypt=True;TrustServerCertificate=True")]
+            "=True;User Data Source=DESKTOP-GVRFC16\\BAOTOAN;Initial Catalog=QL_DTDD;Persist S" +
+            "ecurity Info=True;User ID=sa;Password=123;Encrypt=True;TrustServerCertificate=Tr" +
+            "ue")]
         public string stringConnectSql {
             get {
                 return ((string)(this["stringConnectSql"]));

@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="stringConnectSql" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Data Source=ADMIN-5ET942130\BAOTOAN;Initial Catalog=QL_DTDD;Persist Security Info=True;User ID=sa;Password=123;TrustServerCertificate=True</Value>
+      <Value Profile="(Default)">Data Source=DESKTOP-GVRFC16\BAOTOAN;Initial Catalog=QL_DTDD;Persist Security Info=True;User Data Source=DESKTOP-GVRFC16\BAOTOAN;Initial Catalog=QL_DTDD;Persist Security Info=True;User ID=sa;Password=123;Encrypt=True;TrustServerCertificate=True</Value>
     </Setting>
   </Settings>
 </SettingsFile>

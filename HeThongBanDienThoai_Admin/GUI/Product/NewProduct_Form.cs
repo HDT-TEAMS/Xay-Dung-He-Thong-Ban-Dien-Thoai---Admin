@@ -8,6 +8,7 @@ using System.IO;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Linq;
+using System.Net.Http;
 
 namespace HeThongBanDienThoai_Admin.GUI.Product
 {
@@ -16,6 +17,7 @@ namespace HeThongBanDienThoai_Admin.GUI.Product
         DungLuong_BUS dlb = new DungLuong_BUS();
         MauSac_BUS msb = new MauSac_BUS();
         SanPham_BUS spb = new SanPham_BUS();
+        SanPham sp = new SanPham();
         private List<string> imagePaths = new List<string>();
         private List<string> uploadedImageUrls = new List<string>();
         private ImgurUploader uploader = new ImgurUploader();
@@ -28,11 +30,13 @@ namespace HeThongBanDienThoai_Admin.GUI.Product
             this._loai = loai;
         }
 
-        public NewProduct_Form(int maSp)
+        public NewProduct_Form(Loai loai,int masp)
         {
             InitializeComponent();
-            this._maSP = maSp;
+            this._loai = loai;
+            this._maSP= masp;
             loadChiTietSanPham(_maSP);
+            Label_Headings.Text = "Cập nhật sản phẩm " + sp.TenSP;
         }
 
 
@@ -47,7 +51,7 @@ namespace HeThongBanDienThoai_Admin.GUI.Product
             await Task.Run(() =>
             {
                 var dungLuongList = dlb.loadAllDungLuong();
-                dungLuongList.Insert(0, new DungLuong { MaDungLuong = 0, TenDungLuong = "" });
+                dungLuongList.Insert(0, new DungLuong { MaDungLuong = -1, TenDungLuong = "Chọn dung lượng" });
                 cbb_DungLuong.Invoke((MethodInvoker)delegate
                 {
                     cbb_DungLuong.DataSource = dungLuongList;
@@ -55,7 +59,7 @@ namespace HeThongBanDienThoai_Admin.GUI.Product
                     cbb_DungLuong.ValueMember = "MaDungLuong";
                 });
                 var mauSacList = msb.loadAllMauSac();
-                mauSacList.Insert(0, new MauSac { MaMau = 0, TenMau = "" });
+                mauSacList.Insert(0, new MauSac { MaMau = -1, TenMau = "Chọn màu sắc" });
                 cbb_Mau.Invoke((MethodInvoker)delegate
                 {
                     cbb_Mau.DataSource = mauSacList;
@@ -67,7 +71,7 @@ namespace HeThongBanDienThoai_Admin.GUI.Product
 
         private async void loadChiTietSanPham(int maSP)
         {
-            SanPham sp = spb.getSanPhamByMaSPs(maSP);
+            sp = spb.getSanPhamByMaSPs(maSP);
             if (sp != null)
             {
                 txtMaSPNB.Text = sp.MaNB;
@@ -103,7 +107,7 @@ namespace HeThongBanDienThoai_Admin.GUI.Product
         private void loadCbbDungLuong()
         {
             var dungLuongList = dlb.loadAllDungLuong();
-            dungLuongList.Insert(0, new DungLuong { MaDungLuong = 0, TenDungLuong = "" });
+            dungLuongList.Insert(0, new DungLuong { MaDungLuong = -1, TenDungLuong = "Chọn dung lượng" }); 
             cbb_DungLuong.DataSource = dungLuongList;
             cbb_DungLuong.DisplayMember = "TenDungLuong";
             cbb_DungLuong.ValueMember = "MaDungLuong";
@@ -112,7 +116,7 @@ namespace HeThongBanDienThoai_Admin.GUI.Product
         private void loadCbbMauSac()
         {
             var mauSacList = msb.loadAllMauSac();
-            mauSacList.Insert(0, new MauSac { MaMau = 0, TenMau = "" });
+            mauSacList.Insert(0, new MauSac { MaMau = -1, TenMau = "Chọn màu sắc" }); 
             cbb_Mau.DataSource = mauSacList;
             cbb_Mau.DisplayMember = "TenMau";
             cbb_Mau.ValueMember = "MaMau";
@@ -147,7 +151,16 @@ namespace HeThongBanDienThoai_Admin.GUI.Product
                 Padding = new Padding(0, 0, 12, 0),
                 SizeMode = PictureBoxSizeMode.Zoom
             };
-            pictureBox.Load(url);
+
+            try
+            {
+                pictureBox.Load(url);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi khi tải hình ảnh: {url}\n{ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
+            }
 
             var deleteButton = new Button
             {
@@ -164,6 +177,8 @@ namespace HeThongBanDienThoai_Admin.GUI.Product
             return panel;
         }
 
+
+
         private void DeleteImage(string imageUrl)
         {
             imagePaths.Remove(imageUrl);
@@ -174,15 +189,14 @@ namespace HeThongBanDienThoai_Admin.GUI.Product
         {
             panel_HinhAnh.Controls.Clear();
             var flowLayoutPanel = CreateFlowLayoutPanel();
-
             foreach (var imagePath in imagePaths)
             {
                 var imagePanel = CreateImagePanel(imagePath);
                 flowLayoutPanel.Controls.Add(imagePanel);
             }
-
             panel_HinhAnh.Controls.Add(flowLayoutPanel);
         }
+
 
         private void pictureImage_Click(object sender, EventArgs e)
         {
@@ -193,18 +207,19 @@ namespace HeThongBanDienThoai_Admin.GUI.Product
 
                 if (openImage.ShowDialog() == DialogResult.OK)
                 {
-                    imagePaths.AddRange(openImage.FileNames);
+                    var validPaths = openImage.FileNames.Where(path => File.Exists(path)).ToList();
+                    imagePaths.AddRange(validPaths);
                     LoadImagesToPanel();
                 }
             }
         }
+
 
         private async void btnLuu_Click(object sender, EventArgs e)
         {
             string maNB = txtMaSPNB.Text.Trim();
             string tenSP = txtTenSP.Text.Trim();
             decimal donGia;
-            int maDL, maMau;
             int soluong = 0;
 
             if (string.IsNullOrEmpty(maNB))
@@ -228,38 +243,114 @@ namespace HeThongBanDienThoai_Admin.GUI.Product
                 return;
             }
 
-            if (!int.TryParse(cbb_DungLuong.SelectedValue.ToString(), out maDL))
+            int? maDL = null;
+            if (int.TryParse(cbb_DungLuong.SelectedValue.ToString(), out int dl) && dl != -1)
             {
-                MessageBox.Show("Dung lượng không hợp lệ!");
-                cbb_DungLuong.Focus();
-                return;
+                maDL = dl;
             }
 
-            if (!int.TryParse(cbb_Mau.SelectedValue.ToString(), out maMau))
+            int maMau = -1;
+            if (int.TryParse(cbb_Mau.SelectedValue.ToString(), out int mau) && mau != -1)
             {
-                MessageBox.Show("Màu sắc không hợp lệ!");
-                cbb_Mau.Focus();
-                return;
+                maMau = mau;
             }
 
             try
             {
+                string oldImageUrls = string.Empty;
+                if (_maSP != 0)
+                {
+                    var existingProduct = spb.getSanPhamByMaSPs(_maSP);
+                    if (existingProduct != null)
+                    {
+                        oldImageUrls = existingProduct.HinhAnh;
+                    }
+                }
+
                 uploadedImageUrls.Clear();
                 foreach (var imagePath in imagePaths)
                 {
-                    string imageUrl = await uploader.UploadFileAsync(imagePath);
-                    uploadedImageUrls.Add(imageUrl);
+                    if (File.Exists(imagePath))
+                    {
+                        try
+                        {
+                            string imageUrl = await uploader.UploadFileAsync(imagePath);
+                            if (!string.IsNullOrEmpty(imageUrl))
+                            {
+                                uploadedImageUrls.Add(imageUrl);
+                            }
+                            else
+                            {
+                                MessageBox.Show($"Không thể upload hình ảnh: {imagePath}");
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show($"Lỗi khi upload hình ảnh: {imagePath}\n{ex.Message}");
+                        }
+                    }
                 }
 
-                string imageUrls = string.Join(",", uploadedImageUrls);
-                spb.AddSanPham(maNB, tenSP, maDL, donGia, imageUrls, soluong, _loai.Maloai, maMau);
+                // Xác định các URL hình ảnh cần giữ lại (hình ảnh cũ không bị xóa)
+                var oldImageUrlsList = oldImageUrls.Split(',')
+                                                    .Where(url => Uri.IsWellFormedUriString(url, UriKind.Absolute))
+                                                    .ToList();
+                var unchangedImageUrls = oldImageUrlsList.Intersect(imagePaths).ToList();
+                var finalImageUrls = unchangedImageUrls.Union(uploadedImageUrls).ToList();
+                string finalImageUrlsString = string.Join(",", finalImageUrls);
 
-                MessageBox.Show("Sản phẩm đã được lưu!");
+                if (_maSP == 0)
+                {
+                    spb.AddSanPham(maNB, tenSP, maDL, donGia, finalImageUrlsString, soluong, _loai.Maloai, maMau);
+                    MessageBox.Show("Sản phẩm đã được thêm thành công!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    ClearControls(this);
+                }
+                else
+                {
+                    SanPham existingProduct = spb.getSanPhamByMaSPs(_maSP);
+                    if (existingProduct != null)
+                    {
+                        int updatedSoLuong = soluong > 0 ? soluong : existingProduct.SoLuong ?? 0;
+                        spb.UpdateSanPham(_maSP, maNB, tenSP, maDL , donGia, finalImageUrlsString, updatedSoLuong, _loai.Maloai, maMau);
+                        MessageBox.Show("Sản phẩm đã được cập nhật thành công!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Sản phẩm không tồn tại.");
+                    }
+                }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Lỗi khi lưu sản phẩm: {ex.Message}");
+                MessageBox.Show($"Lỗi: {ex.Message}");
             }
+        }
+
+        private void ClearControls(Control parent)
+        {
+            foreach (Control control in parent.Controls)
+            {
+                if (control is TextBox textBox)
+                {
+                    textBox.Clear();
+                }
+                else if (control is ComboBox comboBox)
+                {
+                    comboBox.SelectedIndex = 0;
+                }
+                else if (control.HasChildren)
+                {
+                    ClearControls(control);
+                }
+            }
+            imagePaths.Clear();
+            uploadedImageUrls.Clear();
+            panel_HinhAnh.Controls.Clear();
+        }
+
+        private void btn_Back_Click(object sender, EventArgs e)
+        {
+            MyLib.LoadForm(this, new ListProduct_Form(_loai));
         }
     }
 }

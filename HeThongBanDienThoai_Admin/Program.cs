@@ -18,7 +18,7 @@ namespace HeThongBanDienThoai_Admin
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new QL_RoleForm());
+            Application.Run(new Login_Form());
         }
     }
 }
