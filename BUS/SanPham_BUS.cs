@@ -12,9 +12,19 @@ namespace BUS
     {
         public SanPham_BUS() { }
         SanPham_DAO sanPham_DAO = new SanPham_DAO();
-        public List<View_SanPhamDetail> getListSanPhamDetail()
+        public List<View_SanPhamDetailsByLoai> getListSanPhamDetail(int maLoai)
         {
-            return sanPham_DAO.loadDetailSanPham();
+            return sanPham_DAO.loadDetailProductByLoai(maLoai);
+        }
+
+        public void AddSanPham(string maNB,string tenSP, int maDL, decimal giaSP, string hinhAnh, int soLuong, int maLoai, int maMau)
+        {
+            sanPham_DAO.InsertSanPham(maNB,tenSP, maDL, giaSP, hinhAnh, soLuong, maLoai, maMau);
+        }
+
+        public SanPham getSanPhamByMaSPs(int maSp)
+        {
+            return sanPham_DAO.getSanPhamByMaSP(maSp);
         }
     }
 }

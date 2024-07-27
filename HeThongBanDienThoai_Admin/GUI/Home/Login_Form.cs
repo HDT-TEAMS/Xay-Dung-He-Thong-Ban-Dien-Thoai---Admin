@@ -21,6 +21,7 @@ namespace HeThongBanDienThoai_Admin.GUI
         {
             InitializeComponent();
             this.btnLogin.Click += BtnLogin_Click;
+
         }
 
         private void BtnLogin_Click(object sender, EventArgs e)

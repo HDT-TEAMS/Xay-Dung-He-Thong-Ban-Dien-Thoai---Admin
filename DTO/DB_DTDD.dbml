@@ -81,7 +81,7 @@
   <Table Name="dbo.DungLuong" Member="DungLuongs">
     <Type Name="DungLuong">
       <Column Name="MaDungLuong" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Name" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Name" Member="TenDungLuong" Storage="_Name" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
       <Association Name="DungLuong_SanPham" Member="SanPhams" ThisKey="MaDungLuong" OtherKey="MaDungLuong" Type="SanPham" />
     </Type>
   </Table>
@@ -220,8 +220,8 @@
       <Association Name="NguoiDung_QuyenNguoiDung" Member="NguoiDung" ThisKey="MAND" OtherKey="MaND" Type="NguoiDung" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.View_SanPhamDetails" Member="View_SanPhamDetails">
-    <Type Name="View_SanPhamDetail">
+  <Table Name="dbo.View_SanPhamDetailsByLoai" Member="View_SanPhamDetailsByLoais">
+    <Type Name="View_SanPhamDetailsByLoai">
       <Column Name="MaSP" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="MaNB" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="MaKM" Type="System.Int32" DbType="Int" CanBeNull="true" />
@@ -230,7 +230,7 @@
       <Column Name="GiaSP" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
       <Column Name="MaLoai" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="MaMau" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="MaDungLuong" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MaDungLuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="IsDeleted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Column Name="TenMau" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
       <Column Name="TenDungLuong" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />

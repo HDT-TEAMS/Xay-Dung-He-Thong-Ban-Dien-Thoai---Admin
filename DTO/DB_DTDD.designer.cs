@@ -271,11 +271,11 @@ namespace DTO
 			}
 		}
 		
-		public System.Data.Linq.Table<View_SanPhamDetail> View_SanPhamDetails
+		public System.Data.Linq.Table<View_SanPhamDetailsByLoai> View_SanPhamDetailsByLoais
 		{
 			get
 			{
-				return this.GetTable<View_SanPhamDetail>();
+				return this.GetTable<View_SanPhamDetailsByLoai>();
 			}
 		}
 	}
@@ -2023,7 +2023,7 @@ namespace DTO
 		
 		private int _MaDungLuong;
 		
-		private string _Name;
+		private string _TenDungLuong;
 		
 		private EntitySet<SanPham> _SanPhams;
 		
@@ -2033,8 +2033,8 @@ namespace DTO
     partial void OnCreated();
     partial void OnMaDungLuongChanging(int value);
     partial void OnMaDungLuongChanged();
-    partial void OnNameChanging(string value);
-    partial void OnNameChanged();
+    partial void OnTenDungLuongChanging(string value);
+    partial void OnTenDungLuongChanged();
     #endregion
 		
 		public DungLuong()
@@ -2063,22 +2063,22 @@ namespace DTO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="NVarChar(255)")]
-		public string Name
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name= "TenDungLuong", Storage="_TenDungLuong", DbType="NVarChar(255)")]
+		public string TenDungLuong
 		{
 			get
 			{
-				return this._Name;
+				return this._TenDungLuong;
 			}
 			set
 			{
-				if ((this._Name != value))
+				if ((this._TenDungLuong != value))
 				{
-					this.OnNameChanging(value);
+					this.OnTenDungLuongChanging(value);
 					this.SendPropertyChanging();
-					this._Name = value;
-					this.SendPropertyChanged("Name");
-					this.OnNameChanged();
+					this._TenDungLuong = value;
+					this.SendPropertyChanged("TenDungLuong");
+					this.OnTenDungLuongChanged();
 				}
 			}
 		}
@@ -4857,8 +4857,8 @@ namespace DTO
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.View_SanPhamDetails")]
-	public partial class View_SanPhamDetail
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.View_SanPhamDetailsByLoai")]
+	public partial class View_SanPhamDetailsByLoai
 	{
 		
 		private int _MaSP;
@@ -4877,7 +4877,7 @@ namespace DTO
 		
 		private int _MaMau;
 		
-		private int _MaDungLuong;
+		private System.Nullable<int> _MaDungLuong;
 		
 		private System.Nullable<bool> _IsDeleted;
 		
@@ -4885,7 +4885,7 @@ namespace DTO
 		
 		private string _TenDungLuong;
 		
-		public View_SanPhamDetail()
+		public View_SanPhamDetailsByLoai()
 		{
 		}
 		
@@ -5017,8 +5017,8 @@ namespace DTO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaDungLuong", DbType="Int NOT NULL")]
-		public int MaDungLuong
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaDungLuong", DbType="Int")]
+		public System.Nullable<int> MaDungLuong
 		{
 			get
 			{

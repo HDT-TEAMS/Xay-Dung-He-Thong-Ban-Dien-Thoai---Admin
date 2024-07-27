@@ -54,7 +54,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DungLuong_DAO.cs" />
     <Compile Include="KhachHang_DAO.cs" />
+    <Compile Include="MauSac_DAO.cs" />
     <Compile Include="NhanVien_DAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Quyen_DAO.cs" />

@@ -69,8 +69,22 @@ namespace HeThongBanDienThoai_Admin.GUI
             btn.TextAlign = HorizontalAlignment.Left;
             btn.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             btn.HoverState.FillColor = Color.WhiteSmoke;
+            btn.Click += Btn_LoaiSanPham;
 
             return btn;
+        }
+
+        private void Btn_LoaiSanPham(object sender, EventArgs e)
+        {
+            Guna2Button btn = (Guna2Button)sender;
+            Loai loai = new Loai
+            {
+                Maloai = int.Parse(btn.Tag.ToString().Split('|')[2]),
+                TenLoai = btn.Tag.ToString().Split('|')[1]
+            };
+            Label_Heading.Text = "Danh sách " + loai.TenLoai.ToString();
+            ListProduct_Form listProduct_Form = new ListProduct_Form(loai);
+            MyLib.LoadForm(panel_container, listProduct_Form, DockStyle.Fill);
         }
 
         public void LoadAllLoaiSP()
@@ -228,8 +242,7 @@ namespace HeThongBanDienThoai_Admin.GUI
 
         private void btnCauHinh_Click(object sender, EventArgs e)
         {
-            ListProduct_Form listProduct = new ListProduct_Form();
-            MyLib.LoadForm(panel_container, listProduct, DockStyle.Fill);
+           
         }
     }
 }

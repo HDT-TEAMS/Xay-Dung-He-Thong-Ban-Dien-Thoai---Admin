@@ -39,9 +39,9 @@
             this.lblPassword = new System.Windows.Forms.Label();
             this.lblUsername = new System.Windows.Forms.Label();
             this.PanelColorLeft = new System.Windows.Forms.Panel();
+            this.picture_Logo = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.picture_Logo = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.PanelColorLeft.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picture_Logo)).BeginInit();
@@ -61,7 +61,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Font = new System.Drawing.Font("Bahnschrift Condensed", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel1.Location = new System.Drawing.Point(270, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(442, 528);
             this.panel1.TabIndex = 9;
@@ -133,7 +133,7 @@
             this.btnLogin.Font = new System.Drawing.Font("Bahnschrift Condensed", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogin.ForeColor = System.Drawing.Color.White;
             this.btnLogin.Location = new System.Drawing.Point(164, 360);
-            this.btnLogin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(2);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(135, 46);
             this.btnLogin.TabIndex = 17;
@@ -157,7 +157,7 @@
             this.chkShowPassword.AutoSize = true;
             this.chkShowPassword.Font = new System.Drawing.Font("Bahnschrift SemiBold SemiConden", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkShowPassword.Location = new System.Drawing.Point(246, 311);
-            this.chkShowPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chkShowPassword.Margin = new System.Windows.Forms.Padding(2);
             this.chkShowPassword.Name = "chkShowPassword";
             this.chkShowPassword.Size = new System.Drawing.Size(121, 22);
             this.chkShowPassword.TabIndex = 13;
@@ -196,10 +196,21 @@
             this.PanelColorLeft.Controls.Add(this.label2);
             this.PanelColorLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.PanelColorLeft.Location = new System.Drawing.Point(0, 0);
-            this.PanelColorLeft.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.PanelColorLeft.Margin = new System.Windows.Forms.Padding(2);
             this.PanelColorLeft.Name = "PanelColorLeft";
             this.PanelColorLeft.Size = new System.Drawing.Size(270, 528);
             this.PanelColorLeft.TabIndex = 8;
+            // 
+            // picture_Logo
+            // 
+            this.picture_Logo.Image = global::HeThongBanDienThoai_Admin.Properties.Resources.logo_video;
+            this.picture_Logo.Location = new System.Drawing.Point(21, 61);
+            this.picture_Logo.Margin = new System.Windows.Forms.Padding(2);
+            this.picture_Logo.Name = "picture_Logo";
+            this.picture_Logo.Size = new System.Drawing.Size(224, 91);
+            this.picture_Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picture_Logo.TabIndex = 2;
+            this.picture_Logo.TabStop = false;
             // 
             // label2
             // 
@@ -219,17 +230,6 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-            // picture_Logo
-            // 
-            this.picture_Logo.Image = global::HeThongBanDienThoai_Admin.Properties.Resources.logo_video;
-            this.picture_Logo.Location = new System.Drawing.Point(21, 61);
-            this.picture_Logo.Margin = new System.Windows.Forms.Padding(2);
-            this.picture_Logo.Name = "picture_Logo";
-            this.picture_Logo.Size = new System.Drawing.Size(224, 91);
-            this.picture_Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picture_Logo.TabIndex = 2;
-            this.picture_Logo.TabStop = false;
-            // 
             // Login_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -238,7 +238,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.PanelColorLeft);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Login_Form";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login_Form";
