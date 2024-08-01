@@ -1,5 +1,7 @@
 ﻿using BUS;
+using DTO;
 using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
@@ -18,10 +20,11 @@ namespace HeThongBanDienThoai_Admin.GUI.Staff_Form
             InitializeComponent();
             this.Load += QL_StaffForm_Load;
             dataGridViewStaff.CellContentClick += DataGridViewStaff_CellContentClick;
+
            
         }
 
-
+      
         private void DataGridViewStaff_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex == dataGridViewStaff.Columns["btnSua"].Index && e.RowIndex >= 0)
@@ -73,5 +76,11 @@ namespace HeThongBanDienThoai_Admin.GUI.Staff_Form
             insertStaffForm.Show();
         }
 
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            string searchText = txtSearch.Text;
+            List<NhanVien> result = nvBUS.SearchNhanVienByName(searchText);
+            dataGridViewStaff.DataSource = result;
+        }
     }
 }

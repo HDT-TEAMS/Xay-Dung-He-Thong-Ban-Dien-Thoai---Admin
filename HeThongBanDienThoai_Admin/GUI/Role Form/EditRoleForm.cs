@@ -56,13 +56,31 @@ namespace HeThongBanDienThoai_Admin.GUI.Role_Form
         {
             try
             {
-                List<ChucNang> chucNangs = rBUS.GetChucNangByMaQuyen(_roleID);
+                // Lấy tất cả các chức năng từ BUS
+                List<ChucNang> chucNangs = rBUS.GetAllChucNangs();
+
+                // Lấy các chức năng đã được gán cho vai trò hiện tại
+                List<ChucNang> assignedChucNangs = rBUS.GetChucNangByMaQuyen(_roleID);
 
                 if (chucNangs != null && chucNangs.Count > 0)
                 {
+                    // Gán danh sách chức năng vào DataGridView
                     dataGridViewChucNang.DataSource = chucNangs;
+
+                    // Đánh dấu các quyền đã được gán cho vai trò
+                    foreach (DataGridViewRow row in dataGridViewChucNang.Rows)
+                    {
+                        // Đảm bảo hàng không phải là hàng tiêu đề
+                        if (row.DataBoundItem != null)
+                        {
+                            var chucNangId = Convert.ToInt32(row.Cells["MaCN"].Value);
+                            // Đánh dấu CheckBox nếu chức năng đã được gán cho vai trò
+                            row.Cells["Check"].Value = assignedChucNangs.Any(cn => cn.MaCN == chucNangId);
+                        }
+                    }
+
+                    // Vô hiệu hóa chỉnh sửa tên quyền
                     this.txtName.Enabled = false;
-                    
                 }
                 else
                 {
@@ -76,12 +94,50 @@ namespace HeThongBanDienThoai_Admin.GUI.Role_Form
             }
         }
 
-        private void btnCancel_Click(object sender, EventArgs e)
+        private void btnSave_Click(object sender, EventArgs e)
         {
-            this.Close();
+            try
+            {
+                var selectedChucNangs = new List<int>();
+                foreach (DataGridViewRow row in dataGridViewChucNang.Rows)
+                {
+                    // Kiểm tra nếu hàng không phải là hàng tiêu đề
+                    if (row.DataBoundItem != null)
+                    {
+                        if (Convert.ToBoolean(row.Cells["Check"].Value))
+                        {
+                            selectedChucNangs.Add(Convert.ToInt32(row.Cells["MaCN"].Value));
+                        }
+                    }
+                }
+
+                var currentChucNangs = rBUS.GetChucNangByMaQuyen(_roleID).Select(cn => cn.MaCN).ToList();
+
+                // Xác định các chức năng cần thêm và cần gỡ bỏ
+                var chucNangsToAdd = selectedChucNangs.Except(currentChucNangs).ToList();
+                var chucNangsToRemove = currentChucNangs.Except(selectedChucNangs).ToList();
+
+                // Thêm chức năng mới
+                foreach (var chucNangId in chucNangsToAdd)
+                {
+                    rBUS.AddChucNangToRole(_roleID, chucNangId);
+                }
+
+                // Gỡ bỏ chức năng không còn được chọn
+                foreach (var chucNangId in chucNangsToRemove)
+                {
+                    rBUS.RemoveChucNangFromRole(_roleID, chucNangId);
+                }
+
+                MessageBox.Show("Cập nhật quyền thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Đã xảy ra lỗi khi lưu dữ liệu quyền: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
-        private void btnCancel_Click_1(object sender, EventArgs e)
+        private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
         }

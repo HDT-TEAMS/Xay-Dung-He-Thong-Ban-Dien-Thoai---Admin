@@ -18,6 +18,11 @@ namespace DAO
         //    return 
         //}
 
+        public List<View_SanPhamDetailsByLoai> loadDetailProduct()
+        {
+            return db.View_SanPhamDetailsByLoais.Select(sp => sp).ToList();
+        }
+
         public List<View_SanPhamDetailsByLoai> loadDetailProductByLoai(int maLoai)
         {
             var detailSanPham = db.View_SanPhamDetailsByLoais
@@ -26,7 +31,7 @@ namespace DAO
             return detailSanPham;
         }
 
-        public void InsertSanPham(string maNB,string tenSP, int? maDL, decimal giaSP, string hinhAnh, int soLuong, int maLoai, int maMau)
+        public void InsertSanPham(string maNB, string tenSP, int? maDL, decimal giaSP, string hinhAnh, int soLuong, int maLoai, int maMau)
         {
             var sanPham = new SanPham
             {
@@ -45,7 +50,7 @@ namespace DAO
             db.SubmitChanges();
         }
 
-        public void UpdateSanPham(int maSP, string maNB, string tenSP, int ?maDL, decimal giaSP, string hinhAnh, int soLuong, int maLoai, int maMau)
+        public void UpdateSanPham(int maSP, string maNB, string tenSP, int? maDL, decimal giaSP, string hinhAnh, int soLuong, int maLoai, int maMau)
         {
             var sanPham = db.SanPhams.SingleOrDefault(sp => sp.MaSP == maSP);
 
@@ -68,6 +73,19 @@ namespace DAO
             }
         }
 
+        public void UpdateSanPham(SanPham sanPham)
+        {
+            var existingSanPham = db.SanPhams.FirstOrDefault(sp => sp.MaSP == sanPham.MaSP);
+            if (existingSanPham != null)
+            {
+                existingSanPham.SoLuong = sanPham.SoLuong;
+                existingSanPham.GiaSP = sanPham.GiaSP;
+                existingSanPham.GiaNhap = sanPham.GiaNhap;
+                db.SubmitChanges();
+            }
+        }
+
+
         public void DeleteSanPham(int maSP)
         {
             var sanPham = db.SanPhams.SingleOrDefault(sp => sp.MaSP == maSP);
@@ -89,14 +107,18 @@ namespace DAO
         }
 
         public List<View_SanPhamDetailsByLoai> SearchSanPham(int maLoai, string searchTerm)
-{
+        {
             var detailSanPham = db.View_SanPhamDetailsByLoais
                                    .Where(sp => sp.MaLoai == maLoai && sp.TenSP.Contains(searchTerm))
                                    .ToList();
             return detailSanPham;
         }
 
-
+        public List<View_SanPhamDetailsByLoai> SearchSanPhamByTenSP(string searchTerm)
+        {
+            var detailSanPham = db.View_SanPhamDetailsByLoais .Where(sp =>  sp.TenSP.Contains(searchTerm)).ToList();
+            return detailSanPham;
+        }
 
     }
 }

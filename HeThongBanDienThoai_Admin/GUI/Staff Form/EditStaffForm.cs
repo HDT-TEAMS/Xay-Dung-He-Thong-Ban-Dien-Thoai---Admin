@@ -56,7 +56,6 @@ namespace HeThongBanDienThoai_Admin.GUI.Staff_Form
         {
             this.Close();
         }
-
         private void btnSave_Click(object sender, EventArgs e)
         {
            NhanVien updatedEmployee = new NhanVien
@@ -83,11 +82,18 @@ namespace HeThongBanDienThoai_Admin.GUI.Staff_Form
                 nvBUS.UpdateNhanVien(updatedEmployee); // Ensure this method accepts NhanVien object
                 MessageBox.Show("Cập nhật nhân viên thành công.", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
+                
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"An error occurred while updating employee data: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
                 }
-            }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+    }
+
 }

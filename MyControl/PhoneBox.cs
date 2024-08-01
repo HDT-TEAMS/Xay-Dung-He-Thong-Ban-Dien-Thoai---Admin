@@ -16,6 +16,16 @@ namespace MyControl
         {
             InitializeComponent();
             this.KeyPress += PhoneBox_KeyPress;
+            this.TextChanged += PhoneBox_TextChanged;
+        }
+
+        private void PhoneBox_TextChanged(object sender, EventArgs e)
+        {
+            if (this.TextLength >= 10 && this.TextLength < 11)
+            {
+                MessageBox.Show("Vui lòng nhập đủ 10 số!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
         }
 
         private void PhoneBox_KeyPress(object sender, System.Windows.Forms.KeyPressEventArgs e)
@@ -24,8 +34,9 @@ namespace MyControl
             {
                 e.Handled = true;
                 MessageBox.Show("Vui lòng nhập số!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            } 
         }
-     
+       
+
     }
 }

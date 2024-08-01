@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DAO;
+﻿using DAO;
 using DTO;
+using System.Collections.Generic;
+
 namespace BUS
 {
     public class NguoiDung_BUS
@@ -12,14 +9,24 @@ namespace BUS
         private NguoiDung_DAO ndd = new NguoiDung_DAO();
         public NguoiDung_BUS() { }
 
+        public void AddNguoiDung(NguoiDung newNguoiDung)
+        {
+            ndd.AddNguoiDung(newNguoiDung);
+        }
+
         public List<NguoiDung> LoadND()
         {
             return ndd.LoadND();
-        } 
+        }
+
         public NguoiDung checkLogins(string username, string password)
         {
-            return ndd.checkLogin(username,password);
+            return ndd.checkLogin(username, password);
         }
-        
+
+        public NguoiDung GetNguoiDungById(int userId)
+        {
+            return ndd.GetNguoiDungById(userId);
+        }
     }
 }

@@ -59,8 +59,10 @@ namespace HeThongBanDienThoai_Admin.GUI.Product
             this.MaSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaKM = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaLoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenLoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaMau = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaDungLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GiaNhap = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IsDeleted = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TableLayoutPanel_Action.SuspendLayout();
             this.TableLayoutPanel_Header.SuspendLayout();
@@ -167,6 +169,7 @@ namespace HeThongBanDienThoai_Admin.GUI.Product
             // 
             // TableLayoutPanel_Paginator
             // 
+            this.TableLayoutPanel_Paginator.BackColor = System.Drawing.Color.White;
             this.TableLayoutPanel_Paginator.ColumnCount = 1;
             this.TableLayoutPanel_Paginator.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.TableLayoutPanel_Paginator.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -210,8 +213,10 @@ namespace HeThongBanDienThoai_Admin.GUI.Product
             this.MaSP,
             this.MaKM,
             this.MaLoai,
+            this.TenLoai,
             this.MaMau,
             this.MaDungLuong,
+            this.GiaNhap,
             this.IsDeleted});
             dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
@@ -297,7 +302,7 @@ namespace HeThongBanDienThoai_Admin.GUI.Product
             // 
             // MaNB
             // 
-            this.MaNB.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.MaNB.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.MaNB.DataPropertyName = "MaNB";
             this.MaNB.DividerWidth = 1;
             this.MaNB.FillWeight = 41.48204F;
@@ -307,6 +312,7 @@ namespace HeThongBanDienThoai_Admin.GUI.Product
             this.MaNB.ReadOnly = true;
             this.MaNB.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.MaNB.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.MaNB.Width = 160;
             // 
             // TenSP
             // 
@@ -330,7 +336,7 @@ namespace HeThongBanDienThoai_Admin.GUI.Product
             this.TenMau.MinimumWidth = 6;
             this.TenMau.Name = "TenMau";
             this.TenMau.ReadOnly = true;
-            this.TenMau.Width = 210;
+            this.TenMau.Width = 150;
             // 
             // TenDungLuong
             // 
@@ -343,11 +349,11 @@ namespace HeThongBanDienThoai_Admin.GUI.Product
             this.TenDungLuong.MinimumWidth = 6;
             this.TenDungLuong.Name = "TenDungLuong";
             this.TenDungLuong.ReadOnly = true;
-            this.TenDungLuong.Width = 209;
+            this.TenDungLuong.Width = 150;
             // 
             // SoLuong
             // 
-            this.SoLuong.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.SoLuong.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.SoLuong.DataPropertyName = "SoLuong";
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
             this.SoLuong.DefaultCellStyle = dataGridViewCellStyle7;
@@ -357,10 +363,11 @@ namespace HeThongBanDienThoai_Admin.GUI.Product
             this.SoLuong.MinimumWidth = 6;
             this.SoLuong.Name = "SoLuong";
             this.SoLuong.ReadOnly = true;
+            this.SoLuong.Width = 120;
             // 
             // GiaSP
             // 
-            this.GiaSP.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.GiaSP.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.GiaSP.DataPropertyName = "GiaSP";
             dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
             dataGridViewCellStyle8.Format = "0,0";
@@ -371,6 +378,7 @@ namespace HeThongBanDienThoai_Admin.GUI.Product
             this.GiaSP.MinimumWidth = 6;
             this.GiaSP.Name = "GiaSP";
             this.GiaSP.ReadOnly = true;
+            this.GiaSP.Width = 150;
             // 
             // MaSP
             // 
@@ -400,6 +408,14 @@ namespace HeThongBanDienThoai_Admin.GUI.Product
             this.MaLoai.ReadOnly = true;
             this.MaLoai.Visible = false;
             // 
+            // TenLoai
+            // 
+            this.TenLoai.DataPropertyName = "TenLoai";
+            this.TenLoai.HeaderText = "TenLoai";
+            this.TenLoai.Name = "TenLoai";
+            this.TenLoai.ReadOnly = true;
+            this.TenLoai.Visible = false;
+            // 
             // MaMau
             // 
             this.MaMau.DataPropertyName = "MaMau";
@@ -417,6 +433,14 @@ namespace HeThongBanDienThoai_Admin.GUI.Product
             this.MaDungLuong.Name = "MaDungLuong";
             this.MaDungLuong.ReadOnly = true;
             this.MaDungLuong.Visible = false;
+            // 
+            // GiaNhap
+            // 
+            this.GiaNhap.DataPropertyName = "GiaNhap";
+            this.GiaNhap.HeaderText = "GiaNhap";
+            this.GiaNhap.Name = "GiaNhap";
+            this.GiaNhap.ReadOnly = true;
+            this.GiaNhap.Visible = false;
             // 
             // IsDeleted
             // 
@@ -464,8 +488,10 @@ namespace HeThongBanDienThoai_Admin.GUI.Product
         private DataGridViewTextBoxColumn MaSP;
         private DataGridViewTextBoxColumn MaKM;
         private DataGridViewTextBoxColumn MaLoai;
+        private DataGridViewTextBoxColumn TenLoai;
         private DataGridViewTextBoxColumn MaMau;
         private DataGridViewTextBoxColumn MaDungLuong;
+        private DataGridViewTextBoxColumn GiaNhap;
         private DataGridViewTextBoxColumn IsDeleted;
     }
 }

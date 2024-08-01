@@ -16,9 +16,9 @@ namespace BUS
         {
             return nvDAO.LoadNV();
         }
-        public void AddNhanVien(NhanVien newNhanVien)
+        public void AddNhanVien(int MaND, string maNB, string tenNV, DateTime ngaySinh, string gioiTinh, string sdtNV, string email)
         {
-            nvDAO.AddNhanVien(newNhanVien);
+            nvDAO.AddNhanVien(MaND,maNB, tenNV, ngaySinh, gioiTinh, sdtNV, email);
         }
 
         public void UpdateNhanVien (NhanVien updateNhanVien)
@@ -42,6 +42,26 @@ namespace BUS
             {
                 throw new Exception("Nhân viên không tồn tại");
             }
+        }
+
+        public List<NhanVien> SearchNhanVienByName(string name)
+        {
+            return nvDAO.SearchNhanVienByName(name);
+        }
+
+        public bool IsEmployeeIDExists(string employeeId)
+        {
+            return nvDAO.IsEmployeeIDExists(employeeId);
+        }
+
+        public string GetNhanVienNameById(int maND)
+        {
+           return nvDAO.GetNhanVienNameByMaND(maND);
+        }
+
+        public int GetMaNVById(int maND)
+        {
+            return nvDAO.GetMaNVByMaND(maND);
         }
     }
 }

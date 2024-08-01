@@ -26,8 +26,8 @@ namespace DTO.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-GVRFC16\\BAOTOAN;Initial Catalog=QL_DTDD;Persist Security Info" +
-            "=True;User ID=sa;Password=123;Encrypt=True;TrustServerCertificate=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DOUBLED;Initial Catalog=QL_DTDD;Persist Security Info=True;User ID=sa" +
+            ";Password=123;TrustServerCertificate=True")]
         public string QL_DTDDConnectionString {
             get {
                 return ((string)(this["QL_DTDDConnectionString"]));

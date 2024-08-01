@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BUS;
+using DTO;
 using HeThongBanDienThoai_Admin.GUI.Staff_Form;
 
 namespace HeThongBanDienThoai_Admin.GUI.Customer_Form
@@ -69,6 +70,13 @@ namespace HeThongBanDienThoai_Admin.GUI.Customer_Form
         private void btnReload_Click(object sender, EventArgs e)
         {
             LoadKH();
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            string searchText = txtSearch.Text;
+            List<KhachHang> result = khBUS.SearchKhachHangByName(searchText);
+            dataGridViewCustomer.DataSource = result;
         }
     }
 }

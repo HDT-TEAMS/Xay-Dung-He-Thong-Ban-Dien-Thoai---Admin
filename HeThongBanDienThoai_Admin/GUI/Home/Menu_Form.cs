@@ -2,7 +2,14 @@
 using DTO;
 using Guna.UI2.WinForms;
 using Guna.UI2.WinForms.Suite;
+using HeThongBanDienThoai_Admin.GUI.Import_Goods;
+using HeThongBanDienThoai_Admin.GUI.Order;
+using HeThongBanDienThoai_Admin.GUI.Customer_Form;
 using HeThongBanDienThoai_Admin.GUI.Product;
+using HeThongBanDienThoai_Admin.GUI.Promotion_Form;
+using HeThongBanDienThoai_Admin.GUI.Role_Form;
+using HeThongBanDienThoai_Admin.GUI.Staff_Form;
+using HeThongBanDienThoai_Admin.GUI.User_Form;
 using HeThongBanDienThoai_Admin.LIB;
 using System;
 using System.Collections.Generic;
@@ -243,6 +250,81 @@ namespace HeThongBanDienThoai_Admin.GUI
         private void btnCauHinh_Click(object sender, EventArgs e)
         {
            
+        }
+
+        private void btnNhapHang_Click(object sender, EventArgs e)
+        {
+            ListImportGoods_Form listImportGoods = new ListImportGoods_Form();
+            Label_Heading.Text = "Nhập Hàng";
+            MyLib.LoadForm(panel_container, listImportGoods,DockStyle.Fill);
+        }
+
+        private void btnNhaCC_Click(object sender, EventArgs e)
+        {
+            ListDistributor_Form listDistributor_Form = new ListDistributor_Form();
+            MyLib.LoadForm(panel_container,listDistributor_Form,DockStyle.Fill);
+        }
+
+        private void btnTinhTrangDon_Click(object sender, EventArgs e)
+        {
+            OrderProcessing_Form order = new OrderProcessing_Form();
+            MyLib.LoadForm(panel_container,order,DockStyle.Fill);
+        }
+
+        private void btnNhanVien_Click(object sender, EventArgs e)
+        {
+            QL_StaffForm QLNV = new QL_StaffForm();
+            QLNV.TopLevel = false;
+            QLNV.Dock = DockStyle.Fill;
+            panel_container.Controls.Clear(); 
+            panel_container.Controls.Add(QLNV);
+            QLNV.BringToFront();
+            QLNV.Show();
+        }
+
+        private void btnKhachHang_Click(object sender, EventArgs e)
+        {
+            QL_CustomerForm QLKH = new QL_CustomerForm();
+            QLKH.TopLevel = false;
+            QLKH.Dock = DockStyle.Fill;
+            panel_container.Controls.Clear();
+            panel_container.Controls.Add(QLKH);
+            QLKH.BringToFront();
+            QLKH.Show();
+        }
+
+        private void btnVaiTro_Click(object sender, EventArgs e)
+        {
+            QL_RoleForm QLRO = new QL_RoleForm();
+            QLRO.TopLevel = false;
+            QLRO.Dock = DockStyle.Fill;
+            panel_container.Controls.Clear();
+            panel_container.Controls.Add(QLRO);
+            QLRO.BringToFront();
+            QLRO.Show();
+        }
+
+        private void btnTaoKM_Click(object sender, EventArgs e)
+        {
+            QL_PromotionForm QLKM = new QL_PromotionForm();
+            QLKM.TopLevel = false;
+            QLKM.Dock = DockStyle.Fill;
+            panel_container.Controls.Clear();
+            panel_container.Controls.Add(QLKM);
+            QLKM.BringToFront();
+            QLKM.Show();
+        }
+
+        private void btnNguoiDung_Click(object sender, EventArgs e)
+        {
+
+            QL_UserForm QLU = new QL_UserForm();
+            QLU.TopLevel = false;
+            QLU.Dock = DockStyle.Fill;
+            panel_container.Controls.Clear();
+            panel_container.Controls.Add(QLU);
+            QLU.BringToFront();
+            QLU.Show();
         }
     }
 }

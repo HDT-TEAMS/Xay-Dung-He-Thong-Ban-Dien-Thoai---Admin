@@ -15,6 +15,7 @@ namespace HeThongBanDienThoai_Admin.GUI.Staff_Form
     public partial class InsertStaffForm : Form
     {
         NhanVien_BUS nvBUS = new NhanVien_BUS();
+        NguoiDung_BUS ndBUS = new NguoiDung_BUS();
         public InsertStaffForm()
         {
             InitializeComponent();
@@ -29,10 +30,12 @@ namespace HeThongBanDienThoai_Admin.GUI.Staff_Form
         {
             string id = txtID.Text;
             string name = txtName.Text;
-            DateTime dateOfBirth = txtDate.Value; 
+            DateTime dateOfBirth = txtDate.Value;
             string gender = cmbGender.Text;
             string phone = txtPhoneBox.Text;
             string email = txtEmail.Text;
+
+        
 
             // Validate inputs
             if (string.IsNullOrEmpty(id) || string.IsNullOrEmpty(name) || string.IsNullOrEmpty(gender) || string.IsNullOrEmpty(phone) || string.IsNullOrEmpty(email))
@@ -41,30 +44,39 @@ namespace HeThongBanDienThoai_Admin.GUI.Staff_Form
                 return;
             }
 
-            // Create a new NhanVien object
-            NhanVien newEmployee = new NhanVien
-            {
-                MaNB = id,
-                TenNV = name,
-                NgaySinh = dateOfBirth,
-                GioiTinh = gender,
-                SDTNV = phone,
-                Email = email,
-                
-                // Set other properties as needed
-            };
-
             try
             {
-                nvBUS.AddNhanVien(newEmployee);
+                // Check if employee ID already exists
+                if (nvBUS.IsEmployeeIDExists(id))
+                {
+                    MessageBox.Show($"Mã nhân viên {id} đã có.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                // Create a new NguoiDung object
+                NguoiDung newND = new NguoiDung
+                {
+                    UserName = id,
+                    PassWord = id,
+                    IsDeleted = false
+                };
+                ndBUS.AddNguoiDung(newND); // Add new user to the database
+
+                // Add new employee to the database
+                nvBUS.AddNhanVien(newND.MaND, id, name, dateOfBirth, gender, phone, email);
+
                 MessageBox.Show("Thêm nhân viên thành công.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+                // Clear form fields
                 txtID.Clear();
                 txtName.Clear();
-                txtDate.Value = DateTime.Now; 
-                cmbGender.SelectedIndex = -1; 
+                txtEmail.Clear();
+                txtPhoneBox.Clear();
+                txtDate.Value = DateTime.Now;
+                cmbGender.SelectedIndex = -1;
                 txtPhoneBox.Clear();
                 txtID.Focus();
+                this.Close();
             }
             catch (Exception ex)
             {

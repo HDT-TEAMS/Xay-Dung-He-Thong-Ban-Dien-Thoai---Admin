@@ -29,9 +29,6 @@ namespace DAO
                 existingKhachHang.SDT = updatedKhachHang.SDT;
                 existingKhachHang.Email = updatedKhachHang.Email;
                 existingKhachHang.DiaChi = updatedKhachHang.DiaChi;
-                // Update other properties as needed
-
-                // Mark the entity as modified
                 dB.SubmitChanges();
             }
             else
@@ -48,6 +45,11 @@ namespace DAO
         {
             dB.KhachHangs.DeleteOnSubmit(deleteKhachHang);
             dB.SubmitChanges();
+        }
+
+        public List<KhachHang> SearchKhachHangByName(string name)
+        {
+            return dB.KhachHangs.Where(kh => kh.TenKH.Contains(name)).ToList();
         }
     }
 }

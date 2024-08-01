@@ -39,5 +39,9 @@ namespace BUS
                 throw new Exception("Khách hàng không tồn tại");
             }
         }
+        public List<KhachHang> SearchKhachHangByName(string name)
+        {
+            return khDAO.SearchKhachHangByName(name);
+        }
     }
 }

@@ -81,7 +81,7 @@
             this.txtPassword.Location = new System.Drawing.Point(82, 256);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.PasswordChar = '\0';
+            this.txtPassword.PasswordChar = '●';
             this.txtPassword.PlaceholderText = "";
             this.txtPassword.SelectedText = "";
             this.txtPassword.Size = new System.Drawing.Size(277, 39);
@@ -138,6 +138,7 @@
             this.btnLogin.Size = new System.Drawing.Size(135, 46);
             this.btnLogin.TabIndex = 17;
             this.btnLogin.Text = "Login";
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click_1);
             // 
             // btnExit
             // 
@@ -163,6 +164,7 @@
             this.chkShowPassword.TabIndex = 13;
             this.chkShowPassword.Text = "Show password";
             this.chkShowPassword.UseVisualStyleBackColor = true;
+            this.chkShowPassword.CheckedChanged += new System.EventHandler(this.chkShowPassword_CheckedChanged);
             // 
             // lblPassword
             // 

@@ -12,8 +12,11 @@ namespace BUS
     {
         public SanPham_BUS() { }
         SanPham_DAO sanPham_DAO = new SanPham_DAO();
-        
 
+        public List<View_SanPhamDetailsByLoai> getAllSanPham()
+        {
+            return sanPham_DAO.loadDetailProduct();
+        }
 
         public List<View_SanPhamDetailsByLoai> getListSanPhamDetail(int maLoai)
         {
@@ -43,6 +46,12 @@ namespace BUS
         public List<View_SanPhamDetailsByLoai> SearchSanPham(int maLoai,string tenSP)
         {
             return sanPham_DAO.SearchSanPham(maLoai, tenSP);    
+        }
+
+        public List<View_SanPhamDetailsByLoai> SearchSanPhamByTenSP(string searchTerm)
+        {
+      
+            return sanPham_DAO.SearchSanPhamByTenSP(searchTerm);
         }
 
     }

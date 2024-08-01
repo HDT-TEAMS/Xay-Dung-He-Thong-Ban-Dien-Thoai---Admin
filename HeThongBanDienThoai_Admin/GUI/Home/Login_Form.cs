@@ -21,7 +21,16 @@ namespace HeThongBanDienThoai_Admin.GUI
         {
             InitializeComponent();
             this.btnLogin.Click += BtnLogin_Click;
+            chkShowPassword.CheckedChanged += ChkShowPassword_CheckedChanged;
 
+        }
+
+        private void ChkShowPassword_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkShowPassword.Checked)
+                txtPassword.PasswordChar = '\0';
+            else
+                txtPassword.PasswordChar = '●';
         }
 
         private void BtnLogin_Click(object sender, EventArgs e)
@@ -36,6 +45,7 @@ namespace HeThongBanDienThoai_Admin.GUI
             else
             {
                 NguoiDung user = ndb.checkLogins(username, password);
+                MyLib.maND = user.MaND;
                 if (user != null)
                 {
                     Menu_Form menu = new Menu_Form(user.MaND);
@@ -55,6 +65,16 @@ namespace HeThongBanDienThoai_Admin.GUI
         private void btnExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void chkShowPassword_CheckedChanged(object sender, EventArgs e)
+        {
+            if(chkShowPassword.Checked==true)
+            {
+                txtPassword.UseSystemPasswordChar = false;
+            }
+            else
+                txtPassword.UseSystemPasswordChar = true;
         }
     }
 }

@@ -60,7 +60,7 @@ namespace HeThongBanDienThoai_Admin.GUI
             this.btnCauHinh = new Guna.UI2.WinForms.Guna2Button();
             this.btn_MasterCauHinh = new Guna.UI2.WinForms.Guna2Button();
             this.Panel_Logo = new Guna.UI2.WinForms.Guna2Panel();
-            this.Btn_Home = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.TableLayoutPanel_Body = new System.Windows.Forms.TableLayoutPanel();
             this.panel_container = new System.Windows.Forms.Panel();
             this.guna2ImageButton1 = new Guna.UI2.WinForms.Guna2ImageButton();
@@ -72,6 +72,7 @@ namespace HeThongBanDienThoai_Admin.GUI
             this.Panel_MasterSanPham.SuspendLayout();
             this.Panel_MasterCauHinh.SuspendLayout();
             this.Panel_Logo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.TableLayoutPanel_Body.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -209,7 +210,7 @@ namespace HeThongBanDienThoai_Admin.GUI
             this.Panel_MasterHeThong.Controls.Add(this.btnNhanVien);
             this.Panel_MasterHeThong.Controls.Add(this.btn_MasterHeThong);
             this.Panel_MasterHeThong.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Panel_MasterHeThong.Location = new System.Drawing.Point(7, 427);
+            this.Panel_MasterHeThong.Location = new System.Drawing.Point(7, 476);
             this.Panel_MasterHeThong.Margin = new System.Windows.Forms.Padding(2);
             this.Panel_MasterHeThong.MaximumSize = new System.Drawing.Size(213, 208);
             this.Panel_MasterHeThong.MinimumSize = new System.Drawing.Size(213, 35);
@@ -249,6 +250,7 @@ namespace HeThongBanDienThoai_Admin.GUI
             this.btnVaiTro.Text = "Vai trò";
             this.btnVaiTro.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnVaiTro.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            this.btnVaiTro.Click += new System.EventHandler(this.btnVaiTro_Click);
             // 
             // btnNguoiDung
             // 
@@ -282,6 +284,7 @@ namespace HeThongBanDienThoai_Admin.GUI
             this.btnNguoiDung.Text = "Người dùng";
             this.btnNguoiDung.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnNguoiDung.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            this.btnNguoiDung.Click += new System.EventHandler(this.btnNguoiDung_Click);
             // 
             // btnKhachHang
             // 
@@ -315,6 +318,7 @@ namespace HeThongBanDienThoai_Admin.GUI
             this.btnKhachHang.Text = "Khách hàng";
             this.btnKhachHang.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnKhachHang.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            this.btnKhachHang.Click += new System.EventHandler(this.btnKhachHang_Click);
             // 
             // btnNhanVien
             // 
@@ -348,6 +352,7 @@ namespace HeThongBanDienThoai_Admin.GUI
             this.btnNhanVien.Text = "Nhân viên";
             this.btnNhanVien.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnNhanVien.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            this.btnNhanVien.Click += new System.EventHandler(this.btnNhanVien_Click);
             // 
             // btn_MasterHeThong
             // 
@@ -390,7 +395,7 @@ namespace HeThongBanDienThoai_Admin.GUI
             this.Panel_MasterBanHang.Controls.Add(this.btnTaoDonHang);
             this.Panel_MasterBanHang.Controls.Add(this.btn_MasterBanHang);
             this.Panel_MasterBanHang.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Panel_MasterBanHang.Location = new System.Drawing.Point(7, 287);
+            this.Panel_MasterBanHang.Location = new System.Drawing.Point(7, 336);
             this.Panel_MasterBanHang.Margin = new System.Windows.Forms.Padding(2);
             this.Panel_MasterBanHang.MaximumSize = new System.Drawing.Size(213, 140);
             this.Panel_MasterBanHang.MinimumSize = new System.Drawing.Size(213, 35);
@@ -430,6 +435,7 @@ namespace HeThongBanDienThoai_Admin.GUI
             this.btnTaoKM.Text = "Tạo khuyến mãi";
             this.btnTaoKM.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnTaoKM.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            this.btnTaoKM.Click += new System.EventHandler(this.btnTaoKM_Click);
             // 
             // btnTinhTrangDon
             // 
@@ -463,6 +469,7 @@ namespace HeThongBanDienThoai_Admin.GUI
             this.btnTinhTrangDon.Text = "Tình trạng đơn";
             this.btnTinhTrangDon.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnTinhTrangDon.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            this.btnTinhTrangDon.Click += new System.EventHandler(this.btnTinhTrangDon_Click);
             // 
             // btnTaoDonHang
             // 
@@ -537,7 +544,7 @@ namespace HeThongBanDienThoai_Admin.GUI
             this.Panel_MasterNhapHang.Controls.Add(this.btnNhaCC);
             this.Panel_MasterNhapHang.Controls.Add(this.btnMasterNhapHang);
             this.Panel_MasterNhapHang.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Panel_MasterNhapHang.Location = new System.Drawing.Point(7, 177);
+            this.Panel_MasterNhapHang.Location = new System.Drawing.Point(7, 226);
             this.Panel_MasterNhapHang.Margin = new System.Windows.Forms.Padding(2);
             this.Panel_MasterNhapHang.MaximumSize = new System.Drawing.Size(213, 120);
             this.Panel_MasterNhapHang.MinimumSize = new System.Drawing.Size(213, 35);
@@ -577,6 +584,7 @@ namespace HeThongBanDienThoai_Admin.GUI
             this.btnNhapHang.Text = "Nhập hàng";
             this.btnNhapHang.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnNhapHang.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            this.btnNhapHang.Click += new System.EventHandler(this.btnNhapHang_Click);
             // 
             // btnNhaCC
             // 
@@ -610,6 +618,7 @@ namespace HeThongBanDienThoai_Admin.GUI
             this.btnNhaCC.Text = "Nhà cung cấp";
             this.btnNhaCC.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnNhaCC.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            this.btnNhaCC.Click += new System.EventHandler(this.btnNhaCC_Click);
             // 
             // btnMasterNhapHang
             // 
@@ -649,7 +658,7 @@ namespace HeThongBanDienThoai_Admin.GUI
             this.Panel_MasterSanPham.BackColor = System.Drawing.Color.White;
             this.Panel_MasterSanPham.Controls.Add(this.btn_MasterSanPham);
             this.Panel_MasterSanPham.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Panel_MasterSanPham.Location = new System.Drawing.Point(7, 142);
+            this.Panel_MasterSanPham.Location = new System.Drawing.Point(7, 191);
             this.Panel_MasterSanPham.Margin = new System.Windows.Forms.Padding(2);
             this.Panel_MasterSanPham.MinimumSize = new System.Drawing.Size(213, 35);
             this.Panel_MasterSanPham.Name = "Panel_MasterSanPham";
@@ -696,7 +705,7 @@ namespace HeThongBanDienThoai_Admin.GUI
             this.Panel_MasterCauHinh.Controls.Add(this.btnCauHinh);
             this.Panel_MasterCauHinh.Controls.Add(this.btn_MasterCauHinh);
             this.Panel_MasterCauHinh.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Panel_MasterCauHinh.Location = new System.Drawing.Point(7, 72);
+            this.Panel_MasterCauHinh.Location = new System.Drawing.Point(7, 121);
             this.Panel_MasterCauHinh.Margin = new System.Windows.Forms.Padding(2);
             this.Panel_MasterCauHinh.MaximumSize = new System.Drawing.Size(213, 70);
             this.Panel_MasterCauHinh.MinimumSize = new System.Drawing.Size(213, 35);
@@ -775,32 +784,26 @@ namespace HeThongBanDienThoai_Admin.GUI
             // 
             this.Panel_Logo.BackColor = System.Drawing.Color.Transparent;
             this.Panel_Logo.BorderRadius = 12;
-            this.Panel_Logo.Controls.Add(this.Btn_Home);
+            this.Panel_Logo.Controls.Add(this.guna2PictureBox1);
             this.Panel_Logo.Dock = System.Windows.Forms.DockStyle.Top;
             this.Panel_Logo.FillColor = System.Drawing.Color.Black;
             this.Panel_Logo.Location = new System.Drawing.Point(7, 7);
             this.Panel_Logo.Name = "Panel_Logo";
-            this.Panel_Logo.Size = new System.Drawing.Size(214, 65);
+            this.Panel_Logo.Size = new System.Drawing.Size(214, 114);
             this.Panel_Logo.TabIndex = 0;
             // 
-            // Btn_Home
+            // guna2PictureBox1
             // 
-            this.Btn_Home.AnimatedGIF = true;
-            this.Btn_Home.BackColor = System.Drawing.Color.Transparent;
-            this.Btn_Home.CheckedState.ImageSize = new System.Drawing.Size(150, 50);
-            this.Btn_Home.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Btn_Home.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Btn_Home.HoverState.ImageSize = new System.Drawing.Size(150, 50);
-            this.Btn_Home.Image = global::HeThongBanDienThoai_Admin.Properties.Resources.logo_topzonePanel;
-            this.Btn_Home.ImageOffset = new System.Drawing.Point(0, 0);
-            this.Btn_Home.ImageRotate = 0F;
-            this.Btn_Home.ImageSize = new System.Drawing.Size(150, 50);
-            this.Btn_Home.Location = new System.Drawing.Point(0, 0);
-            this.Btn_Home.Name = "Btn_Home";
-            this.Btn_Home.PressedState.ImageSize = new System.Drawing.Size(150, 50);
-            this.Btn_Home.Size = new System.Drawing.Size(214, 65);
-            this.Btn_Home.TabIndex = 1;
-            this.Btn_Home.Tag = "panel_home";
+            this.guna2PictureBox1.BorderRadius = 10;
+            this.guna2PictureBox1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.guna2PictureBox1.Image = global::HeThongBanDienThoai_Admin.Properties.Resources.thumbtopzone2_800x450_600x400;
+            this.guna2PictureBox1.ImageRotate = 0F;
+            this.guna2PictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.guna2PictureBox1.Name = "guna2PictureBox1";
+            this.guna2PictureBox1.Size = new System.Drawing.Size(214, 114);
+            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2PictureBox1.TabIndex = 2;
+            this.guna2PictureBox1.TabStop = false;
             // 
             // TableLayoutPanel_Body
             // 
@@ -871,6 +874,7 @@ namespace HeThongBanDienThoai_Admin.GUI
             this.Panel_MasterSanPham.ResumeLayout(false);
             this.Panel_MasterCauHinh.ResumeLayout(false);
             this.Panel_Logo.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.TableLayoutPanel_Body.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -911,6 +915,6 @@ namespace HeThongBanDienThoai_Admin.GUI
         private Guna.UI2.WinForms.Guna2Button btn_MasterCauHinh;
         private Panel panel_container;
         private Guna.UI2.WinForms.Guna2Panel Panel_Logo;
-        private Guna.UI2.WinForms.Guna2ImageButton Btn_Home;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
     }
 }
