@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ProgressBar;
 
 namespace HeThongBanDienThoai_Admin.GUI.User_Form
 {
@@ -31,9 +32,9 @@ namespace HeThongBanDienThoai_Admin.GUI.User_Form
 
         private void DataGridViewRoles_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == dataGridViewRoles.Columns["Check"].Index && e.RowIndex >= 0)
+            if (e.ColumnIndex == dataGridViewRoles.Columns["IsDeleted"].Index && e.RowIndex >= 0)
             {
-                bool isChecked = (bool)dataGridViewRoles.Rows[e.RowIndex].Cells["Check"].Value;
+                bool isChecked = (bool)dataGridViewRoles.Rows[e.RowIndex].Cells["IsDeleted"].Value;
                 int roleId = (int)dataGridViewRoles.Rows[e.RowIndex].Cells["MaQuyen"].Value;
 
                 if (isChecked)
@@ -76,22 +77,30 @@ namespace HeThongBanDienThoai_Admin.GUI.User_Form
            
         }
 
-        private void ConfigureDataGridView()
+        public void ConfigureDataGridView()
         {
             // Tạo cột checkbox
-            DataGridViewCheckBoxColumn checkBoxColumn = new DataGridViewCheckBoxColumn();
-            checkBoxColumn.Name = "Check";
-            checkBoxColumn.HeaderText = "Chọn";
-            checkBoxColumn.TrueValue = true;
-            checkBoxColumn.FalseValue = false;
+            if (dataGridViewRoles.Columns.Contains("IsDeleted"))
+            {
+                DataGridViewCheckBoxColumn checkBoxColumn = new DataGridViewCheckBoxColumn();
+                checkBoxColumn.Name = "IsDeleted";
+                checkBoxColumn.HeaderText = "Hoạt động";
+                checkBoxColumn.DataPropertyName = "IsDeleted";
+                checkBoxColumn.TrueValue = true;
+                checkBoxColumn.FalseValue = false;
+                dataGridViewRoles.Columns.Add(checkBoxColumn);
+            }
 
-            // Thêm cột checkbox vào DataGridView
-            dataGridViewRoles.Columns.Add(checkBoxColumn);
-
+            // Ẩn cột "PassWord" nếu tồn tại
+            if (dataGridViewRoles.Columns.Contains("PassWord"))
+            {
+                dataGridViewRoles.Columns["PassWord"].Visible = false;
+            }
             // Cấu hình các cột khác của DataGridView nếu cần thiết
         }
         private void LoadUserRoles()
         {
+            txtName.Enabled = false;
             allRoles = qBUS.LoadRole();
 
             // Lấy danh sách các quyền mà người dùng hiện tại có
@@ -103,7 +112,7 @@ namespace HeThongBanDienThoai_Admin.GUI.User_Form
             // Gán danh sách quyền vào DataGridView
             dataGridViewRoles.DataSource = allRoles;
 
-            // Đảm bảo 'Check' là tên của cột checkbox và 'MaQuyen' là cột ID quyền
+            // Đảm bảo 'IsDeleted' là tên của cột checkbox và 'MaQuyen' là cột ID quyền
             foreach (DataGridViewRow row in dataGridViewRoles.Rows)
             {
                 if (row.DataBoundItem != null) // Đảm bảo có dữ liệu trong row
@@ -111,7 +120,7 @@ namespace HeThongBanDienThoai_Admin.GUI.User_Form
                     var roleId = Convert.ToInt32(row.Cells["MaQuyen"].Value);
 
                     // Kiểm tra nếu người dùng có quyền này thì đánh dấu checkbox
-                    row.Cells["Check"].Value = userRoleIds.Contains(roleId);
+                    row.Cells["IsDeleted"].Value = userRoleIds.Contains(roleId);
                 }
             }
         }
@@ -125,7 +134,7 @@ namespace HeThongBanDienThoai_Admin.GUI.User_Form
 
             foreach (DataGridViewRow row in dataGridViewRoles.Rows)
             {
-                if (Convert.ToBoolean(row.Cells["Check"].Value))
+                if (Convert.ToBoolean(row.Cells["IsDeleted"].Value))
                 {
                     selectedRoles.Add(Convert.ToInt32(row.Cells["MaQuyen"].Value));
                 }

@@ -4,10 +4,8 @@ using Guna.UI2.WinForms;
 using Guna.UI2.WinForms.Suite;
 using HeThongBanDienThoai_Admin.GUI.Import_Goods;
 using HeThongBanDienThoai_Admin.GUI.Order;
-
 using HeThongBanDienThoai_Admin.GUI.Customer_Form;
 using HeThongBanDienThoai_Admin.GUI.Product;
-using HeThongBanDienThoai_Admin.GUI.Promotion_Form;
 using HeThongBanDienThoai_Admin.GUI.Role_Form;
 using HeThongBanDienThoai_Admin.GUI.Staff_Form;
 using HeThongBanDienThoai_Admin.GUI.User_Form;
@@ -21,6 +19,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using HeThongBanDienThoai_Admin.GUI.Promotion_Form;
 
 namespace HeThongBanDienThoai_Admin.GUI
 {

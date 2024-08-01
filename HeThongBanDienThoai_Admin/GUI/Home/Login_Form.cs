@@ -69,16 +69,12 @@ namespace HeThongBanDienThoai_Admin.GUI
 
         private void chkShowPassword_CheckedChanged(object sender, EventArgs e)
         {
-            if(chkShowPassword.Checked==true)
+            if (chkShowPassword.Checked == true)
             {
                 txtPassword.UseSystemPasswordChar = false;
             }
             else
                 txtPassword.UseSystemPasswordChar = true;
-=
-        private void btnLogin_Click_1(object sender, EventArgs e)
-        {
-
         }
     }
 }

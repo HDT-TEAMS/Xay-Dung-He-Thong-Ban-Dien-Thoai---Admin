@@ -45,11 +45,11 @@
             this.txtDate = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
             this.txtEmail = new MyControl.textEmail();
+            this.txtPhoneBox = new MyControl.phoneBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.btnCancel = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btnSave = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.txtPhoneBox = new MyControl.phoneBox();
             this.guna2Panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -65,7 +65,7 @@
             // 
             this.guna2Panel1.Controls.Add(this.label1);
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.guna2Panel1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this.guna2Panel1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(51)))), ((int)(((byte)(102)))));
             this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(524, 59);
@@ -295,9 +295,30 @@
             this.txtEmail.Size = new System.Drawing.Size(331, 54);
             this.txtEmail.TabIndex = 10;
             // 
+            // txtPhoneBox
+            // 
+            this.txtPhoneBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtPhoneBox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtPhoneBox.DefaultText = "";
+            this.txtPhoneBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtPhoneBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtPhoneBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtPhoneBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtPhoneBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtPhoneBox.Font = new System.Drawing.Font("Bahnschrift Condensed", 14.25F, System.Drawing.FontStyle.Bold);
+            this.txtPhoneBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtPhoneBox.Location = new System.Drawing.Point(164, 288);
+            this.txtPhoneBox.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.txtPhoneBox.Name = "txtPhoneBox";
+            this.txtPhoneBox.PasswordChar = '\0';
+            this.txtPhoneBox.PlaceholderText = "Nhập số điện thoại";
+            this.txtPhoneBox.SelectedText = "";
+            this.txtPhoneBox.Size = new System.Drawing.Size(333, 36);
+            this.txtPhoneBox.TabIndex = 11;
+            // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(51)))), ((int)(((byte)(102)))));
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 564);
             this.panel1.Name = "panel1";
@@ -359,27 +380,6 @@
             this.btnSave.TabIndex = 3;
             this.btnSave.Text = "Lưu";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // txtPhoneBox
-            // 
-            this.txtPhoneBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtPhoneBox.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtPhoneBox.DefaultText = "";
-            this.txtPhoneBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtPhoneBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtPhoneBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtPhoneBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtPhoneBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtPhoneBox.Font = new System.Drawing.Font("Bahnschrift Condensed", 14.25F, System.Drawing.FontStyle.Bold);
-            this.txtPhoneBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtPhoneBox.Location = new System.Drawing.Point(164, 288);
-            this.txtPhoneBox.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.txtPhoneBox.Name = "txtPhoneBox";
-            this.txtPhoneBox.PasswordChar = '\0';
-            this.txtPhoneBox.PlaceholderText = "Nhập số điện thoại";
-            this.txtPhoneBox.SelectedText = "";
-            this.txtPhoneBox.Size = new System.Drawing.Size(333, 36);
-            this.txtPhoneBox.TabIndex = 11;
             // 
             // EditStaffForm
             // 

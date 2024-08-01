@@ -36,14 +36,14 @@
             this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnReload = new Guna.UI2.WinForms.Guna2GradientButton();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.IsDeleted = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NgayKT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NgayBD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GiamGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenKM = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaNB = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaKM = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewPromotion = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.MaKM = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaNB = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenKM = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GiamGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgayBD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgayKT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IsDeleted = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPromotion)).BeginInit();
             this.SuspendLayout();
@@ -103,7 +103,7 @@
             this.btnReload.FillColor2 = System.Drawing.Color.RoyalBlue;
             this.btnReload.Font = new System.Drawing.Font("Bahnschrift Condensed", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReload.ForeColor = System.Drawing.Color.White;
-            this.btnReload.Location = new System.Drawing.Point(629, 7);
+            this.btnReload.Location = new System.Drawing.Point(628, 7);
             this.btnReload.Name = "btnReload";
             this.btnReload.Size = new System.Drawing.Size(140, 50);
             this.btnReload.TabIndex = 2;
@@ -115,7 +115,7 @@
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 77.1164F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22.8836F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 199F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
             this.tableLayoutPanel1.Controls.Add(this.btnReload, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.txtSearch, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnAdd, 2, 0);
@@ -128,50 +128,6 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(972, 64);
             this.tableLayoutPanel1.TabIndex = 2;
             // 
-            // IsDeleted
-            // 
-            this.IsDeleted.DataPropertyName = "IsDeleted";
-            this.IsDeleted.HeaderText = "IsDeleted";
-            this.IsDeleted.Name = "IsDeleted";
-            this.IsDeleted.Visible = false;
-            // 
-            // NgayKT
-            // 
-            this.NgayKT.DataPropertyName = "NgayKT";
-            this.NgayKT.HeaderText = "Ngày kết thúc";
-            this.NgayKT.Name = "NgayKT";
-            // 
-            // NgayBD
-            // 
-            this.NgayBD.DataPropertyName = "NgayBD";
-            this.NgayBD.HeaderText = "Ngày bắt đầu";
-            this.NgayBD.Name = "NgayBD";
-            // 
-            // GiamGia
-            // 
-            this.GiamGia.DataPropertyName = "GiamGia";
-            this.GiamGia.HeaderText = "Giảm giá";
-            this.GiamGia.Name = "GiamGia";
-            // 
-            // TenKM
-            // 
-            this.TenKM.DataPropertyName = "TenKM";
-            this.TenKM.HeaderText = "Tên khuyến mãi";
-            this.TenKM.Name = "TenKM";
-            // 
-            // MaNB
-            // 
-            this.MaNB.DataPropertyName = "MaNB";
-            this.MaNB.HeaderText = "Mã nội bộ";
-            this.MaNB.Name = "MaNB";
-            // 
-            // MaKM
-            // 
-            this.MaKM.DataPropertyName = "MaKM";
-            this.MaKM.HeaderText = "Mã khuyến mãi";
-            this.MaKM.Name = "MaKM";
-            this.MaKM.Visible = false;
-            // 
             // dataGridViewPromotion
             // 
             this.dataGridViewPromotion.AllowUserToResizeRows = false;
@@ -182,10 +138,10 @@
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
             this.dataGridViewPromotion.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(147)))), ((int)(((byte)(245)))));
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(51)))), ((int)(((byte)(102)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Bahnschrift Condensed", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(147)))), ((int)(((byte)(245)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(51)))), ((int)(((byte)(102)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewPromotion.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
@@ -247,6 +203,55 @@
             this.dataGridViewPromotion.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dataGridViewPromotion.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             // 
+            // MaKM
+            // 
+            this.MaKM.DataPropertyName = "MaKM";
+            this.MaKM.HeaderText = "Mã khuyến mãi";
+            this.MaKM.Name = "MaKM";
+            this.MaKM.Visible = false;
+            // 
+            // MaNB
+            // 
+            this.MaNB.DataPropertyName = "MaNB";
+            this.MaNB.DividerWidth = 2;
+            this.MaNB.HeaderText = "Mã nội bộ";
+            this.MaNB.Name = "MaNB";
+            // 
+            // TenKM
+            // 
+            this.TenKM.DataPropertyName = "TenKM";
+            this.TenKM.DividerWidth = 2;
+            this.TenKM.HeaderText = "Tên khuyến mãi";
+            this.TenKM.Name = "TenKM";
+            // 
+            // GiamGia
+            // 
+            this.GiamGia.DataPropertyName = "GiamGia";
+            this.GiamGia.DividerWidth = 2;
+            this.GiamGia.HeaderText = "Giảm giá";
+            this.GiamGia.Name = "GiamGia";
+            // 
+            // NgayBD
+            // 
+            this.NgayBD.DataPropertyName = "NgayBD";
+            this.NgayBD.DividerWidth = 2;
+            this.NgayBD.HeaderText = "Ngày bắt đầu";
+            this.NgayBD.Name = "NgayBD";
+            // 
+            // NgayKT
+            // 
+            this.NgayKT.DataPropertyName = "NgayKT";
+            this.NgayKT.DividerWidth = 2;
+            this.NgayKT.HeaderText = "Ngày kết thúc";
+            this.NgayKT.Name = "NgayKT";
+            // 
+            // IsDeleted
+            // 
+            this.IsDeleted.DataPropertyName = "IsDeleted";
+            this.IsDeleted.HeaderText = "IsDeleted";
+            this.IsDeleted.Name = "IsDeleted";
+            this.IsDeleted.Visible = false;
+            // 
             // QL_PromotionForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -270,13 +275,13 @@
         private Guna.UI2.WinForms.Guna2TextBox txtSearch;
         private Guna.UI2.WinForms.Guna2GradientButton btnReload;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IsDeleted;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NgayKT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NgayBD;
-        private System.Windows.Forms.DataGridViewTextBoxColumn GiamGia;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TenKM;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaNB;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaKM;
         private Guna.UI2.WinForms.Guna2DataGridView dataGridViewPromotion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaKM;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaNB;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenKM;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GiamGia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NgayBD;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NgayKT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IsDeleted;
     }
 }
