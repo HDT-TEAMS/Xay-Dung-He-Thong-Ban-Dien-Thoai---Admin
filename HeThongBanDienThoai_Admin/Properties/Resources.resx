@@ -121,11 +121,17 @@
   <data name="arrow-down" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\RESOURCE\Icons\arrow-down.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icon_print" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\RESOURCE\Icons\icon_print.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="arrow-right" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\RESOURCE\Icons\arrow-right.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="back_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\RESOURCE\Icons\back_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="image-icon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\RESOURCE\Icons\image-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="logo-video" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\RESOURCE\Logo\logo-video.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -136,7 +142,7 @@
   <data name="logo_topzonePanel" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\RESOURCE\Logo\logo_topzonePanel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="image-icon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\RESOURCE\Icons\image-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="thumbtopzone2_800x450-600x400" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\RESOURCE\Logo\thumbtopzone2_800x450-600x400.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

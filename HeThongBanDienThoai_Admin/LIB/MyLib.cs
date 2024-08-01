@@ -1,8 +1,16 @@
-﻿using DTO;
+﻿using BUS;
+using CrystalDecisions.CrystalReports.Engine;
+using DTO;
+using Microsoft.Reporting.WinForms;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Data.SqlClient;
+using System.Globalization;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -12,7 +20,8 @@ namespace HeThongBanDienThoai_Admin.LIB
     public static class MyLib
     {
         private static Thread thread;
-
+        public static int maND { get; set; }
+        public static string UserName { get; set; }
         public static void CloseThisOpenThat(Form pOldForm, Form pNewForm)
         {
             pOldForm.Close();
@@ -75,10 +84,29 @@ namespace HeThongBanDienThoai_Admin.LIB
             }
         }
 
-        public static string AddCommas(long? number, string currency = "đ")
+        public static string AddCommas(decimal? number, string currency = "đ")
         {
             return (string.Format("{0:n0}", number) + currency).Trim();
         }
+
+        public static decimal? ParseCurrencyString(string currencyString, string currencySymbol)
+        {
+            if (string.IsNullOrWhiteSpace(currencyString))
+            {
+                return null;
+            }
+            string cleanString = currencyString.Replace(currencySymbol, "").Replace(",", "").Trim();
+
+            if (decimal.TryParse(cleanString, out decimal result))
+            {
+                return result;
+            }
+            else
+            {
+                return null;
+            }
+        }
+
 
         public static string ConvertToTime(int pNumber, int cost)
         {
@@ -212,6 +240,46 @@ namespace HeThongBanDienThoai_Admin.LIB
                 return userPermissions.Contains(permission);
             }
         }
+
+        public static async Task<string> RandomMaNBPN()
+        {
+            try
+            {
+                PhieuNhap_BUS phieuNhap_BUS = new PhieuNhap_BUS();
+                List<string> listMaNB = phieuNhap_BUS.GetAllInternalCodes();
+
+                int max = 0;
+                foreach (var maNB in listMaNB)
+                {
+                    var parts = maNB.Split('-');
+                    if (parts.Length >= 3)
+                    {
+                        int number = int.Parse(parts[2]);
+                        max = Math.Max(max, number);
+                    }
+                }
+
+                max++;
+
+                if (max > 99999)
+                {
+                    max = 1;
+                }
+
+                string numberPart = max.ToString("D5"); 
+                DateTime currentDate = DateTime.Now;
+
+                string newCode = "PN-" + currentDate.ToString("ddMMyyyy") + "-" + numberPart;
+                return newCode;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error generating internal code: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
+            }
+        }
+
+
 
     }
 }

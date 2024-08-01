@@ -26,15 +26,24 @@ namespace HeThongBanDienThoai_Admin.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-GVRFC16\\BAOTOAN;Initial Catalog=QL_DTDD;Persist Security Info" +
-            "=True;User Data Source=DESKTOP-GVRFC16\\BAOTOAN;Initial Catalog=QL_DTDD;Persist S" +
-            "ecurity Info=True;User ID=sa;Password=123;Encrypt=True;TrustServerCertificate=Tr" +
-            "ue")]
+            "=True;User ID=sa;Password=123;Encrypt=True;TrustServerCertificate=True")]
         public string stringConnectSql {
             get {
                 return ((string)(this["stringConnectSql"]));
             }
             set {
                 this["stringConnectSql"] = value;
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-GVRFC16\\BAOTOAN;Initial Catalog=QL_DTDD;Persist Security Info" +
+            "=True;User ID=sa;Password=123;Encrypt=True;TrustServerCertificate=True")]
+        public string Report_ImportGoods {
+            get {
+                return ((string)(this["Report_ImportGoods"]));
             }
         }
     }

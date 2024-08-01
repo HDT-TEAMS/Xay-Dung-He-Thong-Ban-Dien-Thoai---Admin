@@ -74,10 +74,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChiTietPhieuNhap_BUS.cs" />
+    <Compile Include="DonHang_BUS.cs" />
     <Compile Include="DungLuong_BUS.cs" />
     <Compile Include="KhachHang_BUS.cs" />
     <Compile Include="MauSac_BUS.cs" />
+    <Compile Include="NhaCungCap_BUS.cs" />
     <Compile Include="NhanVien_BUS.cs" />
+    <Compile Include="PhieuNhap_BUS.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Quyen_BUS.cs" />
     <Compile Include="Loai_BUS.cs" />

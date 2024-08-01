@@ -36,6 +36,7 @@ namespace HeThongBanDienThoai_Admin.GUI
             else
             {
                 NguoiDung user = ndb.checkLogins(username, password);
+                MyLib.maND = user.MaND;
                 if (user != null)
                 {
                     Menu_Form menu = new Menu_Form(user.MaND);
@@ -55,6 +56,11 @@ namespace HeThongBanDienThoai_Admin.GUI
         private void btnExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void btnLogin_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

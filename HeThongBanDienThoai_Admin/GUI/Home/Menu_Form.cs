@@ -2,6 +2,8 @@
 using DTO;
 using Guna.UI2.WinForms;
 using Guna.UI2.WinForms.Suite;
+using HeThongBanDienThoai_Admin.GUI.Import_Goods;
+using HeThongBanDienThoai_Admin.GUI.Order;
 using HeThongBanDienThoai_Admin.GUI.Product;
 using HeThongBanDienThoai_Admin.LIB;
 using System;
@@ -243,6 +245,25 @@ namespace HeThongBanDienThoai_Admin.GUI
         private void btnCauHinh_Click(object sender, EventArgs e)
         {
            
+        }
+
+        private void btnNhapHang_Click(object sender, EventArgs e)
+        {
+            ListImportGoods_Form listImportGoods = new ListImportGoods_Form();
+            Label_Heading.Text = "Nhập Hàng";
+            MyLib.LoadForm(panel_container, listImportGoods,DockStyle.Fill);
+        }
+
+        private void btnNhaCC_Click(object sender, EventArgs e)
+        {
+            ListDistributor_Form listDistributor_Form = new ListDistributor_Form();
+            MyLib.LoadForm(panel_container,listDistributor_Form,DockStyle.Fill);
+        }
+
+        private void btnTinhTrangDon_Click(object sender, EventArgs e)
+        {
+            OrderProcessing_Form order = new OrderProcessing_Form();
+            MyLib.LoadForm(panel_container,order,DockStyle.Fill);
         }
     }
 }

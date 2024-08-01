@@ -43,5 +43,15 @@ namespace BUS
                 throw new Exception("Nhân viên không tồn tại");
             }
         }
+
+        public string GetNhanVienNameById(int maND)
+        {
+           return nvDAO.GetNhanVienNameByMaND(maND);
+        }
+
+        public int GetMaNVById(int maND)
+        {
+            return nvDAO.GetMaNVByMaND(maND);
+        }
     }
 }

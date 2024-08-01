@@ -93,6 +93,16 @@ namespace HeThongBanDienThoai_Admin.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icon_print {
+            get {
+                object obj = ResourceManager.GetObject("icon_print", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap image_icon {
             get {
                 object obj = ResourceManager.GetObject("image-icon", resourceCulture);
@@ -126,6 +136,16 @@ namespace HeThongBanDienThoai_Admin.Properties {
         internal static System.Drawing.Bitmap logo_video {
             get {
                 object obj = ResourceManager.GetObject("logo-video", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap thumbtopzone2_800x450_600x400 {
+            get {
+                object obj = ResourceManager.GetObject("thumbtopzone2_800x450-600x400", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
