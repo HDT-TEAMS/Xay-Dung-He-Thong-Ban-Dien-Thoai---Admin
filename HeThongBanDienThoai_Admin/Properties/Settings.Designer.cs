@@ -27,6 +27,7 @@ namespace HeThongBanDienThoai_Admin.Properties {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DOUBLED;Initial Catalog=QL_DTDD;Persist Security Info=True;User ID=sa" +
             ";Password=123;TrustServerCertificate=True")]
+
         public string stringConnectSql {
             get {
                 return ((string)(this["stringConnectSql"]));

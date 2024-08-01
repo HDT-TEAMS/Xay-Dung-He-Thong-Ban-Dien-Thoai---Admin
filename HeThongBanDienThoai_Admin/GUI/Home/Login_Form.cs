@@ -75,6 +75,10 @@ namespace HeThongBanDienThoai_Admin.GUI
             }
             else
                 txtPassword.UseSystemPasswordChar = true;
+=
+        private void btnLogin_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }
