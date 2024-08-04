@@ -103,7 +103,7 @@
             this.btnReload.FillColor2 = System.Drawing.Color.RoyalBlue;
             this.btnReload.Font = new System.Drawing.Font("Bahnschrift Condensed", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReload.ForeColor = System.Drawing.Color.White;
-            this.btnReload.Location = new System.Drawing.Point(628, 7);
+            this.btnReload.Location = new System.Drawing.Point(627, 7);
             this.btnReload.Name = "btnReload";
             this.btnReload.Size = new System.Drawing.Size(140, 50);
             this.btnReload.TabIndex = 2;
@@ -115,7 +115,7 @@
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 77.1164F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22.8836F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 201F));
             this.tableLayoutPanel1.Controls.Add(this.btnReload, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.txtSearch, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnAdd, 2, 0);

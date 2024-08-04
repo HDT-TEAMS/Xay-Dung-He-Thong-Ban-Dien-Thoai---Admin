@@ -36,10 +36,18 @@
     <Reference Include="BUS">
       <HintPath>..\BUS\bin\Debug\BUS.dll</HintPath>
     </Reference>
-    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
-    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
-    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
-    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalDecisions.CrystalReports.Engine.1.0.0\lib\CrystalDecisions.CrystalReports.Engine.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalDecisions.ReportSource.1.0.0\lib\CrystalDecisions.ReportSource.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalDecisions.Shared.1.0.0\lib\CrystalDecisions.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalDecisions.Windows.Forms.1.0.0\lib\CrystalDecisions.Windows.Forms.dll</HintPath>
+    </Reference>
     <Reference Include="DTO">
       <HintPath>..\DTO\bin\Debug\DTO.dll</HintPath>
     </Reference>
@@ -172,12 +180,6 @@
     <Compile Include="GUI\Order\OrderCreate_Form.Designer.cs">
       <DependentUpon>OrderCreate_Form.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Order\OrderInStore_Form.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\Order\OrderInStore_Form.Designer.cs">
-      <DependentUpon>OrderInStore_Form.cs</DependentUpon>
-    </Compile>
     <Compile Include="GUI\Order\OrderProcessing_Form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -201,18 +203,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Des_Report_PrintImports.rpt</DependentUpon>
       <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="GUI\Report\Des_Report_PrintOder.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Des_Report_PrintOder.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="GUI\Report\ReportHoaDon_Form.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\Report\ReportHoaDon_Form.Designer.cs">
-      <DependentUpon>ReportHoaDon_Form.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Report\ReportPhieuNhap_Form.cs">
       <SubType>Form</SubType>
@@ -309,9 +299,6 @@
     <EmbeddedResource Include="GUI\Order\OrderCreate_Form.resx">
       <DependentUpon>OrderCreate_Form.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Order\OrderInStore_Form.resx">
-      <DependentUpon>OrderInStore_Form.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Order\OrderProcessing_Form.resx">
       <DependentUpon>OrderProcessing_Form.cs</DependentUpon>
     </EmbeddedResource>
@@ -324,13 +311,6 @@
     <EmbeddedResource Include="GUI\Report\Des_Report_PrintImports.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>Des_Report_PrintImports.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Report\Des_Report_PrintOder.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>Des_Report_PrintOder.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Report\ReportHoaDon_Form.resx">
-      <DependentUpon>ReportHoaDon_Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Report\ReportPhieuNhap_Form.resx">
       <DependentUpon>ReportPhieuNhap_Form.cs</DependentUpon>
@@ -410,7 +390,6 @@
     <Content Include="RESOURCE\Logo\logo_topzone.jpg" />
     <Content Include="RESOURCE\Logo\logo_topzonePanel.png" />
     <Content Include="RESOURCE\Logo\thumbtopzone2_800x450-600x400.jpg" />
-    <Content Include="RESOURCE\Logo\Superqr.svg.png" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

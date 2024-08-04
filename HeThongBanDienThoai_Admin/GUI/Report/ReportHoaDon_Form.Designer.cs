@@ -1,6 +1,6 @@
 ﻿namespace HeThongBanDienThoai_Admin.GUI.Report
 {
-    partial class ReportPhieuNhap_Form
+    partial class ReportHoaDon_Form
     {
         /// <summary>
         /// Required designer variable.
@@ -39,17 +39,17 @@
             this.crystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.crystalReportViewer1.Location = new System.Drawing.Point(0, 0);
             this.crystalReportViewer1.Name = "crystalReportViewer1";
-            this.crystalReportViewer1.Size = new System.Drawing.Size(866, 567);
+            this.crystalReportViewer1.Size = new System.Drawing.Size(906, 581);
             this.crystalReportViewer1.TabIndex = 0;
             // 
-            // ReportPhieuNhap_Form
+            // ReportHoaDon_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(866, 567);
+            this.ClientSize = new System.Drawing.Size(906, 581);
             this.Controls.Add(this.crystalReportViewer1);
-            this.Name = "ReportPhieuNhap_Form";
-            this.Text = "ReportPhieuNhap_Form";
+            this.Name = "ReportHoaDon_Form";
+            this.Text = "ReportHoaDon_Form";
             this.ResumeLayout(false);
 
         }

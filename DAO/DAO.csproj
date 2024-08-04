@@ -70,6 +70,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChiTietDonHang_DAO.cs" />
     <Compile Include="ChiTietPhieuNhap_DAO.cs" />
     <Compile Include="DonHang_DAO.cs" />
     <Compile Include="DungLuong_DAO.cs" />

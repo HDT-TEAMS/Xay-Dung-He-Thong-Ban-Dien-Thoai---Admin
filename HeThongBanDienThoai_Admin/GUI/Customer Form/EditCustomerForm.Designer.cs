@@ -32,7 +32,7 @@
             this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.guna2ShadowForm1 = new Guna.UI2.WinForms.Guna2ShadowForm(this.components);
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.heading_text = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label2 = new System.Windows.Forms.Label();
             this.txtID = new Guna.UI2.WinForms.Guna2TextBox();
@@ -65,7 +65,7 @@
             // 
             // guna2Panel1
             // 
-            this.guna2Panel1.Controls.Add(this.label1);
+            this.guna2Panel1.Controls.Add(this.heading_text);
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.guna2Panel1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(51)))), ((int)(((byte)(102)))));
             this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
@@ -73,17 +73,17 @@
             this.guna2Panel1.Size = new System.Drawing.Size(524, 59);
             this.guna2Panel1.TabIndex = 21;
             // 
-            // label1
+            // heading_text
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Bahnschrift Condensed", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(176, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(177, 35);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "SỬA KHÁCH HÀNG";
+            this.heading_text.AutoSize = true;
+            this.heading_text.BackColor = System.Drawing.Color.Transparent;
+            this.heading_text.Font = new System.Drawing.Font("Bahnschrift Condensed", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.heading_text.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.heading_text.Location = new System.Drawing.Point(176, 9);
+            this.heading_text.Name = "heading_text";
+            this.heading_text.Size = new System.Drawing.Size(177, 35);
+            this.heading_text.TabIndex = 0;
+            this.heading_text.Text = "SỬA KHÁCH HÀNG";
             // 
             // tableLayoutPanel1
             // 
@@ -148,7 +148,7 @@
             this.txtID.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtID.Name = "txtID";
             this.txtID.PasswordChar = '\0';
-            this.txtID.PlaceholderText = "Nhập mã nhân viên...";
+            this.txtID.PlaceholderText = "Nhập mã khách hàng...";
             this.txtID.SelectedText = "";
             this.txtID.Size = new System.Drawing.Size(333, 46);
             this.txtID.TabIndex = 2;
@@ -171,7 +171,7 @@
             this.txtName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtName.Name = "txtName";
             this.txtName.PasswordChar = '\0';
-            this.txtName.PlaceholderText = "Nhập tên nhân viên...";
+            this.txtName.PlaceholderText = "Nhập tên khách hàng...";
             this.txtName.SelectedText = "";
             this.txtName.Size = new System.Drawing.Size(333, 46);
             this.txtName.TabIndex = 3;
@@ -373,12 +373,12 @@
             this.tableLayoutPanel2.Controls.Add(this.btnCancel, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.btnSave, 1, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 549);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 544);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.Padding = new System.Windows.Forms.Padding(10, 0, 10, 2);
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(524, 85);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(524, 90);
             this.tableLayoutPanel2.TabIndex = 24;
             // 
             // btnCancel
@@ -394,7 +394,7 @@
             this.btnCancel.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnCancel.Font = new System.Drawing.Font("Bahnschrift Condensed", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.White;
-            this.btnCancel.Location = new System.Drawing.Point(13, 16);
+            this.btnCancel.Location = new System.Drawing.Point(13, 19);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(100, 50);
             this.btnCancel.TabIndex = 3;
@@ -414,12 +414,11 @@
             this.btnSave.FillColor2 = System.Drawing.Color.MediumSeaGreen;
             this.btnSave.Font = new System.Drawing.Font("Bahnschrift Condensed", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Location = new System.Drawing.Point(411, 16);
+            this.btnSave.Location = new System.Drawing.Point(411, 19);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(100, 50);
             this.btnSave.TabIndex = 3;
             this.btnSave.Text = "Lưu";
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // EditCustomerForm
             // 
@@ -448,7 +447,7 @@
         private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm1;
         private Guna.UI2.WinForms.Guna2ShadowForm guna2ShadowForm1;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label heading_text;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label label2;
         private Guna.UI2.WinForms.Guna2TextBox txtID;

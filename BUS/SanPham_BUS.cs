@@ -12,6 +12,11 @@ namespace BUS
     {
         public SanPham_BUS() { }
         SanPham_DAO sanPham_DAO = new SanPham_DAO();
+        KhuyenMai_BUS khuyenMai_BUS = new KhuyenMai_BUS();
+        public List<SanPham> loadSanPhams()
+        {
+            return sanPham_DAO.loadSanPhams();
+        }
 
         public List<View_SanPhamDetailsByLoai> getAllSanPham()
         {
@@ -52,6 +57,16 @@ namespace BUS
         {
       
             return sanPham_DAO.SearchSanPhamByTenSP(searchTerm);
+        }
+
+        public int getSoLuongByMaSP(int maSP)
+        {
+            return sanPham_DAO.getSoLuongByMaSP(maSP);
+        }
+
+        public void UpdateSoLuongSanPham(SanPham sanPhams, bool trangThai)
+        {
+            sanPham_DAO.UpdateSoLuongSanPham(sanPhams, trangThai);
         }
 
     }

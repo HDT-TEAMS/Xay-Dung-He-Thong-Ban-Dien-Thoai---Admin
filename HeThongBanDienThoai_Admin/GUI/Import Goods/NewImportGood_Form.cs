@@ -129,7 +129,6 @@ namespace HeThongBanDienThoai_Admin.GUI.Import_Goods
             }
 
         }
-
         private void loadCbbNhaCungCap()
         {
             var nccList = nccb.loadAllNhaCungCap();
@@ -251,14 +250,11 @@ namespace HeThongBanDienThoai_Admin.GUI.Import_Goods
                     continue;
                 }
 
-                decimal giaNhap = sp.GiaNhap ?? 0;
-                decimal giaNhapLamTron = (giaNhap >= 1000)? Math.Round(giaNhap / 1000) * 1000: giaNhap;
-
                 ChiTietPN chiTietPN = new ChiTietPN
                 {
                     MaPN = maPN,
                     MaSP = sp.MaSP,
-                    GiaNhap = giaNhapLamTron, 
+                    GiaNhap = sp.GiaNhap, 
                     SoLuong = sp.SoLuong
                 };
 

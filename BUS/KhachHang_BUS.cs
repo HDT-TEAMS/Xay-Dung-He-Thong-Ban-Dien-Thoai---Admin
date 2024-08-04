@@ -17,6 +17,10 @@ namespace BUS
             return khDAO.LoadKH();
         }
 
+        public void InsertKhachHang(KhachHang khachHang)
+        {
+             khDAO.InsertKhachHang(khachHang);
+        }
         public void UpdateKhachHang(KhachHang updateKhachHang)
         {
             khDAO.UpdateKhachHang(updateKhachHang);
@@ -25,6 +29,10 @@ namespace BUS
         public KhachHang GetKhachHangById(string CustomerId)
         {
             return khDAO.GetKhachHangById(CustomerId);
+        }
+
+        public KhachHang GetMaKHBySDT(string SDT) {
+            return khDAO.GetMaKHbySDT(SDT);
         }
 
         public void DeleteKhachHang(string CustomerId)

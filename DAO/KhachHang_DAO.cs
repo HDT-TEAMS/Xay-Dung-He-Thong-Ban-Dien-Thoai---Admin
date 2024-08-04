@@ -15,6 +15,12 @@ namespace DAO
             return dB.KhachHangs.Select(kh=>kh).ToList<KhachHang>();
         }
 
+        public void InsertKhachHang(KhachHang khachHang)
+        {
+            dB.KhachHangs.InsertOnSubmit(khachHang);
+            dB.SubmitChanges();
+        }
+
         public void UpdateKhachHang(KhachHang updatedKhachHang)
         {
             // Attach the updated entity to the context
@@ -39,6 +45,11 @@ namespace DAO
         public KhachHang GetKhachHangById(string customerID)
         {
             return dB.KhachHangs.SingleOrDefault(nv => nv.MaNB == customerID);
+        }
+
+        public KhachHang GetMaKHbySDT(string sdt)
+        {
+            return dB.KhachHangs.SingleOrDefault(nv => nv.SDT == sdt);
         }
 
         public void DeleteKhachHang(KhachHang deleteKhachHang)

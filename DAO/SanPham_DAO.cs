@@ -12,11 +12,10 @@ namespace DAO
     {
         private DB_DTDDDataContext db = new DB_DTDDDataContext();
         public SanPham_DAO() { }
-
-        //public List<SanPham> loadAllSanPham()
-        //{
-        //    return 
-        //}
+        public List<SanPham> loadSanPhams()
+        {
+            return db.SanPhams.Select(sp => sp).ToList<SanPham>();
+        }
 
         public List<View_SanPhamDetailsByLoai> loadDetailProduct()
         {
@@ -52,7 +51,7 @@ namespace DAO
 
         public void UpdateSanPham(int maSP, string maNB, string tenSP, int? maDL, decimal giaSP, string hinhAnh, int soLuong, int maLoai, int maMau)
         {
-            var sanPham = db.SanPhams.SingleOrDefault(sp => sp.MaSP == maSP);
+            var sanPham = db.SanPhams.FirstOrDefault(sp => sp.MaSP == maSP);
 
             if (sanPham != null)
             {
@@ -85,10 +84,26 @@ namespace DAO
             }
         }
 
+        public void UpdateSoLuongSanPham(SanPham sanPhams, bool trangThai)
+        {
+            var sanPham = db.SanPhams.FirstOrDefault(sp => sp.MaSP == sanPhams.MaSP);
+            if (sanPham != null)
+            {
+                if (trangThai)
+                {
+                    sanPham.SoLuong += sanPhams.SoLuong;
+                }
+                else
+                {
+                    sanPham.SoLuong -= sanPhams.SoLuong;
+                }
+                db.SubmitChanges(); 
+            }
+        }
 
         public void DeleteSanPham(int maSP)
         {
-            var sanPham = db.SanPhams.SingleOrDefault(sp => sp.MaSP == maSP);
+            var sanPham = db.SanPhams.FirstOrDefault(sp => sp.MaSP == maSP);
             if (sanPham != null)
             {
                 db.SanPhams.DeleteOnSubmit(sanPham);
@@ -118,6 +133,12 @@ namespace DAO
         {
             var detailSanPham = db.View_SanPhamDetailsByLoais .Where(sp =>  sp.TenSP.Contains(searchTerm)).ToList();
             return detailSanPham;
+        }
+
+        public int getSoLuongByMaSP(int maSP)
+        {
+            var sanPham = db.SanPhams.FirstOrDefault(sp =>sp.MaSP == maSP);
+            return sanPham != null ? sanPham.SoLuong.GetValueOrDefault(0) : 0;
         }
 
     }

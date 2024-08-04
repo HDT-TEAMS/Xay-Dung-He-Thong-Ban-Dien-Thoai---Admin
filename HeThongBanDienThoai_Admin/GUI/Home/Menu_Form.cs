@@ -27,6 +27,7 @@ namespace HeThongBanDienThoai_Admin.GUI
     {
         private int _maND;
         private Loai_BUS lb = new Loai_BUS();
+        private Guna2Button _activeButton = null;
         public Menu_Form(int maND)
         {
             InitializeComponent();
@@ -91,6 +92,7 @@ namespace HeThongBanDienThoai_Admin.GUI
             };
             Label_Heading.Text = "Danh sách " + loai.TenLoai.ToString();
             ListProduct_Form listProduct_Form = new ListProduct_Form(loai);
+            SetActiveButton((Guna2Button)sender);
             MyLib.LoadForm(panel_container, listProduct_Form, DockStyle.Fill);
         }
 
@@ -249,26 +251,31 @@ namespace HeThongBanDienThoai_Admin.GUI
 
         private void btnCauHinh_Click(object sender, EventArgs e)
         {
-           
+            SetActiveButton((Guna2Button)sender);
         }
 
         private void btnNhapHang_Click(object sender, EventArgs e)
         {
             ListImportGoods_Form listImportGoods = new ListImportGoods_Form();
             Label_Heading.Text = "Nhập Hàng";
+            SetActiveButton((Guna2Button)sender);
             MyLib.LoadForm(panel_container, listImportGoods,DockStyle.Fill);
         }
 
         private void btnNhaCC_Click(object sender, EventArgs e)
         {
             ListDistributor_Form listDistributor_Form = new ListDistributor_Form();
+            SetActiveButton((Guna2Button)sender);
             MyLib.LoadForm(panel_container,listDistributor_Form,DockStyle.Fill);
         }
 
         private void btnTinhTrangDon_Click(object sender, EventArgs e)
         {
+            Label_Heading.Text = "Quản lý đơn hàng";
             OrderProcessing_Form order = new OrderProcessing_Form();
-            MyLib.LoadForm(panel_container,order,DockStyle.Fill);
+            OrderCreate_Form orderCreate = new OrderCreate_Form();
+            SetActiveButton((Guna2Button)sender);
+            MyLib.LoadForm(panel_container,orderCreate,DockStyle.Fill);
         }
 
         private void btnNhanVien_Click(object sender, EventArgs e)
@@ -278,6 +285,7 @@ namespace HeThongBanDienThoai_Admin.GUI
             QLNV.Dock = DockStyle.Fill;
             panel_container.Controls.Clear(); 
             panel_container.Controls.Add(QLNV);
+            SetActiveButton((Guna2Button)sender);
             QLNV.BringToFront();
             QLNV.Show();
         }
@@ -288,6 +296,7 @@ namespace HeThongBanDienThoai_Admin.GUI
             QLKH.TopLevel = false;
             QLKH.Dock = DockStyle.Fill;
             panel_container.Controls.Clear();
+            SetActiveButton((Guna2Button)sender);
             panel_container.Controls.Add(QLKH);
             QLKH.BringToFront();
             QLKH.Show();
@@ -301,6 +310,7 @@ namespace HeThongBanDienThoai_Admin.GUI
             panel_container.Controls.Clear();
             panel_container.Controls.Add(QLRO);
             QLRO.BringToFront();
+            SetActiveButton((Guna2Button)sender);
             QLRO.Show();
         }
 
@@ -310,6 +320,7 @@ namespace HeThongBanDienThoai_Admin.GUI
             QLKM.TopLevel = false;
             QLKM.Dock = DockStyle.Fill;
             panel_container.Controls.Clear();
+            SetActiveButton((Guna2Button)sender);
             panel_container.Controls.Add(QLKM);
             QLKM.BringToFront();
             QLKM.Show();
@@ -323,8 +334,37 @@ namespace HeThongBanDienThoai_Admin.GUI
             QLU.Dock = DockStyle.Fill;
             panel_container.Controls.Clear();
             panel_container.Controls.Add(QLU);
+            SetActiveButton((Guna2Button)sender);
             QLU.BringToFront();
             QLU.Show();
+
+        }
+
+        private void btnTaoDonHang_Click(object sender, EventArgs e)
+        {
+            MyLib.LoadForm(panel_container,new OrderInStore_Form());
+            SetActiveButton((Guna2Button)sender);
+        }
+
+
+        private void SetActiveButton(Guna2Button button)
+        {
+            if (_activeButton != null && _activeButton != button)
+            {
+                ResetButtonState(_activeButton);
+            }
+
+            button.CheckedState.FillColor = Color.RoyalBlue;
+            button.CheckedState.ForeColor = Color.White;
+            button.FillColor = Color.WhiteSmoke;
+            _activeButton = button;
+        }
+
+        private void ResetButtonState(Guna2Button button)
+        {
+            button.CheckedState.FillColor = Color.Transparent;
+            button.CheckedState.ForeColor = Color.Black;
+            button.FillColor = Color.Transparent;
         }
     }
 }

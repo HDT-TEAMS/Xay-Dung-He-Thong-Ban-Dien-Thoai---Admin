@@ -279,6 +279,34 @@ namespace HeThongBanDienThoai_Admin.LIB
             }
         }
 
+        public static async Task<string> RandomHoaDon()
+        {
+            DateTime now = DateTime.Now;
+            string formattedDate = now.ToString("ddMMyyyyHHmmss");
+            string maHoaDon = $"DHCH{formattedDate}";
+            return await Task.FromResult(maHoaDon);
+        }
+
+        public static string GenerateCustomerCode()
+        {
+            KhachHang_BUS khang = new KhachHang_BUS();
+            var maxCode = khang.LoadKH()
+                               .Where(kh => kh.MaNB.StartsWith("KH") && kh.MaNB.Length == 6)
+                               .OrderByDescending(kh => kh.MaNB)
+                               .Select(kh => kh.MaNB)
+                               .FirstOrDefault();
+
+            if (maxCode == null)
+            {
+                return "KH0001";
+            }
+
+            int maxNumber = int.Parse(maxCode.Substring(2));
+            int newNumber = maxNumber + 1;
+            return "KH" + newNumber.ToString("D4");
+        }
+
+
 
 
     }

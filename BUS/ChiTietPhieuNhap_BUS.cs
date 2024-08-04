@@ -28,34 +28,34 @@ namespace BUS
 
             if (sanPham != null)
             {
-                // Cập nhật số lượng sản phẩm
-                sanPham.SoLuong = (sanPham.SoLuong ?? 0) + chiTietPhieuNhap.SoLuong;
+                int soLuongSanPhamHienTai = sanPham.SoLuong ?? 0;
+                int soLuongMoi = chiTietPhieuNhap.SoLuong.GetValueOrDefault();
+                sanPham.SoLuong = soLuongSanPhamHienTai + soLuongMoi;
 
-                // Xử lý giá nhập
-                decimal oldGiaNhap = sanPham.GiaNhap.GetValueOrDefault(); 
-                decimal newGiaNhap = chiTietPhieuNhap.GiaNhap.GetValueOrDefault();
+                decimal giaNhapMoi = chiTietPhieuNhap.GiaNhap.GetValueOrDefault();
+                decimal giaNhapCu = sanPham.GiaNhap.GetValueOrDefault();
 
-                // Xử lý số lượng cũ
-                int oldQuantity = sanPham.SoLuong.GetValueOrDefault();
+                sanPham.GiaNhap = giaNhapMoi;
 
-                // Xử lý giá bán
-                decimal giaSPCu = sanPham.GiaSP.GetValueOrDefault(); 
-                decimal soLuongSanPham = sanPham.SoLuong.GetValueOrDefault(); 
+                if (giaNhapMoi == giaNhapCu)
+                {
+                    return; 
+                }
 
-                // Tính giá bán mới
-                decimal giaSPMoi = (soLuongSanPham == 0)? newGiaNhap : ((giaSPCu * oldQuantity) + (newGiaNhap * chiTietPhieuNhap.SoLuong.GetValueOrDefault())) / soLuongSanPham;
+                decimal giaBanMoi = giaNhapMoi * 1.2m;
 
-                sanPham.GiaSP = giaSPMoi;
-                sanPham.GiaNhap = newGiaNhap; 
-
-                // Cập nhật sản phẩm trong cơ sở dữ liệu
+                if (soLuongSanPhamHienTai == 0)
+                {
+                    sanPham.GiaSP = giaBanMoi;
+                }
+                else
+                {
+                    decimal giaBanCu = sanPham.GiaSP.GetValueOrDefault();
+                    decimal giaBanTrungBinh = (giaBanCu * soLuongSanPhamHienTai + giaBanMoi * soLuongMoi) / (soLuongSanPhamHienTai + soLuongMoi);
+                    sanPham.GiaSP = giaBanTrungBinh;
+                }
                 sanPhamDAO.UpdateSanPham(sanPham);
             }
         }
-
-
-
-
-
     }
 }

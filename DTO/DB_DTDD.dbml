@@ -1,33 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QL_DTDD" Class="DB_DTDDDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-GVRFC16\BAOTOAN;Initial Catalog=QL_DTDD;Persist Security Info=True;User ID=sa;Encrypt=True;Trust Server Certificate=True" SettingsObjectName="DTO.Properties.Settings" SettingsPropertyName="QL_DTDDConnectionString" Provider="System.Data.SqlClient" />
-  <Table Name="dbo.View_DanhSachNhapHang" Member="View_DanhSachNhapHangs">
-    <Type Name="View_DanhSachNhapHang">
-      <Column Name="MaPN" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="MaNB" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="NgayNhap" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="TongTien" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
-      <Column Name="MaNV" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="MaNCC" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="TenNV" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="TenNCC" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.View_SanPhamDetailsByLoai" Member="View_SanPhamDetailsByLoais">
-    <Type Name="View_SanPhamDetailsByLoai">
-      <Column Name="MaSP" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="MaNB" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="MaKM" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="TenSP" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-GVRFC16\BAOTOAN;Initial Catalog=QL_DTDD;Persist Security Info=True;User ID=sa;Trust Server Certificate=True" SettingsObjectName="DTO.Properties.Settings" SettingsPropertyName="QL_DTDDConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.CTDonHang" Member="CTDonHangs">
+    <Type Name="CTDonHang">
+      <Column Name="MaDH" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MaSP" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="SoLuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="GiaSP" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
-      <Column Name="GiaNhap" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
-      <Column Name="MaLoai" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="TenLoai" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="MaMau" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="MaDungLuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="IsDeleted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="TenMau" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="TenDungLuong" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="DonGia" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Association Name="SanPham_CTDonHang" Member="SanPham" ThisKey="MaSP" OtherKey="MaSP" Type="SanPham" IsForeignKey="true" />
+      <Association Name="DonHang_CTDonHang" Member="DonHang" ThisKey="MaDH" OtherKey="MaDH" Type="DonHang" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.SanPham" Member="SanPhams">
@@ -51,16 +31,6 @@
       <Association Name="KhuyenMai_SanPham" Member="KhuyenMai" ThisKey="MaKM" OtherKey="MaKM" Type="KhuyenMai" IsForeignKey="true" />
       <Association Name="Loai_SanPham" Member="Loai" ThisKey="MaLoai" OtherKey="Maloai" Type="Loai" IsForeignKey="true" />
       <Association Name="MauSac_SanPham" Member="MauSac" ThisKey="MaMau" OtherKey="MaMau" Type="MauSac" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.CTDonHang" Member="CTDonHangs">
-    <Type Name="CTDonHang">
-      <Column Name="MaDH" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="MaSP" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="SoLuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="DonGia" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
-      <Association Name="SanPham_CTDonHang" Member="SanPham" ThisKey="MaSP" OtherKey="MaSP" Type="SanPham" IsForeignKey="true" />
-      <Association Name="DonHang_CTDonHang" Member="DonHang" ThisKey="MaDH" OtherKey="MaDH" Type="DonHang" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.ChiTietPN" Member="ChiTietPNs">
@@ -98,6 +68,7 @@
       <Column Name="MaDH" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="MaNB" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="MaKH" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MaNV" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="NgayDat" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="TrangThai" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
       <Column Name="DiaChiNhan" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
@@ -105,8 +76,8 @@
       <Column Name="IsDeleted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Column Name="TongTien" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
       <Association Name="DonHang_CTDonHang" Member="CTDonHangs" ThisKey="MaDH" OtherKey="MaDH" Type="CTDonHang" />
-      <Association Name="DonHang_GiamGia" Member="GiamGias" ThisKey="MaDH" OtherKey="MaDH" Type="GiamGia" />
       <Association Name="KhachHang_DonHang" Member="KhachHang" ThisKey="MaKH" OtherKey="MaKH" Type="KhachHang" IsForeignKey="true" />
+      <Association Name="NhanVien_DonHang" Member="NhanVien" ThisKey="MaNV" OtherKey="MaNV" Type="NhanVien" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.DungLuong" Member="DungLuongs">
@@ -114,18 +85,6 @@
       <Column Name="MaDungLuong" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="TenDungLuong" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
       <Association Name="DungLuong_SanPham" Member="SanPhams" ThisKey="MaDungLuong" OtherKey="MaDungLuong" Type="SanPham" />
-    </Type>
-  </Table>
-  <Table Name="dbo.GiamGia" Member="GiamGias">
-    <Type Name="GiamGia">
-      <Column Name="MaGiamGia" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="MaNB" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="MaDH" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="NgayBD" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="NgayKT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="DieuKienGiam" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
-      <Column Name="isDeleted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Association Name="DonHang_GiamGia" Member="DonHang" ThisKey="MaDH" OtherKey="MaDH" Type="DonHang" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.KhachHang" Member="KhachHangs">
@@ -207,6 +166,7 @@
       <Column Name="SDTNV" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
       <Column Name="Email" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="IsDeleted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="NhanVien_DonHang" Member="DonHangs" ThisKey="MaNV" OtherKey="MaNV" Type="DonHang" />
       <Association Name="NhanVien_PhieuNhap" Member="PhieuNhaps" ThisKey="MaNV" OtherKey="MaNV" Type="PhieuNhap" />
       <Association Name="NguoiDung_NhanVien" Member="NguoiDung" ThisKey="MaND" OtherKey="MaND" Type="NguoiDung" IsForeignKey="true" />
     </Type>
@@ -251,6 +211,24 @@
       <Association Name="NguoiDung_QuyenNguoiDung" Member="NguoiDung" ThisKey="MAND" OtherKey="MaND" Type="NguoiDung" IsForeignKey="true" />
     </Type>
   </Table>
+  <Table Name="dbo.View_SanPhamDetailsByLoai" Member="View_SanPhamDetailsByLoais">
+    <Type Name="View_SanPhamDetailsByLoai">
+      <Column Name="MaSP" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MaNB" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MaKM" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TenSP" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="SoLuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GiaSP" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="GiaNhap" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="MaLoai" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TenLoai" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="MaMau" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MaDungLuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IsDeleted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TenMau" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="TenDungLuong" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+    </Type>
+  </Table>
   <Table Name="dbo.View_DanhSachChiTietPhieuNhap" Member="View_DanhSachChiTietPhieuNhaps">
     <Type Name="View_DanhSachChiTietPhieuNhap">
       <Column Name="MaPN" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
@@ -265,6 +243,46 @@
       <Column Name="NgayNhap" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="TongTien" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
       <Column Name="TenNCC" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.View_DanhSachDonHang" Member="View_DanhSachDonHangs">
+    <Type Name="View_DanhSachDonHang">
+      <Column Name="MaDH" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MaNB" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TenNV" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="TenKH" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="SDT" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="NgayDat" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TongTien" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="TrangThai" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.View_DanhSachNhapHang" Member="View_DanhSachNhapHangs">
+    <Type Name="View_DanhSachNhapHang">
+      <Column Name="MaPN" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MaNB" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NgayNhap" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TongTien" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="MaNV" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MaNCC" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TenNV" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="TenNCC" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.View_DanhSachChiTietDonHang" Member="View_DanhSachChiTietDonHangs">
+    <Type Name="View_DanhSachChiTietDonHang">
+      <Column Name="MaDH" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MaSP" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MaNB" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TenSP" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="MaKM" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TenMau" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="TenDungLuong" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="TongTien" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="HinhThucThanhToan" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="SoLuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DonGia" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="GiaSP" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
     </Type>
   </Table>
   <Function Name="dbo.CreateReportPhieuNhap" Method="CreateReportPhieuNhap">
@@ -284,6 +302,24 @@
       <Column Name="NgayNhap" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="TongTien" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
       <Column Name="TenNCC" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.CreateReportHoaDon" Method="CreateReportHoaDon">
+    <Parameter Name="MaDH" Parameter="maDH" Type="System.Int32" DbType="Int" />
+    <ElementType Name="CreateReportHoaDonResult">
+      <Column Name="MaDH" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NgayDat" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TongTien" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="MaNB" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MaSP" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SoLuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DonGia" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="TenNV" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="TenKH" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="TenSP" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="TenDungLuong" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="TenMau" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="SDT" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
     </ElementType>
   </Function>
 </Database>

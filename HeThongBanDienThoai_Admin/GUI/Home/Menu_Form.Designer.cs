@@ -117,7 +117,7 @@ namespace HeThongBanDienThoai_Admin.GUI
             this.TableLayoutPanel_Header.Name = "TableLayoutPanel_Header";
             this.TableLayoutPanel_Header.RowCount = 1;
             this.TableLayoutPanel_Header.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.TableLayoutPanel_Header.Size = new System.Drawing.Size(772, 30);
+            this.TableLayoutPanel_Header.Size = new System.Drawing.Size(891, 30);
             this.TableLayoutPanel_Header.TabIndex = 0;
             // 
             // guna2ControlBox1
@@ -127,7 +127,7 @@ namespace HeThongBanDienThoai_Admin.GUI
             this.guna2ControlBox1.BackColor = System.Drawing.Color.Transparent;
             this.guna2ControlBox1.FillColor = System.Drawing.Color.Transparent;
             this.guna2ControlBox1.IconColor = System.Drawing.Color.White;
-            this.guna2ControlBox1.Location = new System.Drawing.Point(738, 0);
+            this.guna2ControlBox1.Location = new System.Drawing.Point(857, 0);
             this.guna2ControlBox1.Margin = new System.Windows.Forms.Padding(0);
             this.guna2ControlBox1.Name = "guna2ControlBox1";
             this.guna2ControlBox1.Size = new System.Drawing.Size(34, 30);
@@ -141,7 +141,7 @@ namespace HeThongBanDienThoai_Admin.GUI
             this.guna2ControlBox2.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MaximizeBox;
             this.guna2ControlBox2.FillColor = System.Drawing.Color.Transparent;
             this.guna2ControlBox2.IconColor = System.Drawing.Color.White;
-            this.guna2ControlBox2.Location = new System.Drawing.Point(704, 0);
+            this.guna2ControlBox2.Location = new System.Drawing.Point(823, 0);
             this.guna2ControlBox2.Margin = new System.Windows.Forms.Padding(0);
             this.guna2ControlBox2.Name = "guna2ControlBox2";
             this.guna2ControlBox2.Size = new System.Drawing.Size(34, 30);
@@ -155,7 +155,7 @@ namespace HeThongBanDienThoai_Admin.GUI
             this.guna2ControlBox3.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MinimizeBox;
             this.guna2ControlBox3.FillColor = System.Drawing.Color.Transparent;
             this.guna2ControlBox3.IconColor = System.Drawing.Color.White;
-            this.guna2ControlBox3.Location = new System.Drawing.Point(670, 0);
+            this.guna2ControlBox3.Location = new System.Drawing.Point(789, 0);
             this.guna2ControlBox3.Margin = new System.Windows.Forms.Padding(0);
             this.guna2ControlBox3.Name = "guna2ControlBox3";
             this.guna2ControlBox3.Size = new System.Drawing.Size(34, 30);
@@ -167,7 +167,7 @@ namespace HeThongBanDienThoai_Admin.GUI
             this.Label_Heading.AutoSize = true;
             this.Label_Heading.Font = new System.Drawing.Font("Bahnschrift Condensed", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label_Heading.ForeColor = System.Drawing.Color.White;
-            this.Label_Heading.Location = new System.Drawing.Point(359, 4);
+            this.Label_Heading.Location = new System.Drawing.Point(418, 4);
             this.Label_Heading.Name = "Label_Heading";
             this.Label_Heading.Size = new System.Drawing.Size(55, 21);
             this.Label_Heading.TabIndex = 9;
@@ -212,10 +212,10 @@ namespace HeThongBanDienThoai_Admin.GUI
             this.Panel_MasterHeThong.Dock = System.Windows.Forms.DockStyle.Top;
             this.Panel_MasterHeThong.Location = new System.Drawing.Point(7, 476);
             this.Panel_MasterHeThong.Margin = new System.Windows.Forms.Padding(2);
-            this.Panel_MasterHeThong.MaximumSize = new System.Drawing.Size(213, 208);
-            this.Panel_MasterHeThong.MinimumSize = new System.Drawing.Size(213, 35);
+            this.Panel_MasterHeThong.MaximumSize = new System.Drawing.Size(213, 220);
+            this.Panel_MasterHeThong.MinimumSize = new System.Drawing.Size(220, 35);
             this.Panel_MasterHeThong.Name = "Panel_MasterHeThong";
-            this.Panel_MasterHeThong.Size = new System.Drawing.Size(213, 173);
+            this.Panel_MasterHeThong.Size = new System.Drawing.Size(220, 185);
             this.Panel_MasterHeThong.TabIndex = 21;
             // 
             // btnVaiTro
@@ -244,7 +244,7 @@ namespace HeThongBanDienThoai_Admin.GUI
             this.btnVaiTro.Padding = new System.Windows.Forms.Padding(22, 0, 0, 0);
             this.btnVaiTro.PressedColor = System.Drawing.Color.RoyalBlue;
             this.btnVaiTro.PressedDepth = 100;
-            this.btnVaiTro.Size = new System.Drawing.Size(213, 35);
+            this.btnVaiTro.Size = new System.Drawing.Size(220, 35);
             this.btnVaiTro.TabIndex = 18;
             this.btnVaiTro.Tag = "children|vaitro.view";
             this.btnVaiTro.Text = "Vai trò";
@@ -278,7 +278,7 @@ namespace HeThongBanDienThoai_Admin.GUI
             this.btnNguoiDung.Padding = new System.Windows.Forms.Padding(22, 0, 0, 0);
             this.btnNguoiDung.PressedColor = System.Drawing.Color.RoyalBlue;
             this.btnNguoiDung.PressedDepth = 100;
-            this.btnNguoiDung.Size = new System.Drawing.Size(213, 35);
+            this.btnNguoiDung.Size = new System.Drawing.Size(220, 35);
             this.btnNguoiDung.TabIndex = 17;
             this.btnNguoiDung.Tag = "children|nguoidung.view";
             this.btnNguoiDung.Text = "Người dùng";
@@ -312,7 +312,7 @@ namespace HeThongBanDienThoai_Admin.GUI
             this.btnKhachHang.Padding = new System.Windows.Forms.Padding(22, 0, 0, 0);
             this.btnKhachHang.PressedColor = System.Drawing.Color.RoyalBlue;
             this.btnKhachHang.PressedDepth = 100;
-            this.btnKhachHang.Size = new System.Drawing.Size(213, 35);
+            this.btnKhachHang.Size = new System.Drawing.Size(220, 35);
             this.btnKhachHang.TabIndex = 16;
             this.btnKhachHang.Tag = "children|khachhang.view";
             this.btnKhachHang.Text = "Khách hàng";
@@ -346,7 +346,7 @@ namespace HeThongBanDienThoai_Admin.GUI
             this.btnNhanVien.Padding = new System.Windows.Forms.Padding(22, 0, 0, 0);
             this.btnNhanVien.PressedColor = System.Drawing.Color.RoyalBlue;
             this.btnNhanVien.PressedDepth = 100;
-            this.btnNhanVien.Size = new System.Drawing.Size(213, 35);
+            this.btnNhanVien.Size = new System.Drawing.Size(220, 35);
             this.btnNhanVien.TabIndex = 15;
             this.btnNhanVien.Tag = "children|nhanvien.view";
             this.btnNhanVien.Text = "Nhân viên";
@@ -379,7 +379,7 @@ namespace HeThongBanDienThoai_Admin.GUI
             this.btn_MasterHeThong.Margin = new System.Windows.Forms.Padding(0);
             this.btn_MasterHeThong.Name = "btn_MasterHeThong";
             this.btn_MasterHeThong.PressedColor = System.Drawing.Color.Transparent;
-            this.btn_MasterHeThong.Size = new System.Drawing.Size(213, 35);
+            this.btn_MasterHeThong.Size = new System.Drawing.Size(220, 35);
             this.btn_MasterHeThong.TabIndex = 9;
             this.btn_MasterHeThong.Tag = "parent|nhanvien.view,khachhang.view,nguoidung.view,vaitro.view";
             this.btn_MasterHeThong.Text = "Quản lý hệ thống";
@@ -503,6 +503,7 @@ namespace HeThongBanDienThoai_Admin.GUI
             this.btnTaoDonHang.Text = "Tạo đơn hàng";
             this.btnTaoDonHang.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnTaoDonHang.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            this.btnTaoDonHang.Click += new System.EventHandler(this.btnTaoDonHang_Click);
             // 
             // btn_MasterBanHang
             // 
@@ -817,7 +818,7 @@ namespace HeThongBanDienThoai_Admin.GUI
             this.TableLayoutPanel_Body.Name = "TableLayoutPanel_Body";
             this.TableLayoutPanel_Body.RowCount = 1;
             this.TableLayoutPanel_Body.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.TableLayoutPanel_Body.Size = new System.Drawing.Size(772, 672);
+            this.TableLayoutPanel_Body.Size = new System.Drawing.Size(891, 672);
             this.TableLayoutPanel_Body.TabIndex = 10;
             // 
             // panel_container
@@ -828,7 +829,7 @@ namespace HeThongBanDienThoai_Admin.GUI
             this.panel_container.Margin = new System.Windows.Forms.Padding(9, 2, 3, 2);
             this.panel_container.Name = "panel_container";
             this.panel_container.Padding = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.panel_container.Size = new System.Drawing.Size(532, 668);
+            this.panel_container.Size = new System.Drawing.Size(651, 668);
             this.panel_container.TabIndex = 12;
             // 
             // guna2ImageButton1
@@ -855,7 +856,7 @@ namespace HeThongBanDienThoai_Admin.GUI
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(51)))), ((int)(((byte)(102)))));
-            this.ClientSize = new System.Drawing.Size(786, 709);
+            this.ClientSize = new System.Drawing.Size(905, 709);
             this.Controls.Add(this.TableLayoutPanel_Body);
             this.Controls.Add(this.TableLayoutPanel_Header);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
