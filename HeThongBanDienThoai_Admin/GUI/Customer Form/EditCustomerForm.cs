@@ -17,8 +17,8 @@ namespace HeThongBanDienThoai_Admin.GUI.Customer_Form
     public partial class EditCustomerForm : Form
     {
         KhachHang_BUS khBUS = new KhachHang_BUS();
-        public string _customerId;
-        public EditCustomerForm(string customerId)
+        public int _customerId;
+        public EditCustomerForm(int customerId)
         {
             _customerId = customerId;
             InitializeComponent();
@@ -162,17 +162,20 @@ namespace HeThongBanDienThoai_Admin.GUI.Customer_Form
         {
             KhachHang updatedCustomer = new KhachHang
             {
+                MaKH = _customerId,
                 MaNB = txtID.Text,
                 TenKH = txtName.Text,
                 NgaySinh = txtDate.Value,
                 GioiTinh = cmbGender.Text,
                 SDT = txtPhoneBox.Text,
-                DiaChi = txtAddress.Text
+                DiaChi = txtAddress.Text,
+                Email = txtEmail.Text
 
             };
             // Validate inputs
             if (string.IsNullOrWhiteSpace(updatedCustomer.TenKH) ||
                 string.IsNullOrWhiteSpace(updatedCustomer.DiaChi) ||
+                 string.IsNullOrWhiteSpace(updatedCustomer.Email) ||
                 string.IsNullOrWhiteSpace(updatedCustomer.GioiTinh) ||
                 string.IsNullOrWhiteSpace(updatedCustomer.SDT))
             {

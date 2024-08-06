@@ -68,5 +68,15 @@ namespace DAO
             }
         }
 
+        public void UpdateNguoiDung(NguoiDung nguoiDung)
+        {
+            var updateNguoiDung = db.NguoiDungs.FirstOrDefault(nd => nd.MaND == nguoiDung.MaND);
+            if (updateNguoiDung !=  null) {
+                updateNguoiDung.MaND = nguoiDung.MaND;
+                updateNguoiDung.PassWord = nguoiDung.PassWord;
+                db.SubmitChanges();
+            }
+        }
+
     }
 }

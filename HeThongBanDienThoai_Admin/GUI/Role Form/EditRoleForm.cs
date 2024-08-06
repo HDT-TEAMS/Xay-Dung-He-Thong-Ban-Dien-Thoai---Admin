@@ -24,69 +24,41 @@ namespace HeThongBanDienThoai_Admin.GUI.Role_Form
         {
             _roleID = roleID;
             InitializeComponent();
-            LoadRole();
-            LoadChucNang();
+            loadDetail();
+            LoadChucNangAsync();
         }
-        public void LoadRole()
+
+        public void loadDetail()
         {
-
-            try
+            txtName.Enabled = false;
+            var role = rBUS.GetQuyenById( _roleID );
+            if (role != null)
             {
-                Quyen quyen = rBUS.GetQuyenById(_roleID); // Sử dụng phương thức mới
-
-                if (quyen != null)
-                {
-                    txtName.Text = quyen.TenQuyen;
-
-                }
-                else
-                {
-                    MessageBox.Show("Không tìm thấy quyền.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    this.Close();
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Đã xảy ra lỗi khi tải dữ liệu khách hàng: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                this.Close();
+                txtName.Text = role.TenQuyen;
             }
         }
 
-        public void LoadChucNang()
+        public async Task LoadChucNangAsync()
         {
             try
             {
-                // Lấy tất cả các chức năng từ BUS
-                List<ChucNang> chucNangs = rBUS.GetAllChucNangs();
+                List<ChucNang> allChucNangs = await Task.Run(() => rBUS.GetAllChucNangs());
+                List<ChucNang> roleChucNangs = await Task.Run(() => rBUS.GetChucNangByMaQuyen(_roleID));
 
-                // Lấy các chức năng đã được gán cho vai trò hiện tại
-                List<ChucNang> assignedChucNangs = rBUS.GetChucNangByMaQuyen(_roleID);
-
-                if (chucNangs != null && chucNangs.Count > 0)
+                dataGridViewChucNang.DataSource = allChucNangs;
+                if (dataGridViewChucNang == null || dataGridViewChucNang.Rows.Count == 0)
                 {
-                    // Gán danh sách chức năng vào DataGridView
-                    dataGridViewChucNang.DataSource = chucNangs;
-
-                    // Đánh dấu các quyền đã được gán cho vai trò
-                    foreach (DataGridViewRow row in dataGridViewChucNang.Rows)
-                    {
-                        // Đảm bảo hàng không phải là hàng tiêu đề
-                        if (row.DataBoundItem != null)
-                        {
-                            var chucNangId = Convert.ToInt32(row.Cells["MaCN"].Value);
-                            // Đánh dấu CheckBox nếu chức năng đã được gán cho vai trò
-                            row.Cells["Check"].Value = assignedChucNangs.Any(cn => cn.MaCN == chucNangId);
-                        }
-                    }
-
-                    // Vô hiệu hóa chỉnh sửa tên quyền
-                    this.txtName.Enabled = false;
+                    MessageBox.Show("DataGridView is empty or not initialized.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
                 }
-                else
+                foreach (DataGridViewRow row in dataGridViewChucNang.Rows)
                 {
-                    MessageBox.Show("Không tìm thấy chức năng cho quyền này.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    dataGridViewChucNang.DataSource = null;
+                    if (row.IsNewRow) continue; 
+                    int maCN = Convert.ToInt32(row.Cells["MaCN"].Value);
+                    bool isChecked = roleChucNangs.Any(cn => cn.MaCN == maCN);
+                    row.Cells["Check"].Value = isChecked;
                 }
+                dataGridViewChucNang.Refresh();
             }
             catch (Exception ex)
             {
@@ -94,48 +66,45 @@ namespace HeThongBanDienThoai_Admin.GUI.Role_Form
             }
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
+        private async void btnSave_Click(object sender, EventArgs e)
         {
             try
             {
-                var selectedChucNangs = new List<int>();
+                List<ChucNang> allChucNangs = await Task.Run(() => rBUS.GetAllChucNangs());
+                List<ChucNang> roleChucNangs = await Task.Run(() => rBUS.GetChucNangByMaQuyen(_roleID));
+                var checkedChucNangs = new HashSet<int>();
                 foreach (DataGridViewRow row in dataGridViewChucNang.Rows)
                 {
-                    // Kiểm tra nếu hàng không phải là hàng tiêu đề
-                    if (row.DataBoundItem != null)
+                    if (row.IsNewRow) continue;
+
+                    bool isChecked = Convert.ToBoolean(row.Cells["Check"].Value);
+                    int maCN = Convert.ToInt32(row.Cells["MaCN"].Value);
+
+                    if (isChecked)
                     {
-                        if (Convert.ToBoolean(row.Cells["Check"].Value))
-                        {
-                            selectedChucNangs.Add(Convert.ToInt32(row.Cells["MaCN"].Value));
-                        }
+                        checkedChucNangs.Add(maCN);
                     }
                 }
-
-                var currentChucNangs = rBUS.GetChucNangByMaQuyen(_roleID).Select(cn => cn.MaCN).ToList();
-
-                // Xác định các chức năng cần thêm và cần gỡ bỏ
-                var chucNangsToAdd = selectedChucNangs.Except(currentChucNangs).ToList();
-                var chucNangsToRemove = currentChucNangs.Except(selectedChucNangs).ToList();
-
-                // Thêm chức năng mới
-                foreach (var chucNangId in chucNangsToAdd)
+                var currentChucNangs = roleChucNangs.Select(cn => cn.MaCN).ToHashSet();
+                var toAdd = checkedChucNangs.Except(currentChucNangs);
+                var toRemove = currentChucNangs.Except(checkedChucNangs);
+                foreach (var chucNangId in toAdd)
                 {
-                    rBUS.AddChucNangToRole(_roleID, chucNangId);
+                    await Task.Run(() => rBUS.AddChucNangToRole(_roleID, chucNangId));
+                }
+                foreach (var chucNangId in toRemove)
+                {
+                    await Task.Run(() => rBUS.RemoveChucNangFromRole(_roleID, chucNangId));
                 }
 
-                // Gỡ bỏ chức năng không còn được chọn
-                foreach (var chucNangId in chucNangsToRemove)
-                {
-                    rBUS.RemoveChucNangFromRole(_roleID, chucNangId);
-                }
-
-                MessageBox.Show("Cập nhật quyền thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Chức năng đã được cập nhật thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Đã xảy ra lỗi khi lưu dữ liệu quyền: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Đã xảy ra lỗi khi lưu dữ liệu chức năng: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
         private void btnCancel_Click(object sender, EventArgs e)
         {

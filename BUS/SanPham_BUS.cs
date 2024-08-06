@@ -69,5 +69,10 @@ namespace BUS
             sanPham_DAO.UpdateSoLuongSanPham(sanPhams, trangThai);
         }
 
+        public void UpdateKhuyenMaiSanPham(SanPham sp)
+        {
+            sanPham_DAO.UpdateKhuyenMaiSanPham(sp);
+        }
+
     }
 }

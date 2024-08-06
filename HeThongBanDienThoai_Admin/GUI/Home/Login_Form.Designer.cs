@@ -68,6 +68,7 @@
             // 
             // txtPassword
             // 
+            this.txtPassword.BorderRadius = 8;
             this.txtPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtPassword.DefaultText = "";
             this.txtPassword.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -85,7 +86,7 @@
             this.txtPassword.PlaceholderText = "";
             this.txtPassword.SelectedText = "";
             this.txtPassword.Size = new System.Drawing.Size(277, 39);
-            this.txtPassword.TabIndex = 21;
+            this.txtPassword.TabIndex = 2;
             // 
             // titleLoginForm
             // 
@@ -101,6 +102,7 @@
             // 
             // txtUsername
             // 
+            this.txtUsername.BorderRadius = 8;
             this.txtUsername.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtUsername.DefaultText = "";
             this.txtUsername.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -118,7 +120,7 @@
             this.txtUsername.PlaceholderText = "";
             this.txtUsername.SelectedText = "";
             this.txtUsername.Size = new System.Drawing.Size(277, 39);
-            this.txtUsername.TabIndex = 18;
+            this.txtUsername.TabIndex = 1;
             // 
             // btnLogin
             // 

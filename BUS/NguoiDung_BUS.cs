@@ -28,5 +28,10 @@ namespace BUS
         {
             return ndd.GetNguoiDungById(userId);
         }
+
+        public void UpdateNguoiDung(NguoiDung nguoiDung)
+        {
+            ndd.UpdateNguoiDung(nguoiDung);
+        }
     }
 }

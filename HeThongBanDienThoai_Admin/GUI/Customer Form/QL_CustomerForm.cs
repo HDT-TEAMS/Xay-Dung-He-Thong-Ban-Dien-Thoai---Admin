@@ -25,32 +25,11 @@ namespace HeThongBanDienThoai_Admin.GUI.Customer_Form
 
         private void DataGridViewCustomer_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            int customerId = Convert.ToInt32(dataGridViewCustomer.Rows[e.RowIndex].Cells["MaKH"].Value.ToString());
             if (e.ColumnIndex == dataGridViewCustomer.Columns["btnSua"].Index && e.RowIndex >= 0)
             {
-                // Lấy ID của nhân viên từ hàng hiện tại
-                string customerId = dataGridViewCustomer.Rows[e.RowIndex].Cells["MaNB"].Value.ToString();
-
-                // Tạo form chỉnh sửa và truyền ID nhân viên
                 EditCustomerForm editStaffForm = new EditCustomerForm(customerId);
                 editStaffForm.Show();
-            }
-
-            if (e.ColumnIndex == dataGridViewCustomer.Columns["btnXoa"].Index && e.RowIndex >= 0)
-            {
-                // Lấy ID của khách hàng từ hàng hiện tại
-                string customerId = dataGridViewCustomer.Rows[e.RowIndex].Cells["MaNB"].Value.ToString();
-
-                // Xóa khách hàng
-                try
-                {
-                    khBUS.DeleteKhachHang(customerId);
-                    MessageBox.Show("Khách hàng đã được xóa thành công.");
-                    LoadKH(); // Làm mới danh sách khách hàng
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show($"Lỗi: {ex.Message}");
-                }
             }
         }
 

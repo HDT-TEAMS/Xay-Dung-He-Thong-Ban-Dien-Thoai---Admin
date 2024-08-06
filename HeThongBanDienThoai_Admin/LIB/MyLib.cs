@@ -9,6 +9,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Globalization;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
@@ -32,7 +33,6 @@ namespace HeThongBanDienThoai_Admin.LIB
             thread.SetApartmentState(ApartmentState.STA);
             thread.Start();
         }
-
         public static void LoadForm(Control pBody, Control pControl, DockStyle? dockStyle = DockStyle.Fill)
         {
             pBody.Controls.Clear();
@@ -306,6 +306,19 @@ namespace HeThongBanDienThoai_Admin.LIB
             return "KH" + newNumber.ToString("D4");
         }
 
+        public static string HashPassword(string password)
+        {
+            using (var sha256 = SHA256.Create())
+            {
+                byte[] bytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(password));
+                StringBuilder builder = new StringBuilder();
+                foreach (byte b in bytes)
+                {
+                    builder.Append(b.ToString("x2"));
+                }
+                return builder.ToString();
+            }
+        }
 
 
 

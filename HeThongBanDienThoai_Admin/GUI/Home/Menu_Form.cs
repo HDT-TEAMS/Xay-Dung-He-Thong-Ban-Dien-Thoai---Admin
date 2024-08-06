@@ -9,6 +9,7 @@ using HeThongBanDienThoai_Admin.GUI.Product;
 using HeThongBanDienThoai_Admin.GUI.Role_Form;
 using HeThongBanDienThoai_Admin.GUI.Staff_Form;
 using HeThongBanDienThoai_Admin.GUI.User_Form;
+using HeThongBanDienThoai_Admin.GUI.Configuration;
 using HeThongBanDienThoai_Admin.LIB;
 using System;
 using System.Collections.Generic;
@@ -251,7 +252,9 @@ namespace HeThongBanDienThoai_Admin.GUI
 
         private void btnCauHinh_Click(object sender, EventArgs e)
         {
+            Configuration_Form conf = new Configuration_Form();
             SetActiveButton((Guna2Button)sender);
+            MyLib.LoadForm(panel_container, conf,DockStyle.Fill);
         }
 
         private void btnNhapHang_Click(object sender, EventArgs e)
@@ -365,6 +368,25 @@ namespace HeThongBanDienThoai_Admin.GUI
             button.CheckedState.FillColor = Color.Transparent;
             button.CheckedState.ForeColor = Color.Black;
             button.FillColor = Color.Transparent;
+        }
+
+        private void btn_DangXuat_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn đăng xuất?", "Xác nhận đăng xuất", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+        }
+
+        private void btnXuat_Click(object sender, EventArgs e)
+        {
+            DonHang_BUS dhb = new DonHang_BUS();
+            ExcelExport dt = new ExcelExport();
+            List<View_DanhSachDonHang> ALLDH = dhb.getDanhSachDonHang();
+            string FileName = string.Empty;
+            dt.ExportKhoa(ALLDH, ref FileName, false);
+            dt.OpenFile(FileName);
         }
     }
 }

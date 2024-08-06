@@ -52,5 +52,10 @@ namespace BUS
         {
             rDAO.RemoveChucNangFromRole(roleId, chucNangId);
         }
+
+        public void addUser(Quyen quyen)
+        {
+            rDAO.addUser(quyen);
+        }
     }
 }

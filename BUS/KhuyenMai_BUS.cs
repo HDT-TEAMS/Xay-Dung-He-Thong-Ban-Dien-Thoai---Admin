@@ -27,23 +27,11 @@ namespace BUS
             kmDAO.UpdateKhuyenMai(updateKhuyenMai);
         }
 
-        public KhuyenMai GetKhuyenMaiById(string DiscountId)
+        public KhuyenMai GetKhuyenMaiById(int id)
         {
-            return kmDAO.GetKhuyenMaiById(DiscountId);
+            return kmDAO.GetKhuyenMaiById(id);
         }
 
-        public void DeleteKhuyenMai(string DiscountId)
-        {
-            KhuyenMai km = kmDAO.GetKhuyenMaiById(DiscountId);
-            if (km != null)
-            {
-                kmDAO.DeleteKhuyenMai(km);
-            }
-            else
-            {
-                throw new Exception("Khuyên mãi không tồn tại");
-            }
-        }
 
         public bool IsDiscountIDExists(string discountID)
         {

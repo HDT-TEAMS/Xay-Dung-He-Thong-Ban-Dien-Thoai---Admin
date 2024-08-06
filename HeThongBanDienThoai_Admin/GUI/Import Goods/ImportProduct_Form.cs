@@ -16,7 +16,7 @@ namespace HeThongBanDienThoai_Admin.GUI.Import_Goods
         private int currentPage = 1;
         private int totalProducts;
         private int totalPages;
-        public List<View_SanPhamDetailsByLoai> selectedProducts = new List<View_SanPhamDetailsByLoai>();
+        public  List<View_SanPhamDetailsByLoai> selectedProducts = new List<View_SanPhamDetailsByLoai>();
         private Guna2Button currentButton;
         private Dictionary<int, bool> _checkedStates = new Dictionary<int, bool>();
         private List<View_SanPhamDetailsByLoai> allProducts;

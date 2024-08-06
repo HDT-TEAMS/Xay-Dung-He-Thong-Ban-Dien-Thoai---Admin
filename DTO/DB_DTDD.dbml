@@ -245,18 +245,6 @@
       <Column Name="TenNCC" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.View_DanhSachDonHang" Member="View_DanhSachDonHangs">
-    <Type Name="View_DanhSachDonHang">
-      <Column Name="MaDH" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="MaNB" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="TenNV" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="TenKH" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="SDT" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
-      <Column Name="NgayDat" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="TongTien" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
-      <Column Name="TrangThai" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.View_DanhSachNhapHang" Member="View_DanhSachNhapHangs">
     <Type Name="View_DanhSachNhapHang">
       <Column Name="MaPN" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
@@ -283,6 +271,18 @@
       <Column Name="SoLuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="DonGia" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
       <Column Name="GiaSP" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.View_DanhSachDonHang" Member="View_DanhSachDonHangs">
+    <Type Name="View_DanhSachDonHang">
+      <Column Name="MaDH" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MaNB" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TenNV" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="TenKH" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="SDT" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="NgayDat" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TongTien" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="TrangThai" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
     </Type>
   </Table>
   <Function Name="dbo.CreateReportPhieuNhap" Method="CreateReportPhieuNhap">

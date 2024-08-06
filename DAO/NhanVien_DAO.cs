@@ -33,14 +33,24 @@ namespace DAO
             dB.NhanViens.InsertOnSubmit(nhanVien);
             dB.SubmitChanges();
         }
-        
+
+        public bool checkMaNB(String maNB)
+        {
+            var nhanVien = dB.NhanViens.FirstOrDefault(nv => nv.MaNB == maNB);
+            if (nhanVien != null)
+            {
+                return false;
+            }
+            else return true;
+        }
 
         public void UpdateNhanVien(NhanVien updatedNhanVien)
         {
-            var existingNhanVien = dB.NhanViens.SingleOrDefault(nv => nv.MaNB == updatedNhanVien.MaNB);
+            var existingNhanVien = dB.NhanViens.FirstOrDefault(nv => nv.MaNV == updatedNhanVien.MaNV);
 
             if (existingNhanVien != null)
             {
+                existingNhanVien.MaNB = updatedNhanVien.MaNB;   
                 existingNhanVien.TenNV = updatedNhanVien.TenNV;
                 existingNhanVien.NgaySinh = updatedNhanVien.NgaySinh;
                 existingNhanVien.GioiTinh = updatedNhanVien.GioiTinh;
@@ -55,9 +65,9 @@ namespace DAO
             }
         }
 
-        public NhanVien GetNhanVienById(string employeeId)
+        public NhanVien GetNhanVienById(int employeeId)
         {
-            return dB.NhanViens.SingleOrDefault(nv => nv.MaNB == employeeId);
+            return dB.NhanViens.SingleOrDefault(nv => nv.MaNV == employeeId);
         }
 
         public void DeleteNhanVien(NhanVien deletenhanVien)

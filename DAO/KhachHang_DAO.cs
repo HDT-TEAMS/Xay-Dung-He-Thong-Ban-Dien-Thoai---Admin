@@ -21,10 +21,11 @@ namespace DAO
             dB.SubmitChanges();
         }
 
+
         public void UpdateKhachHang(KhachHang updatedKhachHang)
         {
             // Attach the updated entity to the context
-            var existingKhachHang = dB.KhachHangs.SingleOrDefault(nv => nv.MaNB == updatedKhachHang.MaNB);
+            var existingKhachHang = dB.KhachHangs.SingleOrDefault(nv => nv.MaKH == updatedKhachHang.MaKH);
 
             if (existingKhachHang != null)
             {
@@ -42,9 +43,9 @@ namespace DAO
                 throw new Exception("Không tìm thấy nhân viên");
             }
         }
-        public KhachHang GetKhachHangById(string customerID)
+        public KhachHang GetKhachHangById(int customerID)
         {
-            return dB.KhachHangs.SingleOrDefault(nv => nv.MaNB == customerID);
+            return dB.KhachHangs.SingleOrDefault(nv => nv.MaKH == customerID);
         }
 
         public KhachHang GetMaKHbySDT(string sdt)

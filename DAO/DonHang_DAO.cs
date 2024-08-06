@@ -13,6 +13,7 @@ namespace DAO
         private DB_DTDDDataContext db = new DB_DTDDDataContext();
         public DonHang_DAO() { }
 
+
         public List<View_DanhSachDonHang> getDanhSachDonHang()
         {
             return db.View_DanhSachDonHangs.Select(dsdh => dsdh).ToList<View_DanhSachDonHang>();

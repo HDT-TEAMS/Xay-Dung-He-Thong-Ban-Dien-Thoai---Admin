@@ -123,6 +123,16 @@ namespace HeThongBanDienThoai_Admin.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap log_out_10024482 {
+            get {
+                object obj = ResourceManager.GetObject("log-out_10024482", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap logo_topzonePanel {
             get {
                 object obj = ResourceManager.GetObject("logo_topzonePanel", resourceCulture);

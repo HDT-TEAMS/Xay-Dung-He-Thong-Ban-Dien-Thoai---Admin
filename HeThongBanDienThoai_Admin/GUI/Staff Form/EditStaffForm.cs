@@ -15,8 +15,8 @@ namespace HeThongBanDienThoai_Admin.GUI.Staff_Form
     public partial class EditStaffForm : Form
     {
         NhanVien_BUS nvBUS = new NhanVien_BUS();
-        public string _employeeId;
-        public EditStaffForm(string employeeId)
+        public int _employeeId;
+        public EditStaffForm(int employeeId)
         {
             InitializeComponent();
             _employeeId = employeeId;
@@ -31,7 +31,6 @@ namespace HeThongBanDienThoai_Admin.GUI.Staff_Form
 
                 if (employee != null)
                 {
-                    // Điền dữ liệu vào các trường của form
                     txtID.Text = employee.MaNB;
                     txtName.Text = employee.TenNV;
                     txtDate.Value = employee.NgaySinh ?? DateTime.Now;
@@ -44,12 +43,12 @@ namespace HeThongBanDienThoai_Admin.GUI.Staff_Form
                     MessageBox.Show("Không tìm thấy nhân viên.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     this.Close();
                 }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show($"Đã xảy ra lỗi khi tải dữ liệu nhân viên: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    this.Close();
-                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Đã xảy ra lỗi khi tải dữ liệu nhân viên: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.Close();
+            }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -58,17 +57,20 @@ namespace HeThongBanDienThoai_Admin.GUI.Staff_Form
         }
         private void btnSave_Click(object sender, EventArgs e)
         {
-           NhanVien updatedEmployee = new NhanVien
+            NhanVien updatedEmployee = new NhanVien
             {
+                MaNV = _employeeId,
                 MaNB = txtID.Text,
                 TenNV = txtName.Text,
                 NgaySinh = txtDate.Value,
                 GioiTinh = cmbGender.Text,
-                SDTNV = txtPhoneBox.Text
+                SDTNV = txtPhoneBox.Text,
+                Email = txtEmail.Text,     
             };
 
             // Validate inputs
             if (string.IsNullOrWhiteSpace(updatedEmployee.TenNV) ||
+                string.IsNullOrWhiteSpace(updatedEmployee.Email)||
                 string.IsNullOrWhiteSpace(updatedEmployee.GioiTinh) ||
                 string.IsNullOrWhiteSpace(updatedEmployee.SDTNV))
             {
@@ -78,21 +80,15 @@ namespace HeThongBanDienThoai_Admin.GUI.Staff_Form
 
             try
             {
-                // Update employee data using the business logic layer with the correct method
-                nvBUS.UpdateNhanVien(updatedEmployee); // Ensure this method accepts NhanVien object
+                nvBUS.UpdateNhanVien(updatedEmployee);
                 MessageBox.Show("Cập nhật nhân viên thành công.", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
-                
+
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"An error occurred while updating employee data: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-                }
-
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 

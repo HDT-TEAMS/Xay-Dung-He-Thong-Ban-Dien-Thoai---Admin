@@ -101,6 +101,16 @@ namespace DAO
             }
         }
 
+        public void UpdateKhuyenMaiSanPham(SanPham sp)
+        {
+            var product = db.SanPhams.SingleOrDefault(p => p.MaSP == sp.MaSP);
+            if (product != null)
+            {
+                product.MaKM = sp.MaKM;
+                db.SubmitChanges();
+            }
+        }
+
         public void DeleteSanPham(int maSP)
         {
             var sanPham = db.SanPhams.FirstOrDefault(sp => sp.MaSP == maSP);

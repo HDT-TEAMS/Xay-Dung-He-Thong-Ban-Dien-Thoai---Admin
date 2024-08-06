@@ -39,6 +39,9 @@ namespace HeThongBanDienThoai_Admin.GUI
             this.Label_Heading = new System.Windows.Forms.Label();
             this.BorderLess_Admin = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.panel_sidebar = new Guna.UI2.WinForms.Guna2Panel();
+            this.tablePanel_DangXuat = new System.Windows.Forms.TableLayoutPanel();
+            this.btn_DangXuat = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.Panel_MasterHeThong = new Guna.UI2.WinForms.Guna2Panel();
             this.btnVaiTro = new Guna.UI2.WinForms.Guna2Button();
             this.btnNguoiDung = new Guna.UI2.WinForms.Guna2Button();
@@ -64,8 +67,11 @@ namespace HeThongBanDienThoai_Admin.GUI
             this.TableLayoutPanel_Body = new System.Windows.Forms.TableLayoutPanel();
             this.panel_container = new System.Windows.Forms.Panel();
             this.guna2ImageButton1 = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.btnXuat = new Guna.UI2.WinForms.Guna2Button();
             this.TableLayoutPanel_Header.SuspendLayout();
             this.panel_sidebar.SuspendLayout();
+            this.tablePanel_DangXuat.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_DangXuat)).BeginInit();
             this.Panel_MasterHeThong.SuspendLayout();
             this.Panel_MasterBanHang.SuspendLayout();
             this.Panel_MasterNhapHang.SuspendLayout();
@@ -74,6 +80,7 @@ namespace HeThongBanDienThoai_Admin.GUI
             this.Panel_Logo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.TableLayoutPanel_Body.SuspendLayout();
+            this.panel_container.SuspendLayout();
             this.SuspendLayout();
             // 
             // button8
@@ -186,6 +193,7 @@ namespace HeThongBanDienThoai_Admin.GUI
             // 
             this.panel_sidebar.AutoScroll = true;
             this.panel_sidebar.BorderRadius = 12;
+            this.panel_sidebar.Controls.Add(this.tablePanel_DangXuat);
             this.panel_sidebar.Controls.Add(this.Panel_MasterHeThong);
             this.panel_sidebar.Controls.Add(this.Panel_MasterBanHang);
             this.panel_sidebar.Controls.Add(this.Panel_MasterNhapHang);
@@ -198,8 +206,48 @@ namespace HeThongBanDienThoai_Admin.GUI
             this.panel_sidebar.Margin = new System.Windows.Forms.Padding(0);
             this.panel_sidebar.Name = "panel_sidebar";
             this.panel_sidebar.Padding = new System.Windows.Forms.Padding(7);
-            this.panel_sidebar.Size = new System.Drawing.Size(228, 672);
+            this.panel_sidebar.Size = new System.Drawing.Size(228, 726);
             this.panel_sidebar.TabIndex = 11;
+            // 
+            // tablePanel_DangXuat
+            // 
+            this.tablePanel_DangXuat.BackColor = System.Drawing.Color.White;
+            this.tablePanel_DangXuat.ColumnCount = 2;
+            this.tablePanel_DangXuat.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 52.80374F));
+            this.tablePanel_DangXuat.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 47.19626F));
+            this.tablePanel_DangXuat.Controls.Add(this.btn_DangXuat, 1, 0);
+            this.tablePanel_DangXuat.Controls.Add(this.label1, 0, 0);
+            this.tablePanel_DangXuat.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.tablePanel_DangXuat.Location = new System.Drawing.Point(7, 682);
+            this.tablePanel_DangXuat.Name = "tablePanel_DangXuat";
+            this.tablePanel_DangXuat.RowCount = 1;
+            this.tablePanel_DangXuat.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tablePanel_DangXuat.Size = new System.Drawing.Size(214, 37);
+            this.tablePanel_DangXuat.TabIndex = 22;
+            // 
+            // btn_DangXuat
+            // 
+            this.btn_DangXuat.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btn_DangXuat.Image = global::HeThongBanDienThoai_Admin.Properties.Resources.log_out_10024482;
+            this.btn_DangXuat.ImageRotate = 0F;
+            this.btn_DangXuat.Location = new System.Drawing.Point(116, 3);
+            this.btn_DangXuat.Name = "btn_DangXuat";
+            this.btn_DangXuat.Size = new System.Drawing.Size(34, 31);
+            this.btn_DangXuat.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btn_DangXuat.TabIndex = 0;
+            this.btn_DangXuat.TabStop = false;
+            this.btn_DangXuat.Click += new System.EventHandler(this.btn_DangXuat_Click);
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Bahnschrift Condensed", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(36, 7);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(74, 23);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Đăng xuất";
             // 
             // Panel_MasterHeThong
             // 
@@ -818,18 +866,19 @@ namespace HeThongBanDienThoai_Admin.GUI
             this.TableLayoutPanel_Body.Name = "TableLayoutPanel_Body";
             this.TableLayoutPanel_Body.RowCount = 1;
             this.TableLayoutPanel_Body.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.TableLayoutPanel_Body.Size = new System.Drawing.Size(891, 672);
+            this.TableLayoutPanel_Body.Size = new System.Drawing.Size(891, 726);
             this.TableLayoutPanel_Body.TabIndex = 10;
             // 
             // panel_container
             // 
             this.panel_container.BackColor = System.Drawing.Color.White;
+            this.panel_container.Controls.Add(this.btnXuat);
             this.panel_container.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_container.Location = new System.Drawing.Point(237, 2);
             this.panel_container.Margin = new System.Windows.Forms.Padding(9, 2, 3, 2);
             this.panel_container.Name = "panel_container";
             this.panel_container.Padding = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.panel_container.Size = new System.Drawing.Size(651, 668);
+            this.panel_container.Size = new System.Drawing.Size(651, 722);
             this.panel_container.TabIndex = 12;
             // 
             // guna2ImageButton1
@@ -850,13 +899,28 @@ namespace HeThongBanDienThoai_Admin.GUI
             this.guna2ImageButton1.Size = new System.Drawing.Size(62, 60);
             this.guna2ImageButton1.TabIndex = 0;
             // 
+            // btnXuat
+            // 
+            this.btnXuat.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnXuat.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnXuat.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnXuat.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnXuat.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnXuat.ForeColor = System.Drawing.Color.White;
+            this.btnXuat.Location = new System.Drawing.Point(185, 201);
+            this.btnXuat.Name = "btnXuat";
+            this.btnXuat.Size = new System.Drawing.Size(180, 45);
+            this.btnXuat.TabIndex = 0;
+            this.btnXuat.Text = "Xuất excel";
+            this.btnXuat.Click += new System.EventHandler(this.btnXuat_Click);
+            // 
             // Menu_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(51)))), ((int)(((byte)(102)))));
-            this.ClientSize = new System.Drawing.Size(905, 709);
+            this.ClientSize = new System.Drawing.Size(905, 763);
             this.Controls.Add(this.TableLayoutPanel_Body);
             this.Controls.Add(this.TableLayoutPanel_Header);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -869,6 +933,9 @@ namespace HeThongBanDienThoai_Admin.GUI
             this.TableLayoutPanel_Header.ResumeLayout(false);
             this.TableLayoutPanel_Header.PerformLayout();
             this.panel_sidebar.ResumeLayout(false);
+            this.tablePanel_DangXuat.ResumeLayout(false);
+            this.tablePanel_DangXuat.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_DangXuat)).EndInit();
             this.Panel_MasterHeThong.ResumeLayout(false);
             this.Panel_MasterBanHang.ResumeLayout(false);
             this.Panel_MasterNhapHang.ResumeLayout(false);
@@ -877,6 +944,7 @@ namespace HeThongBanDienThoai_Admin.GUI
             this.Panel_Logo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.TableLayoutPanel_Body.ResumeLayout(false);
+            this.panel_container.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -917,5 +985,9 @@ namespace HeThongBanDienThoai_Admin.GUI
         private Panel panel_container;
         private Guna.UI2.WinForms.Guna2Panel Panel_Logo;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
+        private TableLayoutPanel tablePanel_DangXuat;
+        private Label label1;
+        private Guna.UI2.WinForms.Guna2PictureBox btn_DangXuat;
+        private Guna.UI2.WinForms.Guna2Button btnXuat;
     }
 }

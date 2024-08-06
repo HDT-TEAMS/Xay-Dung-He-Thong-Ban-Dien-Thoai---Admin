@@ -19,38 +19,33 @@ namespace HeThongBanDienThoai_Admin.GUI.Staff_Form
         {
             InitializeComponent();
             this.Load += QL_StaffForm_Load;
-            dataGridViewStaff.CellContentClick += DataGridViewStaff_CellContentClick;
-
-           
+            dataGridViewUser.CellContentClick += DataGridViewStaff_CellContentClick;
         }
 
       
         private void DataGridViewStaff_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == dataGridViewStaff.Columns["btnSua"].Index && e.RowIndex >= 0)
+            int employeeId = Convert.ToInt32(dataGridViewUser.Rows[e.RowIndex].Cells["MaNV"].Value.ToString());
+            if (e.ColumnIndex == dataGridViewUser.Columns["btnSua"].Index && e.RowIndex >= 0)
             {
-                // Lấy ID của nhân viên từ hàng hiện tại
-                string employeeId = dataGridViewStaff.Rows[e.RowIndex].Cells["MaNB"].Value.ToString();
-
-                // Tạo form chỉnh sửa và truyền ID nhân viên
                 EditStaffForm editStaffForm = new EditStaffForm(employeeId);
                 editStaffForm.Show();
             }
-            if (e.ColumnIndex == dataGridViewStaff.Columns["btnXoa"].Index && e.RowIndex >= 0)
+            if (e.ColumnIndex == dataGridViewUser.Columns["btnXoa"].Index && e.RowIndex >= 0)
             {
-                // Lấy ID của khách hàng từ hàng hiện tại
-                string employeeId = dataGridViewStaff.Rows[e.RowIndex].Cells["MaNB"].Value.ToString();
-
-                // Xóa khách hàng
-                try
+                DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn xóa nhân viên này?", "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
                 {
-                    nvBUS.DeleteNhanVien(employeeId);
-                    MessageBox.Show("Nhân viên đã được xóa thành công.");
-                    LoadNV(); // Làm mới danh sách khách hàng
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show($"Lỗi: {ex.Message}");
+                    try
+                    {
+                        nvBUS.DeleteNhanVien(employeeId);
+                        MessageBox.Show("Nhân viên đã được xóa thành công.");
+                        LoadNV();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"Lỗi: {ex.Message}");
+                    }
                 }
             }
         }
@@ -62,7 +57,7 @@ namespace HeThongBanDienThoai_Admin.GUI.Staff_Form
 
         public void LoadNV()
         {
-            dataGridViewStaff.DataSource = nvBUS.LoadNV();
+            dataGridViewUser.DataSource = nvBUS.LoadNV();
         }
 
         private void btnReload_Click(object sender, EventArgs e)
@@ -80,7 +75,7 @@ namespace HeThongBanDienThoai_Admin.GUI.Staff_Form
         {
             string searchText = txtSearch.Text;
             List<NhanVien> result = nvBUS.SearchNhanVienByName(searchText);
-            dataGridViewStaff.DataSource = result;
+            dataGridViewUser.DataSource = result;
         }
     }
 }

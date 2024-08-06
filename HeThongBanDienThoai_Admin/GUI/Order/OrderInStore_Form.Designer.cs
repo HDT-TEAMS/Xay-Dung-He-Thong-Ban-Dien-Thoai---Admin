@@ -56,13 +56,6 @@
             this.panel_SanPham = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel9 = new Guna.UI2.WinForms.Guna2Panel();
             this.dgviewm_listSanPham = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.MaNB = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GiaSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.KhuyenMai = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaKM = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayout_InHoaDon = new System.Windows.Forms.TableLayoutPanel();
             this.txtMaNB = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtKhuyenMai = new Guna.UI2.WinForms.Guna2TextBox();
@@ -76,6 +69,13 @@
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.panel_layoutPage = new System.Windows.Forms.FlowLayoutPanel();
             this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
+            this.MaNB = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GiaSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.KhuyenMai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaKM = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.guna2Panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.guna2Panel3.SuspendLayout();
@@ -479,65 +479,6 @@
             this.dgviewm_listSanPham.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgviewm_listSanPham.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             // 
-            // MaNB
-            // 
-            this.MaNB.DataPropertyName = "MaNB";
-            this.MaNB.DividerWidth = 1;
-            this.MaNB.HeaderText = "Mã Nội Bội";
-            this.MaNB.Name = "MaNB";
-            this.MaNB.ReadOnly = true;
-            // 
-            // TenSP
-            // 
-            this.TenSP.DataPropertyName = "TenSP";
-            this.TenSP.DividerWidth = 1;
-            this.TenSP.HeaderText = "Tên Sản Phẩm";
-            this.TenSP.Name = "TenSP";
-            this.TenSP.ReadOnly = true;
-            // 
-            // GiaSP
-            // 
-            this.GiaSP.DataPropertyName = "GiaSP";
-            dataGridViewCellStyle3.Format = "N0";
-            dataGridViewCellStyle3.NullValue = null;
-            this.GiaSP.DefaultCellStyle = dataGridViewCellStyle3;
-            this.GiaSP.DividerWidth = 1;
-            this.GiaSP.HeaderText = "Giá Sản Phẩm";
-            this.GiaSP.Name = "GiaSP";
-            this.GiaSP.ReadOnly = true;
-            // 
-            // KhuyenMai
-            // 
-            this.KhuyenMai.DataPropertyName = "KhuyenMai";
-            dataGridViewCellStyle4.Format = "N0";
-            dataGridViewCellStyle4.NullValue = null;
-            this.KhuyenMai.DefaultCellStyle = dataGridViewCellStyle4;
-            this.KhuyenMai.DividerWidth = 1;
-            this.KhuyenMai.HeaderText = "Khuyến Mãi";
-            this.KhuyenMai.Name = "KhuyenMai";
-            this.KhuyenMai.ReadOnly = true;
-            // 
-            // SoLuong
-            // 
-            this.SoLuong.DataPropertyName = "SoLuong";
-            this.SoLuong.DividerWidth = 1;
-            this.SoLuong.HeaderText = "Số Lượng";
-            this.SoLuong.Name = "SoLuong";
-            // 
-            // MaKM
-            // 
-            this.MaKM.DataPropertyName = "MaKM";
-            this.MaKM.HeaderText = "MaKM";
-            this.MaKM.Name = "MaKM";
-            this.MaKM.Visible = false;
-            // 
-            // MaSP
-            // 
-            this.MaSP.DataPropertyName = "MaSP";
-            this.MaSP.HeaderText = "MaSP";
-            this.MaSP.Name = "MaSP";
-            this.MaSP.Visible = false;
-            // 
             // tableLayout_InHoaDon
             // 
             this.tableLayout_InHoaDon.ColumnCount = 2;
@@ -782,6 +723,65 @@
             this.panel_layoutPage.Size = new System.Drawing.Size(525, 56);
             this.panel_layoutPage.TabIndex = 0;
             // 
+            // MaNB
+            // 
+            this.MaNB.DataPropertyName = "MaNB";
+            this.MaNB.DividerWidth = 1;
+            this.MaNB.HeaderText = "Mã Sản Phẩm";
+            this.MaNB.Name = "MaNB";
+            this.MaNB.ReadOnly = true;
+            // 
+            // TenSP
+            // 
+            this.TenSP.DataPropertyName = "TenSP";
+            this.TenSP.DividerWidth = 1;
+            this.TenSP.HeaderText = "Tên Sản Phẩm";
+            this.TenSP.Name = "TenSP";
+            this.TenSP.ReadOnly = true;
+            // 
+            // GiaSP
+            // 
+            this.GiaSP.DataPropertyName = "GiaSP";
+            dataGridViewCellStyle3.Format = "N0";
+            dataGridViewCellStyle3.NullValue = null;
+            this.GiaSP.DefaultCellStyle = dataGridViewCellStyle3;
+            this.GiaSP.DividerWidth = 1;
+            this.GiaSP.HeaderText = "Giá Sản Phẩm";
+            this.GiaSP.Name = "GiaSP";
+            this.GiaSP.ReadOnly = true;
+            // 
+            // KhuyenMai
+            // 
+            this.KhuyenMai.DataPropertyName = "KhuyenMai";
+            dataGridViewCellStyle4.Format = "N0";
+            dataGridViewCellStyle4.NullValue = null;
+            this.KhuyenMai.DefaultCellStyle = dataGridViewCellStyle4;
+            this.KhuyenMai.DividerWidth = 1;
+            this.KhuyenMai.HeaderText = "Khuyến Mãi";
+            this.KhuyenMai.Name = "KhuyenMai";
+            this.KhuyenMai.ReadOnly = true;
+            // 
+            // SoLuong
+            // 
+            this.SoLuong.DataPropertyName = "SoLuong";
+            this.SoLuong.DividerWidth = 1;
+            this.SoLuong.HeaderText = "Số Lượng";
+            this.SoLuong.Name = "SoLuong";
+            // 
+            // MaKM
+            // 
+            this.MaKM.DataPropertyName = "MaKM";
+            this.MaKM.HeaderText = "MaKM";
+            this.MaKM.Name = "MaKM";
+            this.MaKM.Visible = false;
+            // 
+            // MaSP
+            // 
+            this.MaSP.DataPropertyName = "MaSP";
+            this.MaSP.HeaderText = "MaSP";
+            this.MaSP.Name = "MaSP";
+            this.MaSP.Visible = false;
+            // 
             // OrderInStore_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 19F);
@@ -847,6 +847,10 @@
         private Guna.UI2.WinForms.Guna2TextBox txtMaNB;
         private Guna.UI2.WinForms.Guna2TextBox txtKhuyenMai;
         private Guna.UI2.WinForms.Guna2DataGridView dgviewm_listSanPham;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaNB;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenSP;
         private System.Windows.Forms.DataGridViewTextBoxColumn GiaSP;
@@ -854,9 +858,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn SoLuong;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaKM;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaSP;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label1;
     }
 }

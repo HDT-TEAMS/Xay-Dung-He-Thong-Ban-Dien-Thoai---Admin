@@ -20,7 +20,9 @@ namespace HeThongBanDienThoai_Admin.GUI
         public Login_Form()
         {
             InitializeComponent();
+            txtUsername.Focus();
             this.btnLogin.Click += BtnLogin_Click;
+   
             chkShowPassword.CheckedChanged += ChkShowPassword_CheckedChanged;
 
         }
@@ -37,6 +39,7 @@ namespace HeThongBanDienThoai_Admin.GUI
         {
             string username = txtUsername.Text.Trim();
             string password = txtPassword.Text.Trim();
+            //string haspassword = MyLib.HashPassword(password);
             if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
             {
                 MessageBox.Show("Vui lòng nhập đầy đủ tên người dùng và mật khẩu !");
@@ -45,21 +48,19 @@ namespace HeThongBanDienThoai_Admin.GUI
             else
             {
                 NguoiDung user = ndb.checkLogins(username, password);
-                MyLib.maND = user.MaND;
                 if (user != null)
                 {
+                    MyLib.maND = user.MaND;
                     Menu_Form menu = new Menu_Form(user.MaND);
                     menu.LoadAllLoaiSP();
                     MyLib.CloseThisOpenThat(this, menu);
                 }
                 else
                 {
-                    MessageBox.Show("Tên người dùng hoặc mật khẩu không đúng !!!");
+                    MessageBox.Show("Tên người dùng hoặc mật khẩu không đúng !!!","Thông báo !",MessageBoxButtons.OK,MessageBoxIcon.Warning);
                     return;
                 }
             }
-
-           
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -70,9 +71,7 @@ namespace HeThongBanDienThoai_Admin.GUI
         private void chkShowPassword_CheckedChanged(object sender, EventArgs e)
         {
             if (chkShowPassword.Checked == true)
-            {
                 txtPassword.UseSystemPasswordChar = false;
-            }
             else
                 txtPassword.UseSystemPasswordChar = true;
         }

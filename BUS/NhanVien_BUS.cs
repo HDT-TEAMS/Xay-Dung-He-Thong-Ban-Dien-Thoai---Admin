@@ -21,17 +21,22 @@ namespace BUS
             nvDAO.AddNhanVien(MaND,maNB, tenNV, ngaySinh, gioiTinh, sdtNV, email);
         }
 
+        public bool checkMaNB(String maNB)
+        {
+            return nvDAO.checkMaNB(maNB);
+        }
+
         public void UpdateNhanVien (NhanVien updateNhanVien)
         {
             nvDAO.UpdateNhanVien(updateNhanVien);
         }
 
-        public NhanVien GetNhanVienById(string employeeId)
+        public NhanVien GetNhanVienById(int employeeId)
         {
             return nvDAO.GetNhanVienById(employeeId);
         }
 
-        public void DeleteNhanVien(string employeeId)
+        public void DeleteNhanVien(int employeeId)
         {
             NhanVien nv = nvDAO.GetNhanVienById(employeeId);
             if (nv != null)

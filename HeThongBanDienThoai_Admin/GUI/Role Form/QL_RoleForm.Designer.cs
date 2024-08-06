@@ -48,9 +48,9 @@
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 3;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 77.1164F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22.8836F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 190F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 85.48813F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.51187F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 108F));
             this.tableLayoutPanel1.Controls.Add(this.btnAdd, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnReload, 1, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -73,11 +73,11 @@
             this.btnAdd.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnAdd.FillColor = System.Drawing.Color.CornflowerBlue;
             this.btnAdd.FillColor2 = System.Drawing.Color.RoyalBlue;
-            this.btnAdd.Font = new System.Drawing.Font("Bahnschrift Condensed", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.Font = new System.Drawing.Font("Bahnschrift Condensed", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.ForeColor = System.Drawing.Color.White;
-            this.btnAdd.Location = new System.Drawing.Point(741, 7);
+            this.btnAdd.Location = new System.Drawing.Point(788, 7);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(150, 50);
+            this.btnAdd.Size = new System.Drawing.Size(103, 50);
             this.btnAdd.TabIndex = 1;
             this.btnAdd.Text = "Thêm mới";
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
@@ -93,28 +93,29 @@
             this.btnReload.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnReload.FillColor = System.Drawing.Color.CornflowerBlue;
             this.btnReload.FillColor2 = System.Drawing.Color.RoyalBlue;
-            this.btnReload.Font = new System.Drawing.Font("Bahnschrift Condensed", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReload.Font = new System.Drawing.Font("Bahnschrift Condensed", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReload.ForeColor = System.Drawing.Color.White;
-            this.btnReload.Location = new System.Drawing.Point(550, 7);
+            this.btnReload.Location = new System.Drawing.Point(674, 7);
             this.btnReload.Name = "btnReload";
-            this.btnReload.Size = new System.Drawing.Size(150, 50);
+            this.btnReload.Size = new System.Drawing.Size(108, 50);
             this.btnReload.TabIndex = 2;
             this.btnReload.Text = "Làm mới";
             this.btnReload.Click += new System.EventHandler(this.btnReload_Click);
             // 
             // dataGridViewRole
             // 
+            this.dataGridViewRole.AllowUserToAddRows = false;
+            this.dataGridViewRole.AllowUserToDeleteRows = false;
             this.dataGridViewRole.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Bahnschrift SemiLight Condensed", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(201)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
             this.dataGridViewRole.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridViewRole.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(51)))), ((int)(((byte)(102)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Bahnschrift Condensed", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Bahnschrift Condensed", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(51)))), ((int)(((byte)(102)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -127,9 +128,9 @@
             this.MaQuyen,
             this.TenQuyen,
             this.IsDeleted});
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Bahnschrift SemiLight Condensed", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(201)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
@@ -139,6 +140,7 @@
             this.dataGridViewRole.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dataGridViewRole.Location = new System.Drawing.Point(0, 64);
             this.dataGridViewRole.Name = "dataGridViewRole";
+            this.dataGridViewRole.ReadOnly = true;
             this.dataGridViewRole.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.dataGridViewRole.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -150,7 +152,7 @@
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewRole.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridViewRole.RowHeadersVisible = false;
-            this.dataGridViewRole.RowTemplate.Height = 30;
+            this.dataGridViewRole.RowTemplate.Height = 35;
             this.dataGridViewRole.Size = new System.Drawing.Size(894, 489);
             this.dataGridViewRole.TabIndex = 5;
             this.dataGridViewRole.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -166,28 +168,31 @@
             this.dataGridViewRole.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.dataGridViewRole.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.dataGridViewRole.ThemeStyle.HeaderStyle.Height = 36;
-            this.dataGridViewRole.ThemeStyle.ReadOnly = false;
+            this.dataGridViewRole.ThemeStyle.ReadOnly = true;
             this.dataGridViewRole.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
             this.dataGridViewRole.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dataGridViewRole.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dataGridViewRole.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.dataGridViewRole.ThemeStyle.RowsStyle.Height = 30;
+            this.dataGridViewRole.ThemeStyle.RowsStyle.Height = 35;
             this.dataGridViewRole.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dataGridViewRole.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             // 
             // btnSua
             // 
+            this.btnSua.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.btnSua.DataPropertyName = "btnSua";
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Bahnschrift Condensed", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Bahnschrift SemiLight Condensed", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSua.DefaultCellStyle = dataGridViewCellStyle3;
             this.btnSua.FillWeight = 23.25233F;
             this.btnSua.HeaderText = "";
             this.btnSua.Name = "btnSua";
+            this.btnSua.ReadOnly = true;
             this.btnSua.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.btnSua.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.btnSua.Text = "Sửa";
             this.btnSua.UseColumnTextForButtonValue = true;
+            this.btnSua.Width = 17;
             // 
             // MaQuyen
             // 
@@ -196,6 +201,8 @@
             this.MaQuyen.FillWeight = 179.2367F;
             this.MaQuyen.HeaderText = "Mã quyền";
             this.MaQuyen.Name = "MaQuyen";
+            this.MaQuyen.ReadOnly = true;
+            this.MaQuyen.Visible = false;
             // 
             // TenQuyen
             // 
@@ -203,12 +210,14 @@
             this.TenQuyen.FillWeight = 179.2367F;
             this.TenQuyen.HeaderText = "Tên quyền";
             this.TenQuyen.Name = "TenQuyen";
+            this.TenQuyen.ReadOnly = true;
             // 
             // IsDeleted
             // 
             this.IsDeleted.DataPropertyName = "IsDeleted";
             this.IsDeleted.HeaderText = "IsDeleted";
             this.IsDeleted.Name = "IsDeleted";
+            this.IsDeleted.ReadOnly = true;
             this.IsDeleted.Visible = false;
             // 
             // QL_RoleForm

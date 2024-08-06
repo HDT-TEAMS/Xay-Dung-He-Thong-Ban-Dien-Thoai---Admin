@@ -1,11 +1,13 @@
 ﻿using BUS;
 using DTO;
+using HeThongBanDienThoai_Admin.LIB;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -35,8 +37,6 @@ namespace HeThongBanDienThoai_Admin.GUI.Staff_Form
             string phone = txtPhoneBox.Text;
             string email = txtEmail.Text;
 
-        
-
             // Validate inputs
             if (string.IsNullOrEmpty(id) || string.IsNullOrEmpty(name) || string.IsNullOrEmpty(gender) || string.IsNullOrEmpty(phone) || string.IsNullOrEmpty(email))
             {
@@ -57,11 +57,20 @@ namespace HeThongBanDienThoai_Admin.GUI.Staff_Form
                 NguoiDung newND = new NguoiDung
                 {
                     UserName = id,
-                    PassWord = id,
+                    PassWord = MyLib.HashPassword(id.ToString()),
                     IsDeleted = false
                 };
-                ndBUS.AddNguoiDung(newND); // Add new user to the database
-
+                
+                if (nvBUS.checkMaNB(id))
+                {
+                    ndBUS.AddNguoiDung(newND); // Add new user to the database
+                }
+                else
+                {
+                    MessageBox.Show("Mã nội bộ nhân viên đã tồn tại !!","Thông báo",MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+               
                 // Add new employee to the database
                 nvBUS.AddNhanVien(newND.MaND, id, name, dateOfBirth, gender, phone, email);
 

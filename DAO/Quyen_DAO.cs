@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Remoting.Contexts;
 using DTO;
 
 namespace DAO
@@ -113,5 +114,12 @@ namespace DAO
                 dB.SubmitChanges();
             }
         }
+
+        public void addUser (Quyen quyen)
+        {
+            dB.Quyens.InsertOnSubmit(quyen);
+            dB.SubmitChanges();
+        }
+        
     }
 }

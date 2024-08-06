@@ -96,19 +96,41 @@ namespace HeThongBanDienThoai_Admin.GUI.Order
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
+            if (txtSearch == null)
+            {
+                throw new InvalidOperationException("txtSearch is not initialized.");
+            }
+
             string searchTerm = txtSearch.Text.Trim();
+
+            if (dhb == null)
+            {
+                throw new InvalidOperationException("dhb is not initialized.");
+            }
+
+            var allOrders = dhb.getDanhSachDonHang();
+
+            if (allOrders == null)
+            {
+                UpdateDataGridViews(new List<View_DanhSachDonHang>());
+                return;
+            }
+
             if (string.IsNullOrEmpty(searchTerm))
             {
                 LoadAllOrders();
             }
             else
             {
-                var filteredOrders = dhb.getDanhSachDonHang()
-                                        .Where(dh => dh.MaNB.ToString().Contains(searchTerm))
-                                        .ToList();
+                var filteredOrders = allOrders
+                                     .Where(dh => dh.MaNB != null && dh.MaNB.ToString().IndexOf(searchTerm, StringComparison.OrdinalIgnoreCase) >= 0)
+                                     .ToList();
+
                 UpdateDataGridViews(filteredOrders);
             }
         }
+
+
 
         private void UpdateDataGridViews(List<View_DanhSachDonHang> orders)
         {

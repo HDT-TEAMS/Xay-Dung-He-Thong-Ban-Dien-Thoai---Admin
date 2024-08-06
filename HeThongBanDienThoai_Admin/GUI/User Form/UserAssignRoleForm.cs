@@ -8,6 +8,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Security;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ProgressBar;
 
@@ -18,49 +19,19 @@ namespace HeThongBanDienThoai_Admin.GUI.User_Form
         private int _userId;
         private NguoiDung_BUS ndBUS = new NguoiDung_BUS();
         private Quyen_BUS qBUS = new Quyen_BUS();
-        private List<Quyen> allRoles;
+        private QuyenNguoiDung_BUS qndB = new QuyenNguoiDung_BUS();
+        private List<Quyen> selectRole;
         public UserAssignRoleForm(int userId)
         {
             InitializeComponent();
             _userId = userId;
-            this.Load += UserAssignRoleForm_Load;
-            this.dataGridViewRoles.CurrentCellDirtyStateChanged += DataGridViewRoles_CurrentCellDirtyStateChanged1;
-            dataGridViewRoles.CellValueChanged += DataGridViewRoles_CellValueChanged;
-
-            ConfigureDataGridView();
-        }
-
-        private void DataGridViewRoles_CellValueChanged(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.ColumnIndex == dataGridViewRoles.Columns["IsDeleted"].Index && e.RowIndex >= 0)
-            {
-                bool isChecked = (bool)dataGridViewRoles.Rows[e.RowIndex].Cells["IsDeleted"].Value;
-                int roleId = (int)dataGridViewRoles.Rows[e.RowIndex].Cells["MaQuyen"].Value;
-
-                if (isChecked)
-                {
-                    qBUS.AddRoleToUser(_userId, roleId);
-                }
-                else
-                {
-                    qBUS.RemoveRoleFromUser(_userId, roleId);
-                }
-            }
-        }
-
-        private void DataGridViewRoles_CurrentCellDirtyStateChanged1(object sender, EventArgs e)
-        {
-            if (dataGridViewRoles.IsCurrentCellDirty)
-            {
-                dataGridViewRoles.CommitEdit(DataGridViewDataErrorContexts.Commit);
-            }
-        }
-
-        private void UserAssignRoleForm_Load(object sender, EventArgs e)
-        {
             LoadUserDetails();
-            LoadUserRoles();
+            LoadRoleByUser(userId);
+            this.btnSave.Click += BtnSave_Click;
         }
+
+      
+
         private void LoadUserDetails()
         {
             var user = ndBUS.GetNguoiDungById(_userId);
@@ -70,97 +41,84 @@ namespace HeThongBanDienThoai_Admin.GUI.User_Form
             }
         }
 
-        
-
-        private void DataGridViewRoles_CurrentCellDirtyStateChanged(object sender, EventArgs e)
+        public async Task<List<Quyen>> LoadRoleAsync()
         {
-           
+            return await Task.Run(() => qBUS.LoadRole());
         }
 
-        public void ConfigureDataGridView()
+        public async Task<List<int>> GetQuyenNguoiDungAsync(int maND)
         {
-            // Tạo cột checkbox
-            if (dataGridViewRoles.Columns.Contains("IsDeleted"))
-            {
-                DataGridViewCheckBoxColumn checkBoxColumn = new DataGridViewCheckBoxColumn();
-                checkBoxColumn.Name = "IsDeleted";
-                checkBoxColumn.HeaderText = "Hoạt động";
-                checkBoxColumn.DataPropertyName = "IsDeleted";
-                checkBoxColumn.TrueValue = true;
-                checkBoxColumn.FalseValue = false;
-                dataGridViewRoles.Columns.Add(checkBoxColumn);
-            }
-
-            // Ẩn cột "PassWord" nếu tồn tại
-            if (dataGridViewRoles.Columns.Contains("PassWord"))
-            {
-                dataGridViewRoles.Columns["PassWord"].Visible = false;
-            }
-            // Cấu hình các cột khác của DataGridView nếu cần thiết
+            return await Task.Run(() => qndB.GetQuyenNguoiDung(maND));
         }
-        private void LoadUserRoles()
+
+
+        private async void LoadRoleByUser(int maND)
         {
-            txtName.Enabled = false;
-            allRoles = qBUS.LoadRole();
-
-            // Lấy danh sách các quyền mà người dùng hiện tại có
-            var userRoles = qBUS.GetChucNangByMaQuyen(_userId);
-
-            // Tạo danh sách các quyền mà người dùng hiện tại có
-            var userRoleIds = userRoles.Select(r => r.MaCN).ToList();
-
-            // Gán danh sách quyền vào DataGridView
-            dataGridViewRoles.DataSource = allRoles;
-
-            // Đảm bảo 'IsDeleted' là tên của cột checkbox và 'MaQuyen' là cột ID quyền
-            foreach (DataGridViewRow row in dataGridViewRoles.Rows)
+            try
             {
-                if (row.DataBoundItem != null) // Đảm bảo có dữ liệu trong row
+                var roleList = await LoadRoleAsync();
+                var userRoleList = await GetQuyenNguoiDungAsync(maND);
+                dataGridViewRoles.DataSource = roleList;
+                foreach (DataGridViewRow row in dataGridViewRoles.Rows)
                 {
-                    var roleId = Convert.ToInt32(row.Cells["MaQuyen"].Value);
-
-                    // Kiểm tra nếu người dùng có quyền này thì đánh dấu checkbox
-                    row.Cells["IsDeleted"].Value = userRoleIds.Contains(roleId);
+                    if (row.Cells["MaQuyen"].Value != null)
+                    {
+                        int maQuyen = Convert.ToInt32(row.Cells["MaQuyen"].Value);
+                        row.Cells["checkRole"].Value = userRoleList.Contains(maQuyen);
+                    }
                 }
+                dataGridViewRoles.Invalidate();
             }
-        }
-
-
-
-        private void btnSave_Click_1(object sender, EventArgs e)
-        {
-            var selectedRoles = new List<int>();
-            var existingRoles = qBUS.GetChucNangByMaQuyen(_userId);
-
-            foreach (DataGridViewRow row in dataGridViewRoles.Rows)
+            catch (Exception ex)
             {
-                if (Convert.ToBoolean(row.Cells["IsDeleted"].Value))
-                {
-                    selectedRoles.Add(Convert.ToInt32(row.Cells["MaQuyen"].Value));
-                }
+                MessageBox.Show($"Đã xảy ra lỗi: {ex.Message}");
             }
-
-            var userAssignedRoles = existingRoles.Select(r => r.MaCN).ToList();
-            var rolesToAdd = selectedRoles.Except(userAssignedRoles).ToList();
-            var rolesToRemove = userAssignedRoles.Except(selectedRoles).ToList();
-
-            foreach (var roleId in rolesToAdd)
-            {
-                qBUS.AddRoleToUser(_userId, roleId);
-            }
-
-            foreach (var roleId in rolesToRemove)
-            {
-                qBUS.RemoveRoleFromUser(_userId, roleId);
-            }
-
-
-            MessageBox.Show("Cập nhật quyền thành công.");
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+
+        private void btnResetPass_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ResetPass_Form refs = new ResetPass_Form(_userId);
+            refs.Show();
+        }
+
+        private async void BtnSave_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var existingRoles = await GetQuyenNguoiDungAsync(_userId);
+                var newRoles = new List<int>();
+
+                foreach (DataGridViewRow row in dataGridViewRoles.Rows)
+                {
+                    if (row.Cells["MaQuyen"].Value != null)
+                    {
+                        int maQuyen = Convert.ToInt32(row.Cells["MaQuyen"].Value);
+                        bool isChecked = Convert.ToBoolean(row.Cells["checkRole"].Value);
+
+                        if (isChecked)
+                        {
+                            newRoles.Add(maQuyen);
+                        }
+                    }
+                }
+                var rolesToAdd = newRoles.Except(existingRoles).ToList();
+                var rolesToRemove = existingRoles.Except(newRoles).ToList();
+                await qndB.UpdateUserRolesAsync(_userId, rolesToAdd, rolesToRemove);
+
+                MessageBox.Show("Quyền của người dùng đã được cập nhật thành công.","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Đã xảy ra lỗi: {ex.Message}");
+            }
+        }
+
     }
 }

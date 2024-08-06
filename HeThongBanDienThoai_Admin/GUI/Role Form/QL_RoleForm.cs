@@ -27,19 +27,15 @@ namespace HeThongBanDienThoai_Admin.GUI.Role_Form
         {
             if (e.ColumnIndex == dataGridViewRole.Columns["btnSua"].Index && e.RowIndex >= 0)
             {
-                // Get the value from the "MaQuyen" cell and convert it to string
                 string roleIdString = dataGridViewRole.Rows[e.RowIndex].Cells["MaQuyen"].Value.ToString();
 
-                // Try to convert the string to an integer
                 if (int.TryParse(roleIdString, out int roleId))
                 {
-                    // Create the form for editing and pass the integer ID
                     EditRoleForm editRoleForm = new EditRoleForm(roleId);
                     editRoleForm.Show();
                 }
                 else
                 {
-                    // Handle the case where conversion fails
                     MessageBox.Show("Invalid role ID format.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
@@ -58,10 +54,10 @@ namespace HeThongBanDienThoai_Admin.GUI.Role_Form
         {
             LoadRole();
         }
-
         private void btnAdd_Click(object sender, EventArgs e)
         {
-       
+            InsertRole_Form insertr = new InsertRole_Form();
+            insertr.Show();
         }
 
 
