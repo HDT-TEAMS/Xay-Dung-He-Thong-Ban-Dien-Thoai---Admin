@@ -2,6 +2,7 @@
 using DTO;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,6 +22,10 @@ namespace BUS
         public void insertCTDonHang(CTDonHang ctdh)
         {
             ctdhd.insertCTDonHang(ctdh);
+        }
+        public DataTable GetTop5SanPhamBanChayDataTable()
+        {
+            return ctdhd.GetTop5SanPhamBanChayDataTable();
         }
     }
 }

@@ -194,13 +194,13 @@ namespace HeThongBanDienThoai_Admin.GUI.Promotion_Form
             try
             {
                 var khuyenMais = kmBUS.LoadKM().ToList();
-                var sanPhams = spBUS.getAllSanPham().ToList(); // Lấy tất cả sản phẩm từ DB
+                var sanPhams = spBUS.getAllSanPham().ToList();
+                var selectedProducts = _productList.Where(p => _checkedStates.ContainsKey(p.MaSP) && _checkedStates[p.MaSP]).ToList(); // Lấy các sản phẩm được chọn
 
-                // 1. Cập nhật MaKM cho sản phẩm khi ngày bắt đầu khuyến mãi đến
                 var activePromotions = khuyenMais.Where(km => km.NgayBD <= DateTime.Now && km.NgayKT > DateTime.Now).ToList();
                 foreach (var km in activePromotions)
                 {
-                    var productsToUpdate = sanPhams.Where(sp => sp.MaKM == null).ToList();
+                    var productsToUpdate = selectedProducts.Where(sp => sp.MaKM == null).ToList();
                     foreach (var sp in productsToUpdate)
                     {
                         sp.MaKM = km.MaKM;
@@ -213,7 +213,7 @@ namespace HeThongBanDienThoai_Admin.GUI.Promotion_Form
 
                         try
                         {
-                            spBUS.UpdateKhuyenMaiSanPham(sanPhamToUpdate);
+                            spBUS.UpdateKhuyenMaiSanPham(sanPhamToUpdate); // Gọi phương thức đồng bộ
                         }
                         catch (Exception ex)
                         {
@@ -222,7 +222,7 @@ namespace HeThongBanDienThoai_Admin.GUI.Promotion_Form
                     }
                 }
 
-                // 2. Cập nhật trạng thái IsDeleted và xóa MaKM của sản phẩm khi khuyến mãi hết hạn
+                // Cập nhật trạng thái IsDeleted và xóa MaKM của sản phẩm khi khuyến mãi hết hạn
                 var expiredPromotions = khuyenMais.Where(km => km.NgayKT < DateTime.Now && !(km.IsDeleted ?? false)).ToList();
                 foreach (var km in expiredPromotions)
                 {
@@ -236,8 +236,8 @@ namespace HeThongBanDienThoai_Admin.GUI.Promotion_Form
                         MessageBox.Show("Lỗi khi cập nhật khuyến mãi: " + ex.Message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
 
-                    // Xóa MaKM của các sản phẩm liên quan
-                    var productsToClear = sanPhams.Where(sp => sp.MaKM == km.MaKM).ToList();
+                    // Chỉ xóa MaKM của các sản phẩm được chọn
+                    var productsToClear = selectedProducts.Where(sp => sp.MaKM == km.MaKM).ToList();
                     foreach (var sp in productsToClear)
                     {
                         sp.MaKM = null;
@@ -249,7 +249,7 @@ namespace HeThongBanDienThoai_Admin.GUI.Promotion_Form
 
                         try
                         {
-                            spBUS.UpdateKhuyenMaiSanPham(sanPhamToClear);
+                            spBUS.UpdateKhuyenMaiSanPham(sanPhamToClear); // Gọi phương thức đồng bộ
                         }
                         catch (Exception ex)
                         {
@@ -265,9 +265,10 @@ namespace HeThongBanDienThoai_Admin.GUI.Promotion_Form
         }
 
 
+
         private void Timer_checkPromotionS_Tick(object sender, EventArgs e)
         {
-            UpdatePromotionStatus();
+             UpdatePromotionStatus();
         }
 
         private void BtnLuu_Click1(object sender, EventArgs e)

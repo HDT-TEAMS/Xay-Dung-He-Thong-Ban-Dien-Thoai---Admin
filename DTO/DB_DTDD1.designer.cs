@@ -292,6 +292,14 @@ namespace DTO
 			}
 		}
 		
+		public System.Data.Linq.Table<VIEW_TOP5SANPHAMBANCHAY> VIEW_TOP5SANPHAMBANCHAYs
+		{
+			get
+			{
+				return this.GetTable<VIEW_TOP5SANPHAMBANCHAY>();
+			}
+		}
+		
 		public System.Data.Linq.Table<View_DanhSachDonHang> View_DanhSachDonHangs
 		{
 			get
@@ -5598,6 +5606,69 @@ namespace DTO
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.VIEW_TOP5SANPHAMBANCHAY")]
+	public partial class VIEW_TOP5SANPHAMBANCHAY
+	{
+		
+		private int _MaSP;
+		
+		private string _TenSP;
+		
+		private System.Nullable<int> _TotalSold;
+		
+		public VIEW_TOP5SANPHAMBANCHAY()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaSP", DbType="Int NOT NULL")]
+		public int MaSP
+		{
+			get
+			{
+				return this._MaSP;
+			}
+			set
+			{
+				if ((this._MaSP != value))
+				{
+					this._MaSP = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenSP", DbType="NVarChar(255)")]
+		public string TenSP
+		{
+			get
+			{
+				return this._TenSP;
+			}
+			set
+			{
+				if ((this._TenSP != value))
+				{
+					this._TenSP = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TotalSold", DbType="Int")]
+		public System.Nullable<int> TotalSold
+		{
+			get
+			{
+				return this._TotalSold;
+			}
+			set
+			{
+				if ((this._TotalSold != value))
+				{
+					this._TotalSold = value;
+				}
+			}
+		}
+	}
+	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.View_DanhSachDonHang")]
 	public partial class View_DanhSachDonHang
 	{
@@ -5617,6 +5688,8 @@ namespace DTO
 		private System.Nullable<decimal> _TongTien;
 		
 		private string _TrangThai;
+		
+		private string _HinhThucThanhToan;
 		
 		public View_DanhSachDonHang()
 		{
@@ -5746,6 +5819,22 @@ namespace DTO
 				if ((this._TrangThai != value))
 				{
 					this._TrangThai = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HinhThucThanhToan", DbType="NVarChar(100)")]
+		public string HinhThucThanhToan
+		{
+			get
+			{
+				return this._HinhThucThanhToan;
+			}
+			set
+			{
+				if ((this._HinhThucThanhToan != value))
+				{
+					this._HinhThucThanhToan = value;
 				}
 			}
 		}

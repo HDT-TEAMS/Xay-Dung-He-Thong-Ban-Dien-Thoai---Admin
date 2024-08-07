@@ -960,40 +960,112 @@ namespace HeThongBanDienThoai_Admin.LIB
         #endregion
 
 
-        public bool ExportKhoa(List<View_DanhSachDonHang> dataSource, ref string fileName, bool isPrintPreview)
+        public bool ExportOnline(List<View_DanhSachDonHang> dataSource, ref string fileName, bool isPrintPreview, bool isOnline)
         {
-            // Check if data is null
-            if (dataSource == null || (dataSource != null && dataSource.Count == 0))
+            // Kiểm tra dữ liệu null
+            if (dataSource == null || dataSource.Count == 0)
             {
                 return false;
             }
 
-            // Set the So thu tu
-            for (int i = 1; i <= dataSource.Count; i++)
+            // Lọc dữ liệu dựa trên điều kiện online/offline và trạng thái đã hoàn thành
+            if (isOnline)
             {
-               dataSource[i - 1].STT = i.ToString();
+                dataSource = dataSource
+                    .Where(order => (order.MaNB.StartsWith("DHTT") || order.MaNB.StartsWith("DHMM"))
+                                    && order.TrangThai == "Đã hoàn thành") // Thêm điều kiện trạng thái
+                    .ToList();
             }
 
+            // Thiết lập số thứ tự (serial number)
+            for (int i = 1; i <= dataSource.Count; i++)
+            {
+                dataSource[i - 1].STT = i.ToString();
+            }
 
             Dictionary<string, string> replacer = new Dictionary<string, string>();
-           
+
             BuildReplacerCurrentDate(ref replacer);
 
+            // Tạo các đối tượng BUS
             DonHang_BUS dh = new DonHang_BUS();
-            decimal tongtien = (decimal) dh.getDanhSachDonHang().Sum(dhs => dhs.TongTien);
+            NhanVien_BUS nvb = new NhanVien_BUS();
 
-            int count = dh.getDanhSachDonHang().Count();
+            // Lấy danh sách đơn hàng và tên nhân viên
+            var danhSachDonHang = dh.getDanhSachDonHang();
+            string tennv = nvb.GetNhanVienNameById(MyLib.maND);
 
+            // Tính tổng tiền
+            decimal tongtien = danhSachDonHang
+                .Where(dhs => isOnline
+                    ? (dhs.MaNB != null && (dhs.MaNB.StartsWith("DHTT") || dhs.MaNB.StartsWith("DHMM"))
+                                && dhs.TrangThai == "Đã hoàn thành") // Thêm điều kiện trạng thái
+                    : dhs.TrangThai == "Đã hoàn thành") // Thêm điều kiện trạng thái
+                .Sum(dhs => dhs.TongTien ?? 0);
 
+            // Thêm các thông tin vào dictionary replacer
+            int currentMonth = DateTime.Now.Month;
+            int currentYear = DateTime.Now.Year;
+            replacer.Add("%Thang", currentMonth.ToString());
+            replacer.Add("%Nam", currentYear.ToString());
             replacer.Add("%TongTien", tongtien.ToString());
+            replacer.Add("%HoTen", tennv);
 
-            replacer.Add("%TongHoaDon", count.ToString());
-
-
+            // Xuất báo cáo
             return OutSimpleReport(dataSource, replacer, "DoanhThu", isPrintPreview, ref fileName);
         }
+
+
+        public bool ExportOffline(List<View_DanhSachDonHang> dataSource, ref string fileName, bool isPrintPreview)
+        {
+            // Kiểm tra dữ liệu null
+            if (dataSource == null || dataSource.Count == 0)
+            {
+                return false;
+            }
+
+            // Lọc dữ liệu dựa trên điều kiện offline và trạng thái đã hoàn thành
+            var filteredData = dataSource
+                .Where(order => order.MaNB.StartsWith("DHCH")
+                                && order.TrangThai == "Đã hoàn thành") // Thêm điều kiện trạng thái
+                .ToList();
+
+            // Thiết lập số thứ tự (serial number)
+            for (int i = 1; i <= filteredData.Count; i++)
+            {
+                filteredData[i - 1].STT = i.ToString();
+            }
+
+            Dictionary<string, string> replacer = new Dictionary<string, string>();
+
+            BuildReplacerCurrentDate(ref replacer);
+
+            // Tạo các đối tượng BUS
+            DonHang_BUS dh = new DonHang_BUS();
+            NhanVien_BUS nvb = new NhanVien_BUS();
+
+            // Tính tổng tiền từ dữ liệu đã lọc
+            decimal tongtien = filteredData
+                .Sum(dhs => dhs.TongTien ?? 0);
+
+            // Lấy tên nhân viên
+            string tennv = nvb.GetNhanVienNameById(MyLib.maND);
+
+            // Thêm các thông tin vào dictionary replacer
+            int currentMonth = DateTime.Now.Month;
+            int currentYear = DateTime.Now.Year;
+            replacer.Add("%Thang", currentMonth.ToString());
+            replacer.Add("%Nam", currentYear.ToString());
+            replacer.Add("%TongTien", tongtien.ToString());
+            replacer.Add("%HoTen", tennv);
+
+            // Xuất báo cáo
+            return OutSimpleReport(filteredData, replacer, "DoanhThu", isPrintPreview, ref fileName);
+        }
+
+
         #endregion
 
-        
+
     }
 }

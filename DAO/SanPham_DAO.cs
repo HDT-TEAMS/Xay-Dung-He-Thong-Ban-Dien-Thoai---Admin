@@ -1,6 +1,7 @@
 ﻿using DTO;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Runtime.Remoting.Contexts;
 using System.Text;
@@ -101,15 +102,23 @@ namespace DAO
             }
         }
 
-        public void UpdateKhuyenMaiSanPham(SanPham sp)
+        public void UpdateKhuyenMaiSanPham(SanPham sanPham)
         {
-            var product = db.SanPhams.SingleOrDefault(p => p.MaSP == sp.MaSP);
-            if (product != null)
+            using (var context = new DB_DTDDDataContext())
             {
-                product.MaKM = sp.MaKM;
-                db.SubmitChanges();
+                // Tìm sản phẩm dựa trên MaSP
+                var existingProduct = context.SanPhams.SingleOrDefault(p => p.MaSP == sanPham.MaSP);
+                if (existingProduct != null)
+                {
+                    // Cập nhật thông tin khuyến mãi
+                    existingProduct.MaKM = sanPham.MaKM;
+                    context.SubmitChanges(); // Đồng bộ
+                }
+
             }
         }
+
+
 
         public void DeleteSanPham(int maSP)
         {
@@ -149,6 +158,28 @@ namespace DAO
         {
             var sanPham = db.SanPhams.FirstOrDefault(sp =>sp.MaSP == maSP);
             return sanPham != null ? sanPham.SoLuong.GetValueOrDefault(0) : 0;
+        }
+
+        public List<SanPham> GetSanPhamGanHetHang()
+        {
+            return db.SanPhams
+                     .Where(sp => sp.SoLuong < 10 && sp.IsDeleted == false)
+                     .ToList();
+        }
+
+        public DataTable GetSanPhamGanHetHangDataTable()
+        {
+            var sanPhamGanHetHang = GetSanPhamGanHetHang();
+            DataTable dt = new DataTable();
+            dt.Columns.Add("TenSP", typeof(string));
+            dt.Columns.Add("SoLuong", typeof(int));
+
+            foreach (var sp in sanPhamGanHetHang)
+            {
+                dt.Rows.Add( sp.TenSP, sp.SoLuong);
+            }
+
+            return dt;
         }
 
     }

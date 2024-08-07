@@ -40,47 +40,45 @@ namespace HeThongBanDienThoai_Admin.GUI
             this.BorderLess_Admin = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.panel_sidebar = new Guna.UI2.WinForms.Guna2Panel();
             this.tablePanel_DangXuat = new System.Windows.Forms.TableLayoutPanel();
-            this.btn_DangXuat = new Guna.UI2.WinForms.Guna2PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.Panel_MasterHeThong = new Guna.UI2.WinForms.Guna2Panel();
             this.btnVaiTro = new Guna.UI2.WinForms.Guna2Button();
             this.btnNguoiDung = new Guna.UI2.WinForms.Guna2Button();
             this.btnKhachHang = new Guna.UI2.WinForms.Guna2Button();
             this.btnNhanVien = new Guna.UI2.WinForms.Guna2Button();
-            this.btn_MasterHeThong = new Guna.UI2.WinForms.Guna2Button();
             this.Panel_MasterBanHang = new Guna.UI2.WinForms.Guna2Panel();
             this.btnTaoKM = new Guna.UI2.WinForms.Guna2Button();
             this.btnTinhTrangDon = new Guna.UI2.WinForms.Guna2Button();
             this.btnTaoDonHang = new Guna.UI2.WinForms.Guna2Button();
-            this.btn_MasterBanHang = new Guna.UI2.WinForms.Guna2Button();
             this.Panel_MasterNhapHang = new Guna.UI2.WinForms.Guna2Panel();
             this.btnNhapHang = new Guna.UI2.WinForms.Guna2Button();
             this.btnNhaCC = new Guna.UI2.WinForms.Guna2Button();
-            this.btnMasterNhapHang = new Guna.UI2.WinForms.Guna2Button();
             this.Panel_MasterSanPham = new Guna.UI2.WinForms.Guna2Panel();
-            this.btn_MasterSanPham = new Guna.UI2.WinForms.Guna2Button();
             this.Panel_MasterCauHinh = new Guna.UI2.WinForms.Guna2Panel();
             this.btnCauHinh = new Guna.UI2.WinForms.Guna2Button();
-            this.btn_MasterCauHinh = new Guna.UI2.WinForms.Guna2Button();
             this.Panel_Logo = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.TableLayoutPanel_Body = new System.Windows.Forms.TableLayoutPanel();
             this.panel_container = new System.Windows.Forms.Panel();
+            this.btn_DangXuat = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.btn_MasterHeThong = new Guna.UI2.WinForms.Guna2Button();
+            this.btn_MasterBanHang = new Guna.UI2.WinForms.Guna2Button();
+            this.btnMasterNhapHang = new Guna.UI2.WinForms.Guna2Button();
+            this.btn_MasterSanPham = new Guna.UI2.WinForms.Guna2Button();
+            this.btn_MasterCauHinh = new Guna.UI2.WinForms.Guna2Button();
+            this.btn_newIndex = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2ImageButton1 = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.btnXuat = new Guna.UI2.WinForms.Guna2Button();
             this.TableLayoutPanel_Header.SuspendLayout();
             this.panel_sidebar.SuspendLayout();
             this.tablePanel_DangXuat.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_DangXuat)).BeginInit();
             this.Panel_MasterHeThong.SuspendLayout();
             this.Panel_MasterBanHang.SuspendLayout();
             this.Panel_MasterNhapHang.SuspendLayout();
             this.Panel_MasterSanPham.SuspendLayout();
             this.Panel_MasterCauHinh.SuspendLayout();
             this.Panel_Logo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.TableLayoutPanel_Body.SuspendLayout();
-            this.panel_container.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_DangXuat)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_newIndex)).BeginInit();
             this.SuspendLayout();
             // 
             // button8
@@ -224,19 +222,6 @@ namespace HeThongBanDienThoai_Admin.GUI
             this.tablePanel_DangXuat.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tablePanel_DangXuat.Size = new System.Drawing.Size(214, 37);
             this.tablePanel_DangXuat.TabIndex = 22;
-            // 
-            // btn_DangXuat
-            // 
-            this.btn_DangXuat.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btn_DangXuat.Image = global::HeThongBanDienThoai_Admin.Properties.Resources.log_out_10024482;
-            this.btn_DangXuat.ImageRotate = 0F;
-            this.btn_DangXuat.Location = new System.Drawing.Point(116, 3);
-            this.btn_DangXuat.Name = "btn_DangXuat";
-            this.btn_DangXuat.Size = new System.Drawing.Size(34, 31);
-            this.btn_DangXuat.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btn_DangXuat.TabIndex = 0;
-            this.btn_DangXuat.TabStop = false;
-            this.btn_DangXuat.Click += new System.EventHandler(this.btn_DangXuat_Click);
             // 
             // label1
             // 
@@ -402,39 +387,6 @@ namespace HeThongBanDienThoai_Admin.GUI
             this.btnNhanVien.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.btnNhanVien.Click += new System.EventHandler(this.btnNhanVien_Click);
             // 
-            // btn_MasterHeThong
-            // 
-            this.btn_MasterHeThong.Animated = true;
-            this.btn_MasterHeThong.AnimatedGIF = true;
-            this.btn_MasterHeThong.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.ToogleButton;
-            this.btn_MasterHeThong.Checked = true;
-            this.btn_MasterHeThong.CheckedState.FillColor = System.Drawing.Color.Transparent;
-            this.btn_MasterHeThong.CheckedState.Image = global::HeThongBanDienThoai_Admin.Properties.Resources.arrow_down;
-            this.btn_MasterHeThong.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_MasterHeThong.DisabledState.BorderColor = System.Drawing.Color.Transparent;
-            this.btn_MasterHeThong.DisabledState.CustomBorderColor = System.Drawing.Color.Transparent;
-            this.btn_MasterHeThong.DisabledState.FillColor = System.Drawing.Color.Transparent;
-            this.btn_MasterHeThong.DisabledState.ForeColor = System.Drawing.Color.Transparent;
-            this.btn_MasterHeThong.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btn_MasterHeThong.FillColor = System.Drawing.Color.Transparent;
-            this.btn_MasterHeThong.Font = new System.Drawing.Font("Bahnschrift Condensed", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_MasterHeThong.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.btn_MasterHeThong.HoverState.FillColor = System.Drawing.Color.Transparent;
-            this.btn_MasterHeThong.Image = global::HeThongBanDienThoai_Admin.Properties.Resources.arrow_right;
-            this.btn_MasterHeThong.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btn_MasterHeThong.ImageSize = new System.Drawing.Size(10, 10);
-            this.btn_MasterHeThong.Location = new System.Drawing.Point(0, 0);
-            this.btn_MasterHeThong.Margin = new System.Windows.Forms.Padding(0);
-            this.btn_MasterHeThong.Name = "btn_MasterHeThong";
-            this.btn_MasterHeThong.PressedColor = System.Drawing.Color.Transparent;
-            this.btn_MasterHeThong.Size = new System.Drawing.Size(220, 35);
-            this.btn_MasterHeThong.TabIndex = 9;
-            this.btn_MasterHeThong.Tag = "parent|nhanvien.view,khachhang.view,nguoidung.view,vaitro.view";
-            this.btn_MasterHeThong.Text = "Quản lý hệ thống";
-            this.btn_MasterHeThong.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btn_MasterHeThong.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
-            this.btn_MasterHeThong.Click += new System.EventHandler(this.btn_MasterHeThong_Click);
-            // 
             // Panel_MasterBanHang
             // 
             this.Panel_MasterBanHang.BackColor = System.Drawing.Color.White;
@@ -553,39 +505,6 @@ namespace HeThongBanDienThoai_Admin.GUI
             this.btnTaoDonHang.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.btnTaoDonHang.Click += new System.EventHandler(this.btnTaoDonHang_Click);
             // 
-            // btn_MasterBanHang
-            // 
-            this.btn_MasterBanHang.Animated = true;
-            this.btn_MasterBanHang.AnimatedGIF = true;
-            this.btn_MasterBanHang.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.ToogleButton;
-            this.btn_MasterBanHang.Checked = true;
-            this.btn_MasterBanHang.CheckedState.FillColor = System.Drawing.Color.Transparent;
-            this.btn_MasterBanHang.CheckedState.Image = global::HeThongBanDienThoai_Admin.Properties.Resources.arrow_down;
-            this.btn_MasterBanHang.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_MasterBanHang.DisabledState.BorderColor = System.Drawing.Color.Transparent;
-            this.btn_MasterBanHang.DisabledState.CustomBorderColor = System.Drawing.Color.Transparent;
-            this.btn_MasterBanHang.DisabledState.FillColor = System.Drawing.Color.Transparent;
-            this.btn_MasterBanHang.DisabledState.ForeColor = System.Drawing.Color.Transparent;
-            this.btn_MasterBanHang.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btn_MasterBanHang.FillColor = System.Drawing.Color.Transparent;
-            this.btn_MasterBanHang.Font = new System.Drawing.Font("Bahnschrift Condensed", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_MasterBanHang.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.btn_MasterBanHang.HoverState.FillColor = System.Drawing.Color.Transparent;
-            this.btn_MasterBanHang.Image = global::HeThongBanDienThoai_Admin.Properties.Resources.arrow_right;
-            this.btn_MasterBanHang.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btn_MasterBanHang.ImageSize = new System.Drawing.Size(10, 10);
-            this.btn_MasterBanHang.Location = new System.Drawing.Point(0, 0);
-            this.btn_MasterBanHang.Margin = new System.Windows.Forms.Padding(0);
-            this.btn_MasterBanHang.Name = "btn_MasterBanHang";
-            this.btn_MasterBanHang.PressedColor = System.Drawing.Color.Transparent;
-            this.btn_MasterBanHang.Size = new System.Drawing.Size(213, 35);
-            this.btn_MasterBanHang.TabIndex = 9;
-            this.btn_MasterBanHang.Tag = "parent|taodh.view,tinhtrangdon.view,taokm.view";
-            this.btn_MasterBanHang.Text = "Quản lý bán hàng";
-            this.btn_MasterBanHang.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btn_MasterBanHang.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
-            this.btn_MasterBanHang.Click += new System.EventHandler(this.btn_MasterBanHang_Click);
-            // 
             // Panel_MasterNhapHang
             // 
             this.Panel_MasterNhapHang.BackColor = System.Drawing.Color.White;
@@ -669,39 +588,6 @@ namespace HeThongBanDienThoai_Admin.GUI
             this.btnNhaCC.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.btnNhaCC.Click += new System.EventHandler(this.btnNhaCC_Click);
             // 
-            // btnMasterNhapHang
-            // 
-            this.btnMasterNhapHang.Animated = true;
-            this.btnMasterNhapHang.AnimatedGIF = true;
-            this.btnMasterNhapHang.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.ToogleButton;
-            this.btnMasterNhapHang.Checked = true;
-            this.btnMasterNhapHang.CheckedState.FillColor = System.Drawing.Color.Transparent;
-            this.btnMasterNhapHang.CheckedState.Image = global::HeThongBanDienThoai_Admin.Properties.Resources.arrow_down;
-            this.btnMasterNhapHang.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMasterNhapHang.DisabledState.BorderColor = System.Drawing.Color.Transparent;
-            this.btnMasterNhapHang.DisabledState.CustomBorderColor = System.Drawing.Color.Transparent;
-            this.btnMasterNhapHang.DisabledState.FillColor = System.Drawing.Color.Transparent;
-            this.btnMasterNhapHang.DisabledState.ForeColor = System.Drawing.Color.Transparent;
-            this.btnMasterNhapHang.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnMasterNhapHang.FillColor = System.Drawing.Color.Transparent;
-            this.btnMasterNhapHang.Font = new System.Drawing.Font("Bahnschrift Condensed", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMasterNhapHang.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.btnMasterNhapHang.HoverState.FillColor = System.Drawing.Color.Transparent;
-            this.btnMasterNhapHang.Image = global::HeThongBanDienThoai_Admin.Properties.Resources.arrow_right;
-            this.btnMasterNhapHang.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnMasterNhapHang.ImageSize = new System.Drawing.Size(10, 10);
-            this.btnMasterNhapHang.Location = new System.Drawing.Point(0, 0);
-            this.btnMasterNhapHang.Margin = new System.Windows.Forms.Padding(0);
-            this.btnMasterNhapHang.Name = "btnMasterNhapHang";
-            this.btnMasterNhapHang.PressedColor = System.Drawing.Color.Transparent;
-            this.btnMasterNhapHang.Size = new System.Drawing.Size(213, 35);
-            this.btnMasterNhapHang.TabIndex = 9;
-            this.btnMasterNhapHang.Tag = "parent|nhacc.view,nhaphang.view";
-            this.btnMasterNhapHang.Text = "Quản lý nhập hàng";
-            this.btnMasterNhapHang.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnMasterNhapHang.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
-            this.btnMasterNhapHang.Click += new System.EventHandler(this.btnMasterNhapHang_Click);
-            // 
             // Panel_MasterSanPham
             // 
             this.Panel_MasterSanPham.BackColor = System.Drawing.Color.White;
@@ -713,40 +599,6 @@ namespace HeThongBanDienThoai_Admin.GUI
             this.Panel_MasterSanPham.Name = "Panel_MasterSanPham";
             this.Panel_MasterSanPham.Size = new System.Drawing.Size(214, 35);
             this.Panel_MasterSanPham.TabIndex = 19;
-            // 
-            // btn_MasterSanPham
-            // 
-            this.btn_MasterSanPham.Animated = true;
-            this.btn_MasterSanPham.AnimatedGIF = true;
-            this.btn_MasterSanPham.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.ToogleButton;
-            this.btn_MasterSanPham.CausesValidation = false;
-            this.btn_MasterSanPham.Checked = true;
-            this.btn_MasterSanPham.CheckedState.FillColor = System.Drawing.Color.Transparent;
-            this.btn_MasterSanPham.CheckedState.Image = global::HeThongBanDienThoai_Admin.Properties.Resources.arrow_down;
-            this.btn_MasterSanPham.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_MasterSanPham.DisabledState.BorderColor = System.Drawing.Color.Transparent;
-            this.btn_MasterSanPham.DisabledState.CustomBorderColor = System.Drawing.Color.Transparent;
-            this.btn_MasterSanPham.DisabledState.FillColor = System.Drawing.Color.Transparent;
-            this.btn_MasterSanPham.DisabledState.ForeColor = System.Drawing.Color.Transparent;
-            this.btn_MasterSanPham.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btn_MasterSanPham.FillColor = System.Drawing.Color.Transparent;
-            this.btn_MasterSanPham.Font = new System.Drawing.Font("Bahnschrift Condensed", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_MasterSanPham.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.btn_MasterSanPham.HoverState.FillColor = System.Drawing.Color.Transparent;
-            this.btn_MasterSanPham.Image = global::HeThongBanDienThoai_Admin.Properties.Resources.arrow_right;
-            this.btn_MasterSanPham.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btn_MasterSanPham.ImageSize = new System.Drawing.Size(10, 10);
-            this.btn_MasterSanPham.Location = new System.Drawing.Point(0, 0);
-            this.btn_MasterSanPham.Margin = new System.Windows.Forms.Padding(0);
-            this.btn_MasterSanPham.Name = "btn_MasterSanPham";
-            this.btn_MasterSanPham.PressedColor = System.Drawing.Color.Transparent;
-            this.btn_MasterSanPham.Size = new System.Drawing.Size(214, 35);
-            this.btn_MasterSanPham.TabIndex = 999999;
-            this.btn_MasterSanPham.Tag = "parent|sanpham.view";
-            this.btn_MasterSanPham.Text = "Quản lý sản phẩm";
-            this.btn_MasterSanPham.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btn_MasterSanPham.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
-            this.btn_MasterSanPham.Click += new System.EventHandler(this.btn_MasterSanPham_Click);
             // 
             // Panel_MasterCauHinh
             // 
@@ -796,6 +648,191 @@ namespace HeThongBanDienThoai_Admin.GUI
             this.btnCauHinh.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.btnCauHinh.Click += new System.EventHandler(this.btnCauHinh_Click);
             // 
+            // Panel_Logo
+            // 
+            this.Panel_Logo.BackColor = System.Drawing.Color.Transparent;
+            this.Panel_Logo.BorderRadius = 12;
+            this.Panel_Logo.Controls.Add(this.btn_newIndex);
+            this.Panel_Logo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Panel_Logo.FillColor = System.Drawing.Color.Black;
+            this.Panel_Logo.Location = new System.Drawing.Point(7, 7);
+            this.Panel_Logo.Name = "Panel_Logo";
+            this.Panel_Logo.Size = new System.Drawing.Size(214, 114);
+            this.Panel_Logo.TabIndex = 0;
+            // 
+            // TableLayoutPanel_Body
+            // 
+            this.TableLayoutPanel_Body.ColumnCount = 2;
+            this.TableLayoutPanel_Body.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 228F));
+            this.TableLayoutPanel_Body.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.TableLayoutPanel_Body.Controls.Add(this.panel_sidebar, 0, 0);
+            this.TableLayoutPanel_Body.Controls.Add(this.panel_container, 1, 0);
+            this.TableLayoutPanel_Body.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.TableLayoutPanel_Body.Location = new System.Drawing.Point(7, 30);
+            this.TableLayoutPanel_Body.Name = "TableLayoutPanel_Body";
+            this.TableLayoutPanel_Body.RowCount = 1;
+            this.TableLayoutPanel_Body.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.TableLayoutPanel_Body.Size = new System.Drawing.Size(891, 726);
+            this.TableLayoutPanel_Body.TabIndex = 10;
+            // 
+            // panel_container
+            // 
+            this.panel_container.BackColor = System.Drawing.Color.White;
+            this.panel_container.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel_container.Location = new System.Drawing.Point(237, 2);
+            this.panel_container.Margin = new System.Windows.Forms.Padding(9, 2, 3, 2);
+            this.panel_container.Name = "panel_container";
+            this.panel_container.Padding = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.panel_container.Size = new System.Drawing.Size(651, 722);
+            this.panel_container.TabIndex = 12;
+            this.panel_container.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_container_Paint);
+            // 
+            // btn_DangXuat
+            // 
+            this.btn_DangXuat.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btn_DangXuat.Image = global::HeThongBanDienThoai_Admin.Properties.Resources.log_out_10024482;
+            this.btn_DangXuat.ImageRotate = 0F;
+            this.btn_DangXuat.Location = new System.Drawing.Point(116, 3);
+            this.btn_DangXuat.Name = "btn_DangXuat";
+            this.btn_DangXuat.Size = new System.Drawing.Size(34, 31);
+            this.btn_DangXuat.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btn_DangXuat.TabIndex = 0;
+            this.btn_DangXuat.TabStop = false;
+            this.btn_DangXuat.Click += new System.EventHandler(this.btn_DangXuat_Click);
+            // 
+            // btn_MasterHeThong
+            // 
+            this.btn_MasterHeThong.Animated = true;
+            this.btn_MasterHeThong.AnimatedGIF = true;
+            this.btn_MasterHeThong.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.ToogleButton;
+            this.btn_MasterHeThong.Checked = true;
+            this.btn_MasterHeThong.CheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.btn_MasterHeThong.CheckedState.Image = global::HeThongBanDienThoai_Admin.Properties.Resources.arrow_down;
+            this.btn_MasterHeThong.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_MasterHeThong.DisabledState.BorderColor = System.Drawing.Color.Transparent;
+            this.btn_MasterHeThong.DisabledState.CustomBorderColor = System.Drawing.Color.Transparent;
+            this.btn_MasterHeThong.DisabledState.FillColor = System.Drawing.Color.Transparent;
+            this.btn_MasterHeThong.DisabledState.ForeColor = System.Drawing.Color.Transparent;
+            this.btn_MasterHeThong.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_MasterHeThong.FillColor = System.Drawing.Color.Transparent;
+            this.btn_MasterHeThong.Font = new System.Drawing.Font("Bahnschrift Condensed", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_MasterHeThong.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.btn_MasterHeThong.HoverState.FillColor = System.Drawing.Color.Transparent;
+            this.btn_MasterHeThong.Image = global::HeThongBanDienThoai_Admin.Properties.Resources.arrow_right;
+            this.btn_MasterHeThong.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btn_MasterHeThong.ImageSize = new System.Drawing.Size(10, 10);
+            this.btn_MasterHeThong.Location = new System.Drawing.Point(0, 0);
+            this.btn_MasterHeThong.Margin = new System.Windows.Forms.Padding(0);
+            this.btn_MasterHeThong.Name = "btn_MasterHeThong";
+            this.btn_MasterHeThong.PressedColor = System.Drawing.Color.Transparent;
+            this.btn_MasterHeThong.Size = new System.Drawing.Size(220, 35);
+            this.btn_MasterHeThong.TabIndex = 9;
+            this.btn_MasterHeThong.Tag = "parent|nhanvien.view,khachhang.view,nguoidung.view,vaitro.view";
+            this.btn_MasterHeThong.Text = "Quản lý hệ thống";
+            this.btn_MasterHeThong.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btn_MasterHeThong.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            this.btn_MasterHeThong.Click += new System.EventHandler(this.btn_MasterHeThong_Click);
+            // 
+            // btn_MasterBanHang
+            // 
+            this.btn_MasterBanHang.Animated = true;
+            this.btn_MasterBanHang.AnimatedGIF = true;
+            this.btn_MasterBanHang.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.ToogleButton;
+            this.btn_MasterBanHang.Checked = true;
+            this.btn_MasterBanHang.CheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.btn_MasterBanHang.CheckedState.Image = global::HeThongBanDienThoai_Admin.Properties.Resources.arrow_down;
+            this.btn_MasterBanHang.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_MasterBanHang.DisabledState.BorderColor = System.Drawing.Color.Transparent;
+            this.btn_MasterBanHang.DisabledState.CustomBorderColor = System.Drawing.Color.Transparent;
+            this.btn_MasterBanHang.DisabledState.FillColor = System.Drawing.Color.Transparent;
+            this.btn_MasterBanHang.DisabledState.ForeColor = System.Drawing.Color.Transparent;
+            this.btn_MasterBanHang.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_MasterBanHang.FillColor = System.Drawing.Color.Transparent;
+            this.btn_MasterBanHang.Font = new System.Drawing.Font("Bahnschrift Condensed", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_MasterBanHang.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.btn_MasterBanHang.HoverState.FillColor = System.Drawing.Color.Transparent;
+            this.btn_MasterBanHang.Image = global::HeThongBanDienThoai_Admin.Properties.Resources.arrow_right;
+            this.btn_MasterBanHang.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btn_MasterBanHang.ImageSize = new System.Drawing.Size(10, 10);
+            this.btn_MasterBanHang.Location = new System.Drawing.Point(0, 0);
+            this.btn_MasterBanHang.Margin = new System.Windows.Forms.Padding(0);
+            this.btn_MasterBanHang.Name = "btn_MasterBanHang";
+            this.btn_MasterBanHang.PressedColor = System.Drawing.Color.Transparent;
+            this.btn_MasterBanHang.Size = new System.Drawing.Size(213, 35);
+            this.btn_MasterBanHang.TabIndex = 9;
+            this.btn_MasterBanHang.Tag = "parent|taodh.view,tinhtrangdon.view,taokm.view";
+            this.btn_MasterBanHang.Text = "Quản lý bán hàng";
+            this.btn_MasterBanHang.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btn_MasterBanHang.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            this.btn_MasterBanHang.Click += new System.EventHandler(this.btn_MasterBanHang_Click);
+            // 
+            // btnMasterNhapHang
+            // 
+            this.btnMasterNhapHang.Animated = true;
+            this.btnMasterNhapHang.AnimatedGIF = true;
+            this.btnMasterNhapHang.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.ToogleButton;
+            this.btnMasterNhapHang.Checked = true;
+            this.btnMasterNhapHang.CheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.btnMasterNhapHang.CheckedState.Image = global::HeThongBanDienThoai_Admin.Properties.Resources.arrow_down;
+            this.btnMasterNhapHang.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMasterNhapHang.DisabledState.BorderColor = System.Drawing.Color.Transparent;
+            this.btnMasterNhapHang.DisabledState.CustomBorderColor = System.Drawing.Color.Transparent;
+            this.btnMasterNhapHang.DisabledState.FillColor = System.Drawing.Color.Transparent;
+            this.btnMasterNhapHang.DisabledState.ForeColor = System.Drawing.Color.Transparent;
+            this.btnMasterNhapHang.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnMasterNhapHang.FillColor = System.Drawing.Color.Transparent;
+            this.btnMasterNhapHang.Font = new System.Drawing.Font("Bahnschrift Condensed", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMasterNhapHang.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.btnMasterNhapHang.HoverState.FillColor = System.Drawing.Color.Transparent;
+            this.btnMasterNhapHang.Image = global::HeThongBanDienThoai_Admin.Properties.Resources.arrow_right;
+            this.btnMasterNhapHang.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnMasterNhapHang.ImageSize = new System.Drawing.Size(10, 10);
+            this.btnMasterNhapHang.Location = new System.Drawing.Point(0, 0);
+            this.btnMasterNhapHang.Margin = new System.Windows.Forms.Padding(0);
+            this.btnMasterNhapHang.Name = "btnMasterNhapHang";
+            this.btnMasterNhapHang.PressedColor = System.Drawing.Color.Transparent;
+            this.btnMasterNhapHang.Size = new System.Drawing.Size(213, 35);
+            this.btnMasterNhapHang.TabIndex = 9;
+            this.btnMasterNhapHang.Tag = "parent|nhacc.view,nhaphang.view";
+            this.btnMasterNhapHang.Text = "Quản lý nhập hàng";
+            this.btnMasterNhapHang.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnMasterNhapHang.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            this.btnMasterNhapHang.Click += new System.EventHandler(this.btnMasterNhapHang_Click);
+            // 
+            // btn_MasterSanPham
+            // 
+            this.btn_MasterSanPham.Animated = true;
+            this.btn_MasterSanPham.AnimatedGIF = true;
+            this.btn_MasterSanPham.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.ToogleButton;
+            this.btn_MasterSanPham.CausesValidation = false;
+            this.btn_MasterSanPham.Checked = true;
+            this.btn_MasterSanPham.CheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.btn_MasterSanPham.CheckedState.Image = global::HeThongBanDienThoai_Admin.Properties.Resources.arrow_down;
+            this.btn_MasterSanPham.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_MasterSanPham.DisabledState.BorderColor = System.Drawing.Color.Transparent;
+            this.btn_MasterSanPham.DisabledState.CustomBorderColor = System.Drawing.Color.Transparent;
+            this.btn_MasterSanPham.DisabledState.FillColor = System.Drawing.Color.Transparent;
+            this.btn_MasterSanPham.DisabledState.ForeColor = System.Drawing.Color.Transparent;
+            this.btn_MasterSanPham.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_MasterSanPham.FillColor = System.Drawing.Color.Transparent;
+            this.btn_MasterSanPham.Font = new System.Drawing.Font("Bahnschrift Condensed", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_MasterSanPham.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.btn_MasterSanPham.HoverState.FillColor = System.Drawing.Color.Transparent;
+            this.btn_MasterSanPham.Image = global::HeThongBanDienThoai_Admin.Properties.Resources.arrow_right;
+            this.btn_MasterSanPham.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btn_MasterSanPham.ImageSize = new System.Drawing.Size(10, 10);
+            this.btn_MasterSanPham.Location = new System.Drawing.Point(0, 0);
+            this.btn_MasterSanPham.Margin = new System.Windows.Forms.Padding(0);
+            this.btn_MasterSanPham.Name = "btn_MasterSanPham";
+            this.btn_MasterSanPham.PressedColor = System.Drawing.Color.Transparent;
+            this.btn_MasterSanPham.Size = new System.Drawing.Size(214, 35);
+            this.btn_MasterSanPham.TabIndex = 999999;
+            this.btn_MasterSanPham.Tag = "parent|sanpham.view";
+            this.btn_MasterSanPham.Text = "Quản lý sản phẩm";
+            this.btn_MasterSanPham.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btn_MasterSanPham.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            this.btn_MasterSanPham.Click += new System.EventHandler(this.btn_MasterSanPham_Click);
+            // 
             // btn_MasterCauHinh
             // 
             this.btn_MasterCauHinh.Animated = true;
@@ -829,57 +866,19 @@ namespace HeThongBanDienThoai_Admin.GUI
             this.btn_MasterCauHinh.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.btn_MasterCauHinh.Click += new System.EventHandler(this.btn_MasterCauHinh_Click);
             // 
-            // Panel_Logo
+            // btn_newIndex
             // 
-            this.Panel_Logo.BackColor = System.Drawing.Color.Transparent;
-            this.Panel_Logo.BorderRadius = 12;
-            this.Panel_Logo.Controls.Add(this.guna2PictureBox1);
-            this.Panel_Logo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Panel_Logo.FillColor = System.Drawing.Color.Black;
-            this.Panel_Logo.Location = new System.Drawing.Point(7, 7);
-            this.Panel_Logo.Name = "Panel_Logo";
-            this.Panel_Logo.Size = new System.Drawing.Size(214, 114);
-            this.Panel_Logo.TabIndex = 0;
-            // 
-            // guna2PictureBox1
-            // 
-            this.guna2PictureBox1.BorderRadius = 10;
-            this.guna2PictureBox1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.guna2PictureBox1.Image = global::HeThongBanDienThoai_Admin.Properties.Resources.thumbtopzone2_800x450_600x400;
-            this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(214, 114);
-            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2PictureBox1.TabIndex = 2;
-            this.guna2PictureBox1.TabStop = false;
-            // 
-            // TableLayoutPanel_Body
-            // 
-            this.TableLayoutPanel_Body.ColumnCount = 2;
-            this.TableLayoutPanel_Body.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 228F));
-            this.TableLayoutPanel_Body.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.TableLayoutPanel_Body.Controls.Add(this.panel_sidebar, 0, 0);
-            this.TableLayoutPanel_Body.Controls.Add(this.panel_container, 1, 0);
-            this.TableLayoutPanel_Body.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.TableLayoutPanel_Body.Location = new System.Drawing.Point(7, 30);
-            this.TableLayoutPanel_Body.Name = "TableLayoutPanel_Body";
-            this.TableLayoutPanel_Body.RowCount = 1;
-            this.TableLayoutPanel_Body.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.TableLayoutPanel_Body.Size = new System.Drawing.Size(891, 726);
-            this.TableLayoutPanel_Body.TabIndex = 10;
-            // 
-            // panel_container
-            // 
-            this.panel_container.BackColor = System.Drawing.Color.White;
-            this.panel_container.Controls.Add(this.btnXuat);
-            this.panel_container.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel_container.Location = new System.Drawing.Point(237, 2);
-            this.panel_container.Margin = new System.Windows.Forms.Padding(9, 2, 3, 2);
-            this.panel_container.Name = "panel_container";
-            this.panel_container.Padding = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.panel_container.Size = new System.Drawing.Size(651, 722);
-            this.panel_container.TabIndex = 12;
+            this.btn_newIndex.BorderRadius = 10;
+            this.btn_newIndex.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_newIndex.Image = global::HeThongBanDienThoai_Admin.Properties.Resources.thumbtopzone2_800x450_600x400;
+            this.btn_newIndex.ImageRotate = 0F;
+            this.btn_newIndex.Location = new System.Drawing.Point(0, 0);
+            this.btn_newIndex.Name = "btn_newIndex";
+            this.btn_newIndex.Size = new System.Drawing.Size(214, 114);
+            this.btn_newIndex.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btn_newIndex.TabIndex = 2;
+            this.btn_newIndex.TabStop = false;
+            this.btn_newIndex.Click += new System.EventHandler(this.btn_newIndex_Click);
             // 
             // guna2ImageButton1
             // 
@@ -898,21 +897,6 @@ namespace HeThongBanDienThoai_Admin.GUI
             this.guna2ImageButton1.PressedState.ImageSize = new System.Drawing.Size(64, 64);
             this.guna2ImageButton1.Size = new System.Drawing.Size(62, 60);
             this.guna2ImageButton1.TabIndex = 0;
-            // 
-            // btnXuat
-            // 
-            this.btnXuat.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnXuat.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnXuat.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnXuat.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnXuat.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnXuat.ForeColor = System.Drawing.Color.White;
-            this.btnXuat.Location = new System.Drawing.Point(185, 201);
-            this.btnXuat.Name = "btnXuat";
-            this.btnXuat.Size = new System.Drawing.Size(180, 45);
-            this.btnXuat.TabIndex = 0;
-            this.btnXuat.Text = "Xuất excel";
-            this.btnXuat.Click += new System.EventHandler(this.btnXuat_Click);
             // 
             // Menu_Form
             // 
@@ -935,16 +919,15 @@ namespace HeThongBanDienThoai_Admin.GUI
             this.panel_sidebar.ResumeLayout(false);
             this.tablePanel_DangXuat.ResumeLayout(false);
             this.tablePanel_DangXuat.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_DangXuat)).EndInit();
             this.Panel_MasterHeThong.ResumeLayout(false);
             this.Panel_MasterBanHang.ResumeLayout(false);
             this.Panel_MasterNhapHang.ResumeLayout(false);
             this.Panel_MasterSanPham.ResumeLayout(false);
             this.Panel_MasterCauHinh.ResumeLayout(false);
             this.Panel_Logo.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.TableLayoutPanel_Body.ResumeLayout(false);
-            this.panel_container.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btn_DangXuat)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_newIndex)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -984,10 +967,9 @@ namespace HeThongBanDienThoai_Admin.GUI
         private Guna.UI2.WinForms.Guna2Button btn_MasterCauHinh;
         private Panel panel_container;
         private Guna.UI2.WinForms.Guna2Panel Panel_Logo;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
+        private Guna.UI2.WinForms.Guna2PictureBox btn_newIndex;
         private TableLayoutPanel tablePanel_DangXuat;
         private Label label1;
         private Guna.UI2.WinForms.Guna2PictureBox btn_DangXuat;
-        private Guna.UI2.WinForms.Guna2Button btnXuat;
     }
 }

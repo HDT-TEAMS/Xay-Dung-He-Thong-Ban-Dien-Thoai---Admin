@@ -51,15 +51,15 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.TableLayoutPanel_Header = new System.Windows.Forms.TableLayoutPanel();
             this.TableLayoutPanel_Action = new System.Windows.Forms.TableLayoutPanel();
@@ -89,33 +89,7 @@
             this.TongTien1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TrangThai1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaDH1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewButtonColumn4 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.MaNB5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenNV5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenKH5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SDT5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NgayDat5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TongTien5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TrangThai5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaDH5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewButtonColumn3 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.MaNB4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenNV4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenKH4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SDT4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NgayDat4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TongTien4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TrangThai4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaDH4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewButtonColumn2 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.MaNB3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenNV3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenKH3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SDT3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NgayDat3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TongTien3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TrangThai3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaDH3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Sua = new System.Windows.Forms.DataGridViewButtonColumn();
             this.MaNB2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenNV2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -125,6 +99,37 @@
             this.TongTien2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TrangThai2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaDH2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TT1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewButtonColumn2 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.MaNB3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenNV3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenKH3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SDT3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgayDat3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TongTien3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TrangThai3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaDH3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TT2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewButtonColumn3 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.MaNB4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenNV4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenKH4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SDT4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgayDat4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TongTien4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TrangThai4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaDH4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TT3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewButtonColumn4 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.MaNB5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenNV5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenKH5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SDT5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgayDat5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TongTien5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TrangThai5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaDH5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TT4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TableLayoutPanel_Header.SuspendLayout();
             this.TableLayoutPanel_Action.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_DaXacNhap)).BeginInit();
@@ -247,7 +252,8 @@
             this.NgayDat2,
             this.TongTien2,
             this.TrangThai2,
-            this.MaDH2});
+            this.MaDH2,
+            this.TT1});
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -387,7 +393,8 @@
             this.NgayDat1,
             this.TongTien1,
             this.TrangThai1,
-            this.MaDH1});
+            this.MaDH1,
+            this.TT});
             dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle12.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -506,7 +513,8 @@
             this.NgayDat3,
             this.TongTien3,
             this.TrangThai3,
-            this.MaDH3});
+            this.MaDH3,
+            this.TT2});
             dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle18.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle18.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -613,7 +621,8 @@
             this.NgayDat4,
             this.TongTien4,
             this.TrangThai4,
-            this.MaDH4});
+            this.MaDH4,
+            this.TT3});
             dataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle25.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle25.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -720,7 +729,8 @@
             this.NgayDat5,
             this.TongTien5,
             this.TrangThai5,
-            this.MaDH5});
+            this.MaDH5,
+            this.TT4});
             dataGridViewCellStyle31.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle31.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle31.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -873,89 +883,199 @@
             this.MaDH1.ReadOnly = true;
             this.MaDH1.Visible = false;
             // 
-            // dataGridViewButtonColumn4
+            // TT
             // 
-            this.dataGridViewButtonColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle29.Font = new System.Drawing.Font("Segoe UI", 9F);
-            dataGridViewCellStyle29.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.dataGridViewButtonColumn4.DefaultCellStyle = dataGridViewCellStyle29;
-            this.dataGridViewButtonColumn4.FillWeight = 20F;
-            this.dataGridViewButtonColumn4.HeaderText = "";
-            this.dataGridViewButtonColumn4.MinimumWidth = 6;
-            this.dataGridViewButtonColumn4.Name = "dataGridViewButtonColumn4";
-            this.dataGridViewButtonColumn4.ReadOnly = true;
-            this.dataGridViewButtonColumn4.Text = "Sửa";
-            this.dataGridViewButtonColumn4.UseColumnTextForButtonValue = true;
-            this.dataGridViewButtonColumn4.Width = 6;
+            this.TT.DataPropertyName = "TT";
+            this.TT.HeaderText = "TT";
+            this.TT.Name = "TT";
+            this.TT.ReadOnly = true;
+            this.TT.Visible = false;
             // 
-            // MaNB5
+            // Sua
             // 
-            this.MaNB5.DataPropertyName = "MaNB";
-            this.MaNB5.DividerWidth = 1;
-            this.MaNB5.HeaderText = "Mã Đơn Hàng";
-            this.MaNB5.Name = "MaNB5";
-            this.MaNB5.ReadOnly = true;
+            this.Sua.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F);
+            dataGridViewCellStyle3.Format = "N0";
+            dataGridViewCellStyle3.NullValue = null;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.Sua.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Sua.FillWeight = 20F;
+            this.Sua.HeaderText = "";
+            this.Sua.MinimumWidth = 6;
+            this.Sua.Name = "Sua";
+            this.Sua.ReadOnly = true;
+            this.Sua.Text = "Sửa";
+            this.Sua.UseColumnTextForButtonValue = true;
+            this.Sua.Width = 6;
             // 
-            // TenNV5
+            // MaNB2
             // 
-            this.TenNV5.DataPropertyName = "TenNV";
-            this.TenNV5.DividerWidth = 1;
-            this.TenNV5.HeaderText = "Nhân Viên";
-            this.TenNV5.Name = "TenNV5";
-            this.TenNV5.ReadOnly = true;
+            this.MaNB2.DataPropertyName = "MaNB";
+            this.MaNB2.DividerWidth = 1;
+            this.MaNB2.HeaderText = "Mã Đơn Hàng";
+            this.MaNB2.Name = "MaNB2";
+            this.MaNB2.ReadOnly = true;
             // 
-            // TenKH5
+            // TenNV2
             // 
-            this.TenKH5.DataPropertyName = "TenKH";
-            this.TenKH5.DividerWidth = 1;
-            this.TenKH5.HeaderText = "Khách Hàng";
-            this.TenKH5.Name = "TenKH5";
-            this.TenKH5.ReadOnly = true;
+            this.TenNV2.DataPropertyName = "TenNV";
+            this.TenNV2.DividerWidth = 1;
+            this.TenNV2.HeaderText = "Nhân Viên";
+            this.TenNV2.Name = "TenNV2";
+            this.TenNV2.ReadOnly = true;
             // 
-            // SDT5
+            // TenKH2
             // 
-            this.SDT5.DataPropertyName = "SDT";
-            this.SDT5.DividerWidth = 1;
-            this.SDT5.HeaderText = "Số Điện Thoại";
-            this.SDT5.Name = "SDT5";
-            this.SDT5.ReadOnly = true;
+            this.TenKH2.DataPropertyName = "TenKH";
+            this.TenKH2.DividerWidth = 1;
+            this.TenKH2.HeaderText = "Khách Hàng";
+            this.TenKH2.Name = "TenKH2";
+            this.TenKH2.ReadOnly = true;
             // 
-            // NgayDat5
+            // SDT2
             // 
-            this.NgayDat5.DataPropertyName = "NgayDat";
-            this.NgayDat5.DividerWidth = 1;
-            this.NgayDat5.HeaderText = "Ngày Đặt";
-            this.NgayDat5.Name = "NgayDat5";
-            this.NgayDat5.ReadOnly = true;
+            this.SDT2.DataPropertyName = "SDT";
+            this.SDT2.DividerWidth = 1;
+            this.SDT2.HeaderText = "Số Điện Thoại";
+            this.SDT2.Name = "SDT2";
+            this.SDT2.ReadOnly = true;
             // 
-            // TongTien5
+            // NgayDat2
             // 
-            this.TongTien5.DataPropertyName = "TongTien";
-            dataGridViewCellStyle30.Format = "N0";
-            dataGridViewCellStyle30.NullValue = null;
-            this.TongTien5.DefaultCellStyle = dataGridViewCellStyle30;
-            this.TongTien5.DividerWidth = 1;
-            this.TongTien5.HeaderText = "Tổng Tiền";
-            this.TongTien5.Name = "TongTien5";
-            this.TongTien5.ReadOnly = true;
+            this.NgayDat2.DataPropertyName = "NgayDat";
+            this.NgayDat2.DividerWidth = 1;
+            this.NgayDat2.HeaderText = "Ngày Đặt";
+            this.NgayDat2.Name = "NgayDat2";
+            this.NgayDat2.ReadOnly = true;
             // 
-            // TrangThai5
+            // TongTien2
             // 
-            this.TrangThai5.DataPropertyName = "TrangThai";
-            this.TrangThai5.DividerWidth = 1;
-            this.TrangThai5.HeaderText = "Trạng Thái";
-            this.TrangThai5.Name = "TrangThai5";
-            this.TrangThai5.ReadOnly = true;
+            this.TongTien2.DataPropertyName = "TongTien";
+            dataGridViewCellStyle4.Format = "N0";
+            dataGridViewCellStyle4.NullValue = null;
+            this.TongTien2.DefaultCellStyle = dataGridViewCellStyle4;
+            this.TongTien2.DividerWidth = 1;
+            this.TongTien2.HeaderText = "Tổng Tiền";
+            this.TongTien2.Name = "TongTien2";
+            this.TongTien2.ReadOnly = true;
             // 
-            // MaDH5
+            // TrangThai2
             // 
-            this.MaDH5.DataPropertyName = "MaDH";
-            this.MaDH5.DividerWidth = 1;
-            this.MaDH5.HeaderText = "MaDH";
-            this.MaDH5.Name = "MaDH5";
-            this.MaDH5.ReadOnly = true;
-            this.MaDH5.Visible = false;
+            this.TrangThai2.DataPropertyName = "TrangThai";
+            this.TrangThai2.DividerWidth = 1;
+            this.TrangThai2.HeaderText = "Trạng Thái";
+            this.TrangThai2.Name = "TrangThai2";
+            this.TrangThai2.ReadOnly = true;
+            // 
+            // MaDH2
+            // 
+            this.MaDH2.DataPropertyName = "MaDH";
+            this.MaDH2.DividerWidth = 1;
+            this.MaDH2.HeaderText = "MaDH";
+            this.MaDH2.Name = "MaDH2";
+            this.MaDH2.ReadOnly = true;
+            this.MaDH2.Visible = false;
+            // 
+            // TT1
+            // 
+            this.TT1.DataPropertyName = "TT";
+            this.TT1.HeaderText = "TT";
+            this.TT1.Name = "TT1";
+            this.TT1.ReadOnly = true;
+            this.TT1.Visible = false;
+            // 
+            // dataGridViewButtonColumn2
+            // 
+            this.dataGridViewButtonColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Segoe UI", 9F);
+            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.dataGridViewButtonColumn2.DefaultCellStyle = dataGridViewCellStyle16;
+            this.dataGridViewButtonColumn2.FillWeight = 20F;
+            this.dataGridViewButtonColumn2.HeaderText = "";
+            this.dataGridViewButtonColumn2.MinimumWidth = 6;
+            this.dataGridViewButtonColumn2.Name = "dataGridViewButtonColumn2";
+            this.dataGridViewButtonColumn2.ReadOnly = true;
+            this.dataGridViewButtonColumn2.Text = "Sửa";
+            this.dataGridViewButtonColumn2.UseColumnTextForButtonValue = true;
+            this.dataGridViewButtonColumn2.Width = 6;
+            // 
+            // MaNB3
+            // 
+            this.MaNB3.DataPropertyName = "MaNB";
+            this.MaNB3.DividerWidth = 1;
+            this.MaNB3.HeaderText = "Mã Đơn Hàng";
+            this.MaNB3.Name = "MaNB3";
+            this.MaNB3.ReadOnly = true;
+            // 
+            // TenNV3
+            // 
+            this.TenNV3.DataPropertyName = "TenNV";
+            this.TenNV3.DividerWidth = 1;
+            this.TenNV3.HeaderText = "Nhân Viên";
+            this.TenNV3.Name = "TenNV3";
+            this.TenNV3.ReadOnly = true;
+            // 
+            // TenKH3
+            // 
+            this.TenKH3.DataPropertyName = "TenKH";
+            this.TenKH3.DividerWidth = 1;
+            this.TenKH3.HeaderText = "Khách Hàng";
+            this.TenKH3.Name = "TenKH3";
+            this.TenKH3.ReadOnly = true;
+            // 
+            // SDT3
+            // 
+            this.SDT3.DataPropertyName = "SDT";
+            this.SDT3.DividerWidth = 1;
+            this.SDT3.HeaderText = "Số Điện Thoại";
+            this.SDT3.Name = "SDT3";
+            this.SDT3.ReadOnly = true;
+            // 
+            // NgayDat3
+            // 
+            this.NgayDat3.DataPropertyName = "NgayDat";
+            this.NgayDat3.DividerWidth = 1;
+            this.NgayDat3.HeaderText = "Ngày Đặt";
+            this.NgayDat3.Name = "NgayDat3";
+            this.NgayDat3.ReadOnly = true;
+            // 
+            // TongTien3
+            // 
+            this.TongTien3.DataPropertyName = "TongTien";
+            dataGridViewCellStyle17.Format = "N0";
+            dataGridViewCellStyle17.NullValue = null;
+            this.TongTien3.DefaultCellStyle = dataGridViewCellStyle17;
+            this.TongTien3.DividerWidth = 1;
+            this.TongTien3.HeaderText = "Tổng Tiền";
+            this.TongTien3.Name = "TongTien3";
+            this.TongTien3.ReadOnly = true;
+            // 
+            // TrangThai3
+            // 
+            this.TrangThai3.DataPropertyName = "TrangThai";
+            this.TrangThai3.DividerWidth = 1;
+            this.TrangThai3.HeaderText = "Trạng Thái";
+            this.TrangThai3.Name = "TrangThai3";
+            this.TrangThai3.ReadOnly = true;
+            // 
+            // MaDH3
+            // 
+            this.MaDH3.DataPropertyName = "MaDH";
+            this.MaDH3.DividerWidth = 1;
+            this.MaDH3.HeaderText = "MaDH";
+            this.MaDH3.Name = "MaDH3";
+            this.MaDH3.ReadOnly = true;
+            this.MaDH3.Visible = false;
+            // 
+            // TT2
+            // 
+            this.TT2.DataPropertyName = "TT";
+            this.TT2.HeaderText = "TT";
+            this.TT2.Name = "TT2";
+            this.TT2.ReadOnly = true;
+            this.TT2.Visible = false;
             // 
             // dataGridViewButtonColumn3
             // 
@@ -1044,175 +1164,105 @@
             this.MaDH4.ReadOnly = true;
             this.MaDH4.Visible = false;
             // 
-            // dataGridViewButtonColumn2
+            // TT3
             // 
-            this.dataGridViewButtonColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("Segoe UI", 9F);
-            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.dataGridViewButtonColumn2.DefaultCellStyle = dataGridViewCellStyle16;
-            this.dataGridViewButtonColumn2.FillWeight = 20F;
-            this.dataGridViewButtonColumn2.HeaderText = "";
-            this.dataGridViewButtonColumn2.MinimumWidth = 6;
-            this.dataGridViewButtonColumn2.Name = "dataGridViewButtonColumn2";
-            this.dataGridViewButtonColumn2.ReadOnly = true;
-            this.dataGridViewButtonColumn2.Text = "Sửa";
-            this.dataGridViewButtonColumn2.UseColumnTextForButtonValue = true;
-            this.dataGridViewButtonColumn2.Width = 6;
+            this.TT3.DataPropertyName = "TT";
+            this.TT3.HeaderText = "TT";
+            this.TT3.Name = "TT3";
+            this.TT3.ReadOnly = true;
+            this.TT3.Visible = false;
             // 
-            // MaNB3
+            // dataGridViewButtonColumn4
             // 
-            this.MaNB3.DataPropertyName = "MaNB";
-            this.MaNB3.DividerWidth = 1;
-            this.MaNB3.HeaderText = "Mã Đơn Hàng";
-            this.MaNB3.Name = "MaNB3";
-            this.MaNB3.ReadOnly = true;
+            this.dataGridViewButtonColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle29.Font = new System.Drawing.Font("Segoe UI", 9F);
+            dataGridViewCellStyle29.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.dataGridViewButtonColumn4.DefaultCellStyle = dataGridViewCellStyle29;
+            this.dataGridViewButtonColumn4.FillWeight = 20F;
+            this.dataGridViewButtonColumn4.HeaderText = "";
+            this.dataGridViewButtonColumn4.MinimumWidth = 6;
+            this.dataGridViewButtonColumn4.Name = "dataGridViewButtonColumn4";
+            this.dataGridViewButtonColumn4.ReadOnly = true;
+            this.dataGridViewButtonColumn4.Text = "Sửa";
+            this.dataGridViewButtonColumn4.UseColumnTextForButtonValue = true;
+            this.dataGridViewButtonColumn4.Width = 6;
             // 
-            // TenNV3
+            // MaNB5
             // 
-            this.TenNV3.DataPropertyName = "TenNV";
-            this.TenNV3.DividerWidth = 1;
-            this.TenNV3.HeaderText = "Nhân Viên";
-            this.TenNV3.Name = "TenNV3";
-            this.TenNV3.ReadOnly = true;
+            this.MaNB5.DataPropertyName = "MaNB";
+            this.MaNB5.DividerWidth = 1;
+            this.MaNB5.HeaderText = "Mã Đơn Hàng";
+            this.MaNB5.Name = "MaNB5";
+            this.MaNB5.ReadOnly = true;
             // 
-            // TenKH3
+            // TenNV5
             // 
-            this.TenKH3.DataPropertyName = "TenKH";
-            this.TenKH3.DividerWidth = 1;
-            this.TenKH3.HeaderText = "Khách Hàng";
-            this.TenKH3.Name = "TenKH3";
-            this.TenKH3.ReadOnly = true;
+            this.TenNV5.DataPropertyName = "TenNV";
+            this.TenNV5.DividerWidth = 1;
+            this.TenNV5.HeaderText = "Nhân Viên";
+            this.TenNV5.Name = "TenNV5";
+            this.TenNV5.ReadOnly = true;
             // 
-            // SDT3
+            // TenKH5
             // 
-            this.SDT3.DataPropertyName = "SDT";
-            this.SDT3.DividerWidth = 1;
-            this.SDT3.HeaderText = "Số Điện Thoại";
-            this.SDT3.Name = "SDT3";
-            this.SDT3.ReadOnly = true;
+            this.TenKH5.DataPropertyName = "TenKH";
+            this.TenKH5.DividerWidth = 1;
+            this.TenKH5.HeaderText = "Khách Hàng";
+            this.TenKH5.Name = "TenKH5";
+            this.TenKH5.ReadOnly = true;
             // 
-            // NgayDat3
+            // SDT5
             // 
-            this.NgayDat3.DataPropertyName = "NgayDat";
-            this.NgayDat3.DividerWidth = 1;
-            this.NgayDat3.HeaderText = "Ngày Đặt";
-            this.NgayDat3.Name = "NgayDat3";
-            this.NgayDat3.ReadOnly = true;
+            this.SDT5.DataPropertyName = "SDT";
+            this.SDT5.DividerWidth = 1;
+            this.SDT5.HeaderText = "Số Điện Thoại";
+            this.SDT5.Name = "SDT5";
+            this.SDT5.ReadOnly = true;
             // 
-            // TongTien3
+            // NgayDat5
             // 
-            this.TongTien3.DataPropertyName = "TongTien";
-            dataGridViewCellStyle17.Format = "N0";
-            dataGridViewCellStyle17.NullValue = null;
-            this.TongTien3.DefaultCellStyle = dataGridViewCellStyle17;
-            this.TongTien3.DividerWidth = 1;
-            this.TongTien3.HeaderText = "Tổng Tiền";
-            this.TongTien3.Name = "TongTien3";
-            this.TongTien3.ReadOnly = true;
+            this.NgayDat5.DataPropertyName = "NgayDat";
+            this.NgayDat5.DividerWidth = 1;
+            this.NgayDat5.HeaderText = "Ngày Đặt";
+            this.NgayDat5.Name = "NgayDat5";
+            this.NgayDat5.ReadOnly = true;
             // 
-            // TrangThai3
+            // TongTien5
             // 
-            this.TrangThai3.DataPropertyName = "TrangThai";
-            this.TrangThai3.DividerWidth = 1;
-            this.TrangThai3.HeaderText = "Trạng Thái";
-            this.TrangThai3.Name = "TrangThai3";
-            this.TrangThai3.ReadOnly = true;
+            this.TongTien5.DataPropertyName = "TongTien";
+            dataGridViewCellStyle30.Format = "N0";
+            dataGridViewCellStyle30.NullValue = null;
+            this.TongTien5.DefaultCellStyle = dataGridViewCellStyle30;
+            this.TongTien5.DividerWidth = 1;
+            this.TongTien5.HeaderText = "Tổng Tiền";
+            this.TongTien5.Name = "TongTien5";
+            this.TongTien5.ReadOnly = true;
             // 
-            // MaDH3
+            // TrangThai5
             // 
-            this.MaDH3.DataPropertyName = "MaDH";
-            this.MaDH3.DividerWidth = 1;
-            this.MaDH3.HeaderText = "MaDH";
-            this.MaDH3.Name = "MaDH3";
-            this.MaDH3.ReadOnly = true;
-            this.MaDH3.Visible = false;
+            this.TrangThai5.DataPropertyName = "TrangThai";
+            this.TrangThai5.DividerWidth = 1;
+            this.TrangThai5.HeaderText = "Trạng Thái";
+            this.TrangThai5.Name = "TrangThai5";
+            this.TrangThai5.ReadOnly = true;
             // 
-            // Sua
+            // MaDH5
             // 
-            this.Sua.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F);
-            dataGridViewCellStyle3.Format = "N0";
-            dataGridViewCellStyle3.NullValue = null;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.Sua.DefaultCellStyle = dataGridViewCellStyle3;
-            this.Sua.FillWeight = 20F;
-            this.Sua.HeaderText = "";
-            this.Sua.MinimumWidth = 6;
-            this.Sua.Name = "Sua";
-            this.Sua.ReadOnly = true;
-            this.Sua.Text = "Sửa";
-            this.Sua.UseColumnTextForButtonValue = true;
-            this.Sua.Width = 6;
+            this.MaDH5.DataPropertyName = "MaDH";
+            this.MaDH5.DividerWidth = 1;
+            this.MaDH5.HeaderText = "MaDH";
+            this.MaDH5.Name = "MaDH5";
+            this.MaDH5.ReadOnly = true;
+            this.MaDH5.Visible = false;
             // 
-            // MaNB2
+            // TT4
             // 
-            this.MaNB2.DataPropertyName = "MaNB";
-            this.MaNB2.DividerWidth = 1;
-            this.MaNB2.HeaderText = "Mã Đơn Hàng";
-            this.MaNB2.Name = "MaNB2";
-            this.MaNB2.ReadOnly = true;
-            // 
-            // TenNV2
-            // 
-            this.TenNV2.DataPropertyName = "TenNV";
-            this.TenNV2.DividerWidth = 1;
-            this.TenNV2.HeaderText = "Nhân Viên";
-            this.TenNV2.Name = "TenNV2";
-            this.TenNV2.ReadOnly = true;
-            // 
-            // TenKH2
-            // 
-            this.TenKH2.DataPropertyName = "TenKH";
-            this.TenKH2.DividerWidth = 1;
-            this.TenKH2.HeaderText = "Khách Hàng";
-            this.TenKH2.Name = "TenKH2";
-            this.TenKH2.ReadOnly = true;
-            // 
-            // SDT2
-            // 
-            this.SDT2.DataPropertyName = "SDT";
-            this.SDT2.DividerWidth = 1;
-            this.SDT2.HeaderText = "Số Điện Thoại";
-            this.SDT2.Name = "SDT2";
-            this.SDT2.ReadOnly = true;
-            // 
-            // NgayDat2
-            // 
-            this.NgayDat2.DataPropertyName = "NgayDat";
-            this.NgayDat2.DividerWidth = 1;
-            this.NgayDat2.HeaderText = "Ngày Đặt";
-            this.NgayDat2.Name = "NgayDat2";
-            this.NgayDat2.ReadOnly = true;
-            // 
-            // TongTien2
-            // 
-            this.TongTien2.DataPropertyName = "TongTien";
-            dataGridViewCellStyle4.Format = "N0";
-            dataGridViewCellStyle4.NullValue = null;
-            this.TongTien2.DefaultCellStyle = dataGridViewCellStyle4;
-            this.TongTien2.DividerWidth = 1;
-            this.TongTien2.HeaderText = "Tổng Tiền";
-            this.TongTien2.Name = "TongTien2";
-            this.TongTien2.ReadOnly = true;
-            // 
-            // TrangThai2
-            // 
-            this.TrangThai2.DataPropertyName = "TrangThai";
-            this.TrangThai2.DividerWidth = 1;
-            this.TrangThai2.HeaderText = "Trạng Thái";
-            this.TrangThai2.Name = "TrangThai2";
-            this.TrangThai2.ReadOnly = true;
-            // 
-            // MaDH2
-            // 
-            this.MaDH2.DataPropertyName = "MaDH";
-            this.MaDH2.DividerWidth = 1;
-            this.MaDH2.HeaderText = "MaDH";
-            this.MaDH2.Name = "MaDH2";
-            this.MaDH2.ReadOnly = true;
-            this.MaDH2.Visible = false;
+            this.TT4.DataPropertyName = "TT";
+            this.TT4.HeaderText = "TT";
+            this.TT4.Name = "TT4";
+            this.TT4.ReadOnly = true;
+            this.TT4.Visible = false;
             // 
             // OrderCreate_Form
             // 
@@ -1263,15 +1313,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private Guna.UI2.WinForms.Guna2DataGridView dgv_ChoXacNhan;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaNB1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TenNV1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TenKH1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SDT1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NgayDat1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TongTien1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TrangThai1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaDH1;
         private System.Windows.Forms.DataGridViewButtonColumn Sua;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaNB2;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenNV2;
@@ -1281,6 +1322,17 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TongTien2;
         private System.Windows.Forms.DataGridViewTextBoxColumn TrangThai2;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaDH2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TT1;
+        private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaNB1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenNV1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenKH1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SDT1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NgayDat1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TongTien1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TrangThai1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaDH1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TT;
         private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaNB3;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenNV3;
@@ -1290,6 +1342,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TongTien3;
         private System.Windows.Forms.DataGridViewTextBoxColumn TrangThai3;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaDH3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TT2;
         private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaNB4;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenNV4;
@@ -1299,6 +1352,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TongTien4;
         private System.Windows.Forms.DataGridViewTextBoxColumn TrangThai4;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaDH4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TT3;
         private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaNB5;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenNV5;
@@ -1308,5 +1362,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TongTien5;
         private System.Windows.Forms.DataGridViewTextBoxColumn TrangThai5;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaDH5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TT4;
     }
 }

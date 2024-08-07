@@ -18,6 +18,23 @@ namespace BUS
             return loai_DAO.GetLoaiList();
         }
 
+        public void InsertLoai(Loai l)
+        {
+            loai_DAO.InsertLoai(l);
+        }
+        public void UpdateLoai(Loai l)
+        {
+            loai_DAO.UpdateLoai(l);
+        }
 
+        public void DeleteLoai(int maLoai)
+        {
+            loai_DAO.DeletetLoai(maLoai);
+        }
+
+        public Loai getLoaiByMal(int mal)
+        {
+            return loai_DAO.getLoaiByMal(mal);
+        }
     }
 }

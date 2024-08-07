@@ -16,5 +16,24 @@ namespace BUS
         {
             return msd.loadDataMauSac();
         }
+
+        public void InsertMauSac(MauSac color)
+        {
+            msd.InsertMauSac(color);
+        }
+        public void UpdateMauSac(MauSac color)
+        {
+            msd.UpdateMauSac(color);
+        }
+
+        public void DeletetMauSac(int maMauSac)
+        {
+            msd.DeletetMauSac(maMauSac);
+        }
+
+        public MauSac getMauSacByMacolor(int macolor)
+        {
+            return msd.getMauSacByMacolor(macolor);
+        }
     }
 }

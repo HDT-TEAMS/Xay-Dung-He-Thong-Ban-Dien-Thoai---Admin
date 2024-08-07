@@ -21,6 +21,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using HeThongBanDienThoai_Admin.GUI.Promotion_Form;
+using HeThongBanDienThoai_Admin.GUI.Statistical;
 
 namespace HeThongBanDienThoai_Admin.GUI
 {
@@ -37,7 +38,14 @@ namespace HeThongBanDienThoai_Admin.GUI
 
         private void Menu_Form_Load(object sender, EventArgs e)
         {
+            loadThongKe();
             showChucNang();
+        }
+
+        private void loadThongKe()
+        {
+            MyLib.LoadForm(panel_container, new IndexStatistical_Form());
+            Label_Heading.Text = "Thống kê";
         }
 
         private Guna2Button CreateButtonLoaiSP(Loai loai)
@@ -379,14 +387,26 @@ namespace HeThongBanDienThoai_Admin.GUI
             }
         }
 
-        private void btnXuat_Click(object sender, EventArgs e)
+        private void btn_newIndex_Click(object sender, EventArgs e)
         {
-            DonHang_BUS dhb = new DonHang_BUS();
-            ExcelExport dt = new ExcelExport();
-            List<View_DanhSachDonHang> ALLDH = dhb.getDanhSachDonHang();
-            string FileName = string.Empty;
-            dt.ExportKhoa(ALLDH, ref FileName, false);
-            dt.OpenFile(FileName);
+            loadThongKe();
         }
+
+        private void panel_container_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+
+
+        //private void btnXuat_Click(object sender, EventArgs e)
+        //{
+        //    DonHang_BUS dhb = new DonHang_BUS();
+        //    ExcelExport dt = new ExcelExport();
+        //    List<View_DanhSachDonHang> ALLDH = dhb.getDanhSachDonHang();
+        //    string FileName = string.Empty;
+        //    dt.ExportKhoa(ALLDH, ref FileName, false);
+        //    dt.OpenFile(FileName);
+        //}
     }
 }

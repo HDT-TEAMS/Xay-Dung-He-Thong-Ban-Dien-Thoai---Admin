@@ -2,6 +2,7 @@
 using DTO;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -72,6 +73,11 @@ namespace BUS
         public void UpdateKhuyenMaiSanPham(SanPham sp)
         {
             sanPham_DAO.UpdateKhuyenMaiSanPham(sp);
+        }
+
+        public DataTable GetSanPhamGanHetHangDataTable()
+        {
+           return sanPham_DAO.GetSanPhamGanHetHangDataTable();
         }
 
     }

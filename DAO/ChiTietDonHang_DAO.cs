@@ -1,6 +1,7 @@
 ﻿using DTO;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -39,6 +40,30 @@ namespace DAO
                 ctdh.SoLuong = ctdh.SoLuong;
                 ctdh.DonGia = ctdh.DonGia;
             }
+        }
+
+        public DataTable GetTop5SanPhamBanChayDataTable()
+        {
+            var topSanPhamBanChay = db.VIEW_TOP5SANPHAMBANCHAYs
+                                              .OrderByDescending(sp => sp.TotalSold)
+                                              .Take(5)
+                                              .ToList();
+
+            DataTable dt = new DataTable();
+            dt.Columns.Add("MaSP", typeof(int));
+            dt.Columns.Add("TenSP", typeof(string));
+            dt.Columns.Add("TotalSold", typeof(int));
+
+            foreach (var item in topSanPhamBanChay)
+            {
+                DataRow row = dt.NewRow();
+                row["MaSP"] = item.MaSP;
+                row["TenSP"] = item.TenSP;
+                row["TotalSold"] = item.TotalSold;
+                dt.Rows.Add(row);
+            }
+
+            return dt;
         }
 
     }

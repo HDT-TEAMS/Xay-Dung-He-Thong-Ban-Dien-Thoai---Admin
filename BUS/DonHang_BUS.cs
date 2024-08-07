@@ -3,6 +3,7 @@ using DTO;
 using Guna.Charts.WinForms;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -37,6 +38,18 @@ namespace BUS
         {
             return dha.GetReportHoaDon(maHD);
         }
+
+        public DataTable GetDoanhThuOnlineTheoThangNam(int thang, int nam)
+        {
+           return dha.GetDoanhThuOnlineTheoThangNam(thang,nam);
+        }
+
+        // Lấy doanh thu offline theo tháng và năm
+        public DataTable GetDoanhThuOfflineTheoThangNam(int thang, int nam)
+        {
+            return dha.GetDoanhThuOfflineTheoThangNam(thang, nam);
+        }
+
 
     }
 }
