@@ -23,7 +23,7 @@
 
 ### Yêu cầu 
 <p>AI: Chatbot tư vấn khách hàng  </p>
-<p>Thuật toán: Gợi ý sản phẩm tương tự</p>
+<p>Thuật toán: Gợi ý sản phẩm tương tự (Kmeans)</p>
 
 <p>Web: MVC ASP, Entity Framework</p>
 <p>Ngôn ngữ: Javascript, C# </p>
